@@ -1,0 +1,70 @@
+# System files
+# ------------
+
+Icon
+.DS_Store
+
+# Frontend
+/public/assets/
+/public/dist/
+
+# Temporary files
+# ---------------
+
+/public/media/*
+!/public/media/index.html
+
+# Editors
+# (sensitive workspace files)
+# ---------------------------
+*.sublime-workspace
+/.vscode
+/.idea
+
+# -------------SECURITY-------------
+# NEVER publish these files via Git!
+# -------------SECURITY-------------
+
+# Cache Files
+# ---------------
+
+/storage/cache/*
+!/storage/cache/index.html
+
+# Accounts
+# ---------------
+
+/storage/accounts/*
+!/storage/accounts/index.html
+
+# Sessions
+# ---------------
+
+/storage/sessions/*
+!/storage/sessions/index.html
+
+# Plugins
+# ---------------
+
+site/plugins/*
+!site/plugins/custom
+
+# License
+# ---------------
+
+/site/config/.license
+
+# Node Modules
+# ---------------
+
+node_modules
+
+# Vendor
+# ---------------
+
+vendor
+
+# Kirby Folder
+# ---------------
+.dev
+kirby
