@@ -6,18 +6,17 @@
 <body>
     <?php snippet('header') ?>
     <main class="px-3 pt-1">
-        <div class="flex flex-row justify-between items-center	">
+        <div class="flex flex-row justify-between items-center">
             <nav class="flex gap-5 font-serif all-small-caps">
-                <a class="" href=" ">INDEX</a>
-                <a class="grow" href=" ">SORT</a>
+                <a class="" href=" ">index</a>
+                <a class="grow" href=" ">sort</a>
             </nav>
             
-            <h1 class="font-sans text-2xl">
-                <?= $page->title() ?> Laura Gauch
-            </h1>
         </div>
 
-        <!-- <div x-data="scrollApp()" x-init="duplicateImages()" @scroll="handleScroll" class="image-container" x-ref="container">
+        <?php snippet('menu') ?>
+
+        <div x-data="scrollApp()" x-init="duplicateImages()" @scroll="handleScroll" class="image-container" x-ref="container">
                 <li>
                     <img src="content/0003_13.jpg" class="h-[600px]">
                 </li>
@@ -34,7 +33,7 @@
                     <img src="content/000061660009.jpg" class="h-[600px]">
                 </li>
 
-        </div> -->
+        </div>
         <!-- <ul class="flex flex-row flex-nowrap items-center">
                     <li>
                         <img src="content/0003_13.jpg" class="h-96 w-100%">
