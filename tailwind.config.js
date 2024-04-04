@@ -6,6 +6,10 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["GeigyLLMedium", "sans-serif"],
+        serif: ["TimesTen", "serif"],
+      },
     },
   },
   variants: {},
