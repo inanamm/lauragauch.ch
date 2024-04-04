@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["GeigyLLMedium", "sans-serif"],
+        sans: ["GeigyLLRegular", "sans-serif"],
         serif: ["TimesTen", "serif"],
       },
     },

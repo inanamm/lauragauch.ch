@@ -5,14 +5,15 @@
 
 <body>
     <?php snippet('header') ?>
-    <main>
-        <div class="flex flex-row font-serif all-small-caps">
-
-            <a class="mr-2" href=" ">INDEX</a>
-            <a class="grow" href=" ">SORT</a>
+    <main class="px-3 pt-1">
+        <div class="flex flex-row justify-between items-center	">
+            <nav class="flex gap-5 font-serif all-small-caps">
+                <a class="" href=" ">INDEX</a>
+                <a class="grow" href=" ">SORT</a>
+            </nav>
             
-            <h1 class="font-sans ">
-                <?= $page->title() ?>
+            <h1 class="font-sans text-2xl">
+                <?= $page->title() ?> Laura Gauch
             </h1>
         </div>
 
