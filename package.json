@@ -13,7 +13,8 @@
     "@glidejs/glide": "^3.6.0",
     "alpinejs": "^3.13.6",
     "motion": "^10.17.0",
-    "swup": "^4.6.0"
+    "swup": "^4.6.0",
+    "tailwindcss-opentype": "^1.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.18",
