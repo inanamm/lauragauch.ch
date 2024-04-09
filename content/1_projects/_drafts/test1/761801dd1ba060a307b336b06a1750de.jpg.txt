@@ -1,0 +1,13 @@
+Sort: 1
+
+----
+
+Photographer: Laura Gauch
+
+----
+
+Uuid: MMPImEWPTxN3Elm7
+
+----
+
+Template: cover

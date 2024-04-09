@@ -1,25 +1,95 @@
 title: Project
-preset: page
+# preset: page
 
 status:
   draft: Draft
   listed: Published
+  unlisted: Privately Published
 
+columns:
+  main:
+    width: 2/3
+    sections:
 
-fields:
+    # ???
+      details:
+        type: fields
+        fields:
+          description:
+            label: Description
+            type: writer
+            marks: 
+              - link
+            nodes: false
 
-sidebar:
-  cover:
-    type: files
-    label: Cover 1
-    layout: cards
-    info: "{{ file.dimensions }}"
-    template: cover
-    ratio: 4/5
-    cover: true
-    min: 1
-    max: 3
-    required: true
-  gallery:
-    type: files
-    label: Gallery
+          line:
+            type: line
+
+          additionalInfo:
+            label: Details
+            type: structure
+            columns:
+              additionalDetails:
+                width: 1/3
+              value:
+                width: 2/3
+              date:
+                width: 1/6
+                when: 
+              
+            fields:
+              additionalDetails:
+                label: Add-Ons
+                type: select
+                width: 1/2
+                options:
+                  support: Support of
+                  collaboration: Collaboration with
+                  links: Links
+                  nextViewings: Next Viewings
+              value:
+                width: 1/2
+                label: Value
+                type: writer
+                marks:
+                  - link
+                nodes: 
+                  - bulletList      
+              date:
+                type: date
+                label: Date
+                type: date
+                width: 1/2
+                display: YYYY-MM-DD
+  sidebar:
+    width: 1/3
+    sticky: true
+    sections:
+      color:
+        type: fields
+        fields:
+          color:
+            label: Background Color
+            width: 1/2
+            type: color
+            alpha: false
+            format: hex
+            mode: picker
+            required: true
+      cover:
+        type: files
+        label: Cover
+        layout: cards
+        ratio: 16/9
+        cover: true
+        back: black
+        min: 1
+        required: true
+        info: "{{ file.dimensions }}"
+        # template: default
+        # query: page.images
+      gallery:
+        type: files
+        label: Gallery
+
+seo: seo/site

@@ -37,6 +37,21 @@ tabs:
 #                 label: LinkedIn Handle
 #                 type: url
 
+  # #tab2 PROJECTS
+  # projects:
+  #   icon: dashboard
+  #   sections:
+  #     drafts:
+  #       extends: sections/projects
+  #       label: Project Drafts
+  #       status: draft
+
+  #     published:
+  #       extends: sections/projects
+  #       label: Published Drafts
+  #       status: listed
+
+
   media:
     icon: images
     sections:
