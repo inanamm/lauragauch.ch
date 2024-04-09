@@ -1,0 +1,154 @@
+Title: About
+
+----
+
+Biography: <p>Laura Gauch is a visual artist focusing on photography and film. Her passion for capturing the world sprung during her teenage years and was carried to the present through the exploration of her Chilean heritage and familial background. Putting a personal and intimate perspective in each and every project she commits to, Laura strives to create a composition relatable to the viewing audience in order to connect the image to people and their reality. </p>
+
+----
+
+Presskits:
+
+- 
+  toggle: 'true'
+  title: fdsa
+  target: 'true'
+  link: ""
+  date: 2024-04-01
+- 
+  toggle: 'true'
+  title: poiuz
+  target: 'true'
+  link: ""
+- 
+  toggle: 'true'
+  title: fdsa
+  target: 'true'
+  link: ""
+
+----
+
+Press:
+
+- 
+  title: fdsafdsa
+  link: ""
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+
+----
+
+Clients: <ul><li><a href="https://oysurf.com/" target="_blank">Oy Surf</a></li><li><a href="https://martinaholenstein.ch/" target="_blank">fdsdsafdsa</a></li><li>fdsfdsaf</li><li>fdafds</li><li>dfsafdsa</li><li>fdsa</li></ul>
+
+----
+
+Upcoming:
+
+- 
+  title: MoMa
+  link: ""
+  target: 'false'
+  date: ""
+  toggle: 'true'
+  year: ""
+
+----
+
+Exhibitions:
+
+- 
+  title: Kunsthaus Zürich
+  link: ""
+  target: 'false'
+  year: ""
+  toggle: 'true'
+  date: ""
+
+----
+
+Awards:
+
+- 
+  title: 'Winner Prix Photoforum, Biel/Bienne '
+  year: 2024-01-01
+  toggle: 'true'
+  link: ""
+  target: 'false'
+- 
+  title: fdsafdsa
+  year: 2024-04-03
+  toggle: 'true'
+  link: ""
+  target: 'false'
+
+----
+
+Friends: <ul><li><a href="https://www.instagram.com/bylauragauch/" target="_blank">Martina Holenstein</a></li><li>fdsdsafdsa</li><li>fdsfdsaf</li><li>fdafds</li><li>dfsafdsa</li><li>fdsa</li></ul>
+
+----
+
+Datasecurity: <p>DATA SECURITY<br>fdsfdsafdsfds fdksl fjdksl fjdksla fjdkls fjdkls afjdkls fjdksl fjkdsla fjkdsl fjkdsla</p>
+
+----
+
+Email: laura@lauragauch.ch
+
+----
+
+Contact: +41 79 780 24 83
+
+----
+
+Link: https://www.instagram.com/bylauragauch/
+
+----
+
+Linktext: @bylauragauch
+
+----
+
+Target: true
+
+----
+
+Addressoffice: 
+
+----
+
+Structure:
+
+- 
+  title: Laura Gauch Raices
+  link: https://www.instagram.com/bylauragauch/
+  target: 'true'
+  date: 2024-04-26
+  toggle: 'true'
+  images: null
+  price: null
+  linktext: Raíces
+- 
+  title: raices
+  link: https://www.instagram.com/bylauragauch/
+  target: 'true'
+  date: 2024-04-07
+  toggle: 'true'
+  a: false
+  b: false
+- 
+  title: fdsa
+  link: https://www.instagram.com/bylauragauch/
+  target: 'true'
+  date: 2024-04-01
+  toggle: 'true'
+
+----
+
+Classnames: 
+
+----
+
+Instagram: https://www.instagram.com/bylauragauch/
+
+----
+
+Uuid: 4McrMEitDa7SXs1F

@@ -6,10 +6,10 @@
 <body>
     <?php snippet('header') ?>
     <main class="px-3 pt-1">
-        <div class="flex flex-row justify-between items-center">
-            <nav class="flex gap-5 font-serif all-small-caps">
+        <div class="flex flex-row">
+            <nav class="flex gap-5 font-serif all-small-caps ">
                 <a class="" href=" ">index</a>
-                <a class="grow" href=" ">sort</a>
+                <a class="" href=" ">sort</a>
             </nav>
             
         </div>
