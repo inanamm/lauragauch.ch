@@ -1,0 +1,18 @@
+title: Image
+
+columns:
+  main:
+    width: 1/1
+    sections:
+      meta:
+        type: fields
+        fields:
+          alt:
+            label: Alternative Text
+            type: text
+            required: true
+          photographer:
+            label: Photogapher
+            type: text
+            width: 1/2
+            default: Laura Gauch

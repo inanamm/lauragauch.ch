@@ -1,4 +1,4 @@
-title: food
+title: Laura Gauch
 
 tabs:
 #tab1 PAGES
@@ -8,60 +8,48 @@ tabs:
       pages:
         type: pages
         status: published
-      fields:
-        type: fields
-        fields:
-          intro:
-            label: Introtext
-            type: writer
-            marks: false
-            nodes: false
-            counter: true
-            maxlength: 220
-            spellcheck: true
 
 
-#tab2 PROJECTS
-  projects:
-    icon: dashboard
-    sections:
-
-      drafts:
-         extends: sections/projects
-         label: Project Drafts
-         status: draft
-
-      published:
-        extends: sections/projects
-        label: Published Drafts
-        status: listed
-
-
-#tab3 INFO
-  Info:
-    icon: pin
-    columns:
-      main:
-        width: 1/2
-        sections:
+# #tab2 INFO
+#   Info:
+#     icon: pin
+#     columns:
+#       main:
+#         width: 1/2
+#         sections:
          
-      sidebar:
-        width: 1/2
-        sections:
-          contact:
-            type: fields
-            fields:
-              email:
-                label: General Email
-                type: email
-              phone:
-                label: General Phonennumber
-                type: tel
-              instagram:
-                label: Instagram Handle
-                type: url
-              linkedin:
-                label: LinkedIn Handle
-                type: url
-                
+#       sidebar:
+#         width: 1/2
+#         sections:
+#           contact:
+#             type: fields
+#             fields:
+#               email:
+#                 label: General Email
+#                 type: email
+#               phone:
+#                 label: General Phonennumber
+#                 type: tel
+#               instagram:
+#                 label: Instagram Handle
+#                 type: url
+#               linkedin:
+#                 label: LinkedIn Handle
+#                 type: url
+
+  media:
+    icon: images
+    sections:
+      gallery:
+        type: files
+        label: Gallery
+        layout: list
+        limit: 100
+        info: 
+          - "{{ file.dimensions }}"
+        image:
+          cover: true
+          ratio: 1/1
+
+
   seotab: seo
