@@ -31,12 +31,19 @@
                 <div>
                     <h3 class="font-serif text-base all-small-caps">Contact</h3>
 
-                    <?= $site->page('about')->email()->kt() ?>
-                    <?= $site->page('about')->contact()->kt() ?>
+                    <?= kirbytag([
+                        'email' => $site->page('about')->email(),
+                        'text' => $site->page('about')->email(),
+                    ]);
+                    ?>
+                    <?php if ($site->page('about')->contact()->isNotEmpty()): ?>
+                        <dd><?= Html::tel($site->page('about')->contact()) ?></dd>
+                    <?php endif ?>
                 </div>
                 <div class="flex flex-col">
                     <h3 class="font-serif text-base all-small-caps">Social Media</h3>
-                    <?= $site->page('about')->linkText()->kt() ?>
+                    <a href="<?= $site->page('about')->instagramLink()->toUrl() ?>" <?php e($site->page('about')->target()->toBool(), 'target="_blank"') ?>>
+                        <?= $site->page('about')->instagramLinkText() ?> </a>
                 </div>
             </div>
         </article>

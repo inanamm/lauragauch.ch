@@ -111,15 +111,23 @@ Contact: +41 79 780 24 83
 
 ----
 
+Instagramlink: https://github.com/GuidoOffermans
+
+----
+
+Instagramlinktext: @bylauragauch
+
+----
+
+Target: true
+
+----
+
 Link: https://www.instagram.com/bylauragauch/
 
 ----
 
 Linktext: @bylauragauch
-
-----
-
-Target: true
 
 ----
 

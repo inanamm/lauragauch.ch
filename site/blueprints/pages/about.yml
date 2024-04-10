@@ -323,11 +323,12 @@ columns:
           lineB1:
             type: line
 
-          link:
+          instagramLink:
             type: url
-          linkText:
+            label: Instagram
+          instagramLinkText:
             type: text
-            label: Link Text
+            label: Instagram Handle
           target:
             type: toggle
             label: Open in a new tab?
