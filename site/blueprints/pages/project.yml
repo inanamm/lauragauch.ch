@@ -5,116 +5,122 @@ status:
   draft: Draft
   listed: Published
   unlisted: Privately Published
+tabs:
+  content:
+    label: Content
+    icon: text
+    columns:
+      main:
+        width: 2/3
+        sections:
 
-columns:
-  main:
-    width: 2/3
-    sections:
-
-    # ???
-      details:
-        type: fields
-        fields:
-          description:
-            label: Description
-            type: writer
-            marks: 
-              - link
-            nodes: false
-
-          line:
-            type: line
-
-          additionalInfo:
-            label: Details
-            type: structure
-            columns:
-              additionalDetails:
-                width: 1/3
-              value:
-                width: 2/3
-              date:
-                width: 1/6
-              dateUntil:
-                width: 1/6
-              
+        # ???
+          details:
+            type: fields
             fields:
-              additionalDetails:
-                label: Add-Ons
-                type: select
-                width: 1/2
-                options:
-                  support: Support of
-                  collaboration: Collaboration with
-                  links: Links
-                  nextViewings: Next Viewings
-              value:
-                width: 1/2
-                label: Value
+              description:
+                label: Description
                 type: writer
-                marks:
+                marks: 
                   - link
-                nodes: 
-                  - bulletList
-              gap:
-                type: gap
-                width: 1/2      
-              date:
-                type: date
-                label: From
-                type: date
-                width: 1/4
-                display: YYYY-MM-DD
-                when:
-                  additionalDetails: nextViewings
-              # gapB:
-              #   type: gap
-              #   width: 1/2 
-              dateUntil:
-                type: date
-                label: Until
-                type: date
-                width: 1/4
-                display: YYYY-MM-DD
-                when:
-                  additionalDetails: nextViewings
+                nodes: false
 
-  sidebar:
-    width: 1/3
-    sticky: true
-    sections:
-      color:
-        type: fields
-        fields:
+              line:
+                type: line
+
+              additionalInfo:
+                label: Details
+                type: structure
+                columns:
+                  additionalDetails:
+                    width: 1/3
+                  value:
+                    width: 2/3
+                  date:
+                    width: 1/6
+                  dateUntil:
+                    width: 1/6
+                  
+                fields:
+                  additionalDetails:
+                    label: Add-Ons
+                    type: select
+                    width: 1/2
+                    options:
+                      support: Support of
+                      collaboration: Collaboration with
+                      links: Links
+                      nextViewings: Next Viewings
+                  value:
+                    width: 1/2
+                    label: Value
+                    type: writer
+                    marks:
+                      - link
+                    nodes: 
+                      - bulletList
+                  gap:
+                    type: gap
+                    width: 1/2      
+                  date:
+                    type: date
+                    label: From
+                    type: date
+                    width: 1/4
+                    display: YYYY-MM-DD
+                    when:
+                      additionalDetails: nextViewings
+                  # gapB:
+                  #   type: gap
+                  #   width: 1/2 
+                  dateUntil:
+                    type: date
+                    label: Until
+                    type: date
+                    width: 1/4
+                    display: YYYY-MM-DD
+                    when:
+                      additionalDetails: nextViewings
+
+      sidebar:
+        width: 1/3
+        sticky: true
+        sections:
           color:
-            label: Background Color
-            width: 1/2
-            type: color
-            alpha: false
-            format: hex
-            mode: picker
-            required: true
-      cover:
-        type: files
-        label: Cover
-        layout: cards
-        size: medium
-        ratio: 16/9
-        cover: true
-        back: black
-        min: 1
-        required: true
-        info: "{{ file.dimensions }}"
-        template: default
-        # query: site.images
-        # uploads:
-        #   parent: site.images
-      gallery:
-        type: files
-        label: Gallery
-        sortable: true
-        # query: site.images
-        # uploads:
-        #   parent: site.images
+            type: fields
+            fields:
+              color:
+                label: Background Color
+                width: 1/2
+                type: color
+                alpha: false
+                format: hex
+                mode: picker
+                required: true
+          images:
+            type: fields
+            fields:
+              cover:
+                type: files
+                label: Cover
+                layout: cards
+                size: medium
+                max: 1
+                required: true
+                info: "{{ file.dimensions }}"
+                template: default
+                query: site.images
+                uploads:
+                  parent: site
+                image:
+                  cover: true
+                  ratio: 1/1
+              gallery:
+                type: files
+                label: Gallery
+                sortable: true
+                query: site.images
+                uploads:
+                  parent: site
 
-seo: seo/site
+  seo: seo/page
