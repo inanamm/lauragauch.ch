@@ -17,6 +17,11 @@ columns:
           lineA1:
             type: line
 
+          headline:
+            label: Links
+            type: headline
+            numbered: false 
+
     # ALL LINKS
       links:
         type: fields
@@ -129,6 +134,11 @@ columns:
           lineA4:
             type: line
     
+          headlineB:
+            label: Exhibition and information
+            type: headline
+            numbered: false 
+
       # UPCOMING
           upcoming:
             type: structure
@@ -273,7 +283,12 @@ columns:
 
           lineA11:
             type: line
-            
+
+          headlineC:
+            label: Imprint
+            type: headline
+            numbered: false 
+
       # SELECTED FRIENDS
           friends:
             type: list
@@ -290,6 +305,17 @@ columns:
             marks: 
               - link
             nodes: false
+
+      # IMPRINT
+          imprint:
+            type: writer
+            label: Imprint
+            marks:
+              - link
+            nodes: false
+            options:
+              admin: true
+              editor: false 
 
   sidebar:
     width: 1/3

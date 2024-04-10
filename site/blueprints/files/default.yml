@@ -1,5 +1,8 @@
 title: Image
 
+accept:
+  extension: jpg, png, jpeg, webp
+
 columns:
   main:
     width: 1/1

@@ -1,0 +1,28 @@
+Title: The Ocean Is Closed on Mondays
+
+----
+
+Description: <p>The Ocean Is Closed on Mondays is a short film exploring what’s lost through the process of assimilation, reflecting on the challenges that come with Immigration through a survey of the Latinx/Hispanic Community in New York City. The film unravels on the notes of a poem written by Laura Gauch and Elisabet Velasquez.</p>
+
+----
+
+Additionalinfo:
+
+- 
+  additionaldetails: nextViewings
+  value: '<p>Swiss Art Awards</p>'
+  date: 2024-06-11
+  dateuntil: 2024-06-28
+- 
+  additionaldetails: support
+  value: '<p>Migros</p>'
+  date: ""
+  dateuntil: ""
+
+----
+
+Color: #7ec2f7
+
+----
+
+Uuid: lJtun2TlkMLmQAfy

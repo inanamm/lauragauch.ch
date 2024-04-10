@@ -35,7 +35,8 @@ columns:
                 width: 2/3
               date:
                 width: 1/6
-                when: 
+              dateUntil:
+                width: 1/6
               
             fields:
               additionalDetails:
@@ -54,13 +55,30 @@ columns:
                 marks:
                   - link
                 nodes: 
-                  - bulletList      
+                  - bulletList
+              gap:
+                type: gap
+                width: 1/2      
               date:
                 type: date
-                label: Date
+                label: From
                 type: date
-                width: 1/2
+                width: 1/4
                 display: YYYY-MM-DD
+                when:
+                  additionalDetails: nextViewings
+              # gapB:
+              #   type: gap
+              #   width: 1/2 
+              dateUntil:
+                type: date
+                label: Until
+                type: date
+                width: 1/4
+                display: YYYY-MM-DD
+                when:
+                  additionalDetails: nextViewings
+
   sidebar:
     width: 1/3
     sticky: true
@@ -80,16 +98,23 @@ columns:
         type: files
         label: Cover
         layout: cards
+        size: medium
         ratio: 16/9
         cover: true
         back: black
         min: 1
         required: true
         info: "{{ file.dimensions }}"
-        # template: default
-        # query: page.images
+        template: default
+        # query: site.images
+        # uploads:
+        #   parent: site.images
       gallery:
         type: files
         label: Gallery
+        sortable: true
+        # query: site.images
+        # uploads:
+        #   parent: site.images
 
 seo: seo/site
