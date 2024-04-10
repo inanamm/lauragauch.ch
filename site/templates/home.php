@@ -14,7 +14,7 @@
             
         </div>
 
-        <?php snippet('menu') ?>
+        <?php snippet('about') ?>
 
         <div x-data="scrollApp()" x-init="duplicateImages()" @scroll="handleScroll" class="image-container" x-ref="container">
                 <li>

@@ -10,29 +10,35 @@ Presskits:
 
 - 
   toggle: 'true'
-  title: fdsa
+  title: Presskit 1
   target: 'true'
-  link: ""
+  link: https://www.google.com/
   date: 2024-04-01
 - 
   toggle: 'true'
-  title: poiuz
+  title: Presskit 2
   target: 'true'
-  link: ""
+  link: https://www.google.com/
 - 
   toggle: 'true'
-  title: fdsa
+  title: Presskit 3
   target: 'true'
-  link: ""
+  link: https://www.google.com/
 
 ----
 
 Press:
 
 - 
-  title: fdsafdsa
-  link: ""
+  title: Selected Press 1
+  link: https://www.google.com/
   target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 2
+  link: https://www.google.com/
+  target: 'false'
   date: 2024-04-11
   toggle: 'true'
 
@@ -46,9 +52,9 @@ Upcoming:
 
 - 
   title: MoMa
-  link: ""
+  link: https://www.google.com/
   target: 'false'
-  date: ""
+  date: 2024-08-16
   toggle: 'true'
   year: ""
 
@@ -58,11 +64,17 @@ Exhibitions:
 
 - 
   title: Kunsthaus Zürich
-  link: ""
+  link: https://www.google.com/
   target: 'false'
-  year: ""
+  year: 2023-01-01
   toggle: 'true'
   date: ""
+- 
+  title: Museum für Gestaltung
+  link: ""
+  target: 'false'
+  year: 2022-10-04
+  toggle: 'true'
 
 ----
 
@@ -75,7 +87,7 @@ Awards:
   link: ""
   target: 'false'
 - 
-  title: fdsafdsa
+  title: Another Grant
   year: 2024-04-03
   toggle: 'true'
   link: ""
@@ -87,11 +99,7 @@ Friends: <ul><li><a href="https://www.instagram.com/bylauragauch/" target="_blan
 
 ----
 
-Datasecurity: <p>DATA SECURITY<br>fdsfdsafdsfds fdksl fjdksl fjdksla fjdkls fjdkls afjdkls fjdksl fjkdsla fjkdsl fjkdsla</p>
-
-----
-
-Imprint: <p>All Images © <a href="https://lauragauch.ch">Laura Gauch</a><br>Developed and designed by <a href="https://martinaholenstein.ch/" target="_blank">Martina Holenstein</a> and <a href="https://github.com/GuidoOffermans" target="_blank">Guido Offermans</a></p>
+Datasecurity: <p>Data Security fdsfdsafdsfds fdksl fjdksl fjdksla fjdkls fjdkls afjdkls fjdksl fjkdsla fjkdsl fjkdsla</p>
 
 ----
 
@@ -112,6 +120,10 @@ Linktext: @bylauragauch
 ----
 
 Target: true
+
+----
+
+Imprint: <p>All Images © <a href="https://lauragauch.ch">Laura Gauch</a><br>Developed and designed by <a href="https://martinaholenstein.ch/" target="_blank">Martina Holenstein</a> and <a href="https://github.com/GuidoOffermans" target="_blank">Guido Offermans</a></p>
 
 ----
 
