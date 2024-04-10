@@ -2,6 +2,10 @@ Title: Home
 
 ----
 
+Imprint: <p>All Images © <a href="https://lauragauch.ch">Laura Gauch</a><br>Developed and designed by <a href="https://martinaholenstein.ch/" target="_blank">Martina Holenstein</a> and <a href="https://github.com/GuidoOffermans" target="_blank">Guido Offermans</a></p>
+
+----
+
 Text: 
 
 ----

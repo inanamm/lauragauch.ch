@@ -1,0 +1,16 @@
+title: Home
+
+
+# IMPRINT
+fields:
+  imprint:
+    type: writer
+    label: Imprint
+    marks:
+      - link
+    nodes: false
+
+options:
+  list: 
+    admin: true
+    editor: false
