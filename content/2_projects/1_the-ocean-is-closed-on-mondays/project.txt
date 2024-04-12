@@ -15,13 +15,23 @@ Additionalinfo:
   dateuntil: 2024-06-28
 - 
   additionaldetails: support
-  value: '<p>Migros</p>'
+  value: '<p>Migros Kulturprozent</p>'
   date: ""
   dateuntil: ""
 
 ----
 
-Color: #7ec2f7
+Presskits:
+
+- 
+  toggle: 'true'
+  title: The Ocean is Closed on Mondays
+  target: 'true'
+  link: https://www.google.com/
+
+----
+
+Color: #529648
 
 ----
 
@@ -34,6 +44,70 @@ Gallery:
 - file://cubAdMZH2nQs4RXy
 - file://EGqXzkQIPrqzK8cj
 - file://esFG9biJcOjaCxPD
+
+----
+
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: 
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Robotsindex: false
+
+----
+
+Robotsfollow: false
+
+----
+
+Robotsarchive: false
+
+----
+
+Robotsimageindex: false
+
+----
+
+Robotssnippet: false
+
+----
+
+Metainherit: 
 
 ----
 

@@ -45,7 +45,7 @@
                 
     <!-- Original images -->
 
-
+    <?php snippet('project') ?>
 
     </main>
     <?php snippet('footer') ?>
