@@ -24,6 +24,21 @@ Presskits:
   title: Presskit 3
   target: 'true'
   link: https://www.google.com/
+- 
+  toggle: 'true'
+  title: Presskit 4
+  target: 'true'
+  link: https://www.google.com/
+- 
+  toggle: 'true'
+  title: Presskit 5
+  target: 'true'
+  link: https://www.google.com/
+- 
+  toggle: 'true'
+  title: Presskit 6
+  target: 'true'
+  link: https://www.google.com/
 
 ----
 
@@ -38,6 +53,48 @@ Press:
 - 
   title: Selected Press 2
   link: https://www.google.com/
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 3
+  link: https://www.google.com/
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 4
+  link: https://www.google.com/
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 5
+  link: https://www.google.com/
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 6
+  link: https://www.google.com/
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 7
+  link: https://www.google.com/
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 8
+  link: https://www.google.com
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 9
+  link: https://www.google.com
   target: 'false'
   date: 2024-04-11
   toggle: 'true'
@@ -53,7 +110,7 @@ Upcoming:
 - 
   title: MoMa
   link: https://www.google.com/
-  target: 'false'
+  target: 'true'
   date: 2024-08-16
   toggle: 'true'
   year: ""
@@ -63,18 +120,53 @@ Upcoming:
 Exhibitions:
 
 - 
-  title: Kunsthaus Zürich
-  link: https://www.google.com/
-  target: 'false'
-  year: 2023-01-01
-  toggle: 'true'
-  date: ""
-- 
   title: Museum für Gestaltung
   link: ""
   target: 'false'
   year: 2022-10-04
   toggle: 'true'
+- 
+  title: Kunsthaus Zürich
+  link: https://www.google.com/
+  target: 'true'
+  year: 2023-01-01
+  toggle: 'true'
+  date: ""
+- 
+  title: Musée Visionaire
+  link: https://www.google.com/
+  target: 'true'
+  year: 2023-01-01
+  toggle: 'true'
+  date: ""
+- 
+  title: Kunst Basel
+  link: https://www.google.com/
+  target: 'true'
+  year: 2023-01-01
+  toggle: 'true'
+  date: ""
+- 
+  title: Louvre Paris
+  link: https://www.google.com/
+  target: 'true'
+  year: 2023-01-01
+  toggle: 'true'
+  date: ""
+- 
+  title: Fondation Prada
+  link: https://www.google.com/
+  target: 'true'
+  year: 2023-01-01
+  toggle: 'true'
+  date: ""
+- 
+  title: Kunstmuseum Chur
+  link: https://www.google.com/
+  target: 'false'
+  year: 2023-01-01
+  toggle: 'true'
+  date: ""
 
 ----
 
@@ -115,7 +207,7 @@ Instagramlink: https://github.com/GuidoOffermans
 
 ----
 
-Instagramlinktext: @bylauragauch
+Instagramlinktext: bylauragauch
 
 ----
 

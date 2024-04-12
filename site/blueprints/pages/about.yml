@@ -223,6 +223,7 @@ columns:
                 text: 
                   - "No"
                   - "Yes"
+                default: true
                 width: 1/4
 
               lineA6:
@@ -297,14 +298,6 @@ columns:
               - link
             nodes:
               - bulletList
-
-      # DATA SECURITY
-          datasecurity:
-            label: Data Security
-            type: writer
-            marks: 
-              - link
-            nodes: false
 
   sidebar:
     width: 1/3

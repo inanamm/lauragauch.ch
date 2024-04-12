@@ -1,0 +1,16 @@
+title: Datasecurity Page
+
+columns:
+  main:
+    width: 2/3
+    sections:
+    # BIOGRAPHY
+      bio:
+        type: fields
+        fields:
+          datasecurity:
+            label: Data Security
+            type: writer
+            marks: 
+              - link
+            nodes: false

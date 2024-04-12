@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-screen">
 
 <?php snippet('head') ?>
 
-<body>
+<body class="h-full">
     <?php snippet('header') ?>
     <main class="px-3 pt-1">
         <div class="flex flex-row">
@@ -20,19 +20,6 @@
                 <li>
                     <img src="content/0003_13.jpg" class="h-[600px]">
                 </li>
-                <li>
-                    <img src="content/0033_33.jpg" class="h-[600px]">
-                </li>
-                <li>
-                    <img src="content/0037_E.jpg" class="h-[600px]">
-                </li>
-                <li>
-                    <img src="content/000061630010.jpg" class="h-[600px]">
-                </li>
-                <li>
-                    <img src="content/000061660009.jpg" class="h-[600px]">
-                </li>
-
         </div>
         <!-- <ul class="flex flex-row flex-nowrap items-center">
                     <li>
