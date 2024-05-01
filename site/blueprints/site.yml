@@ -1,15 +1,79 @@
 title: Laura Gauch
 
 tabs:
-#tab1 PAGES
+#tab1 PAGES & PROJECTS
   pages:
     icon: text
+    label: Pages and Projects
     sections:
       pages:
         type: pages
         status: published
+        
+      subTitle:
+        type: fields
+        fields:
+          line:
+            type: line
+          pageTitle:
+            label: Projects
+            type: headline
+            numbered: false
+      drafts:
+        extends: sections/projects
+        label: Drafts
+        status: draft
+        layout: list
+        empty: No projects yet
+        image:
+          query: page.images.template("cover").first
+          ratio: 3/2
+          cover: true
+
+      unlisted:
+        extends: sections/projects
+        label: Privately Published
+        status: unlisted
+        layout: cards
+        size: medium
+        empty: No projects yet
+        image:
+          query: page.images.template("cover").first
+          ratio: 3/2
+          cover: true
+
+      listed:
+        extends: sections/projects
+        label: Published
+        status: listed
+        layout: cards
+        size: medium
+        empty: No projects yet
+        image:
+          query: page.images.template("cover").first
+          ratio: 3/2
+          cover: true
 
 
+  media:
+    icon: images
+    label: Media
+    sections:
+      gallery:
+        type: files
+        label: Gallery
+        layout: list
+        limit: 100
+        info: 
+          - "{{ file.dimensions }}"
+        image:
+          cover: true
+          ratio: 1/1
+
+
+  seotab: seo/site
+    icon: search
+    label: SEO
 # #tab2 INFO
 #   Info:
 #     icon: pin
@@ -36,35 +100,3 @@ tabs:
 #               linkedin:
 #                 label: LinkedIn Handle
 #                 type: url
-
-  # #tab2 PROJECTS
-  # projects:
-  #   icon: dashboard
-  #   sections:
-  #     drafts:
-  #       extends: sections/projects
-  #       label: Project Drafts
-  #       status: draft
-
-  #     published:
-  #       extends: sections/projects
-  #       label: Published Drafts
-  #       status: listed
-
-
-  media:
-    icon: images
-    sections:
-      gallery:
-        type: files
-        label: Gallery
-        layout: list
-        limit: 100
-        info: 
-          - "{{ file.dimensions }}"
-        image:
-          cover: true
-          ratio: 1/1
-
-
-  seotab: seo/site

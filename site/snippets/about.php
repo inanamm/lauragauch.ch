@@ -49,7 +49,7 @@
             </div>
         </article>
 
-        <div class="bottom grid lg:grid-cols-3 grid-row font-serif px-3 lg:flex-row gap-6">
+        <div class="bottom grid lg:grid-cols-3 grid-row font-serif px-3 lg:flex-row gap-6 pb-3">
 
             <div class="flex flex-col">
                 <h3 class="all-small-caps">Presskits</h3>

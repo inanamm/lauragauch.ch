@@ -1,0 +1,73 @@
+Title: draft1
+
+----
+
+Description: <p>Blablablblablab  Blablablblablab Blablablblablab Blablablblablab Blablablblablab</p>
+
+----
+
+Additionalinfo: 
+
+----
+
+Presskits: 
+
+----
+
+Color: #af4d4d
+
+----
+
+Cover: - file://eEhOzmwCnSBb7ok1
+
+----
+
+Gallery: 
+
+----
+
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: 
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Metainherit: 
+
+----
+
+Uuid: 699XpD5D3lfLwvwm

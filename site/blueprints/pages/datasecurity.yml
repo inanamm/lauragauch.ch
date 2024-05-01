@@ -4,7 +4,7 @@ columns:
   main:
     width: 2/3
     sections:
-    # BIOGRAPHY
+    # DATASECURITY
       bio:
         type: fields
         fields:

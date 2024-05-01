@@ -1,0 +1,73 @@
+Title: draft private
+
+----
+
+Description: <p>Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab </p>
+
+----
+
+Additionalinfo: 
+
+----
+
+Presskits: 
+
+----
+
+Color: #5472dd
+
+----
+
+Cover: 
+
+----
+
+Gallery: 
+
+----
+
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: 
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Metainherit: 
+
+----
+
+Uuid: QBfUWlW9lHi0bkUh

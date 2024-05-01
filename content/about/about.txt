@@ -191,11 +191,7 @@ Friends: <ul><li><a href="https://www.instagram.com/bylauragauch/" target="_blan
 
 ----
 
-Datasecurity: <p>Data Security fdsfdsafdsfds fdksl fjdksl fjdksla fjdkls fjdkls afjdkls fjdksl fjkdsla fjkdsl fjkdsla</p>
-
-----
-
-Email: laura@lauragauch.ch
+Email: laura@lauragauch.com
 
 ----
 
@@ -212,6 +208,10 @@ Instagramlinktext: bylauragauch
 ----
 
 Target: true
+
+----
+
+Datasecurity: <p>Data Security fdsfdsafdsfds fdksl fjdksl fjdksla fjdkls fjdkls afjdkls fjdksl fjkdsla fjkdsl fjkdsla</p>
 
 ----
 

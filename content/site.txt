@@ -2,6 +2,58 @@ Title: Laura Gauch
 
 ----
 
+Metatemplate: 
+
+----
+
+Metadescription: 
+
+----
+
+Ogtemplate: 
+
+----
+
+Ogdescription: 
+
+----
+
+Ogsitename: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: summary
+
+----
+
+Robotsindex: false
+
+----
+
+Robotsfollow: false
+
+----
+
+Robotsarchive: false
+
+----
+
+Robotsimageindex: false
+
+----
+
+Robotssnippet: false
+
+----
+
+Socialmediaaccounts: 
+
+----
+
 Intro: 
 
 ----
@@ -19,3 +71,7 @@ Instagram:
 ----
 
 Linkedin: 
+
+----
+
+Imprint: <p>All Images © <a href="https://lauragauch.com">Laura Gauch</a><br>Developed and designed by <a href="https://martinaholenstein.ch/" target="_blank">Martina Holenstein</a> and <a href="https://github.com/GuidoOffermans" target="_blank">Guido Offermans</a></p>
