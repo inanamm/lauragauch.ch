@@ -31,7 +31,7 @@ Presskits:
 
 ----
 
-Color: #529648
+Backgroundcolor: hsl(220 100% 50%)
 
 ----
 
@@ -108,6 +108,14 @@ Robotssnippet: false
 ----
 
 Metainherit: 
+
+----
+
+Colora: #6e00ff
+
+----
+
+Color: #529648
 
 ----
 

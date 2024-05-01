@@ -2,8 +2,20 @@
 <html lang="en" class="h-screen">
 
 <?php snippet('head') ?>
+<?php
+$hslColor = $page->backgroundColor()->escape();
+$alpha = 0.5; // 50% opacity
+$hslColor = trim($hslColor);
+$hslColor = substr($hslColor, 4, -1);
+$hslParts = explode(' ', $hslColor);
+$hue = trim($hslParts[0]);
+$saturation = trim($hslParts[1]);
+$lightness = trim($hslParts[2]);
+$hslaColor = "hsla($hue, $saturation, $lightness, $alpha)";
+$style = "background-color: $hslaColor";
+?>
 
-<body class="h-full bg-blue-100 ">
+<body class="h-full bg-blue-100" style="<?= $style ?>">
     <?php snippet('header') ?>
 
     <main>
@@ -18,6 +30,7 @@
             <article class="lg:row-start-2 lg:col-start-2 lg:col-end-6 text-2xl pb-24">
                 <?= $page->description() ?>
             </article>
+
 
 
             <!-- ADDITIONAL INFO -->

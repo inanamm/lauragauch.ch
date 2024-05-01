@@ -136,12 +136,12 @@ tabs:
           color:
             type: fields
             fields:
-              color:
+              backgroundColor:
                 label: Background Color
                 width: 1/2
                 type: color
                 alpha: false
-                format: hex
+                format: hsl
                 mode: picker
                 required: true
           images:

@@ -14,7 +14,7 @@ Presskits:
 
 ----
 
-Color: #5472dd
+Backgroundcolor: hsl(227 100% 70%)
 
 ----
 
@@ -67,6 +67,10 @@ Twitterauthor:
 ----
 
 Metainherit: 
+
+----
+
+Color: #5472dd
 
 ----
 

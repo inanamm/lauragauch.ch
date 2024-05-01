@@ -14,12 +14,14 @@
 
 
     <div id="navigation" x-show="menuOpen" x-ref="projectOverlay"
-        class="w-full flex flex-col fixed bottom-0 top-[20%] left-0 backdrop-blur-md bg-sky-500/50 overflow-y-scroll rounded-t-2xl"
+        class="w-full flex flex-col fixed bottom-0 top-[20%] left-0 backdrop-blur-md overflow-y-scroll rounded-t-2xl"
+        style="background-color:<?= $page->backgroundColor()->escape() ?>;"
         x-transition:enter="transition duration-500 ease-in-out" x-transition:enter-start="translate-y-full"
         x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in-out duration-500"
         x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full">
 
-        
+  
+
         <article class="top grid lg:grid-cols-6 grid-row px-3 font-sans text-2xl pb-20 gap-6">
             <div class="col-span-4 row-start-2 row-end-">
                 <h3 class="font-serif text-base all-small-caps">Share this project</h3>
