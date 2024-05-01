@@ -14,7 +14,7 @@ Presskits:
 
 ----
 
-Backgroundcolor: #ff7272
+Backgroundcolor: hsl(0 100% 66%)
 
 ----
 
@@ -22,7 +22,11 @@ Cover: - file://eEhOzmwCnSBb7ok1
 
 ----
 
-Gallery: 
+Gallery:
+
+- file://zanHsSTXlgQ13hNN
+- file://VrE4xVP1eOpjabJl
+- file://4ClQg9SygaWuemap
 
 ----
 

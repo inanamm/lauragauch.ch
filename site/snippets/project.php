@@ -1,4 +1,4 @@
-<div class="relative h-full z-20 overflow-y-scroll" x-data="{ menuOpen: true }"
+<div class="relative h-full z-20 overflow-y-scroll" x-data="{ menuOpen: false }"
     x-init="() => $watch('menuOpen', (value) => document.body.style.overflow = value ? 'hidden' : 'auto')">
 
     <button @click="menuOpen = !menuOpen; $nextTick(() => { setTimeout(() => $refs.projectOverlay.scrollTop = 0, 200); $refs.projectOverlay.style.backgroundColor = '#efefef' })"

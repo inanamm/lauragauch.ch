@@ -11,69 +11,59 @@
                 <a class="" href=" ">index</a>
                 <a class="" href=" ">sort</a>
             </nav>
-            
+
         </div>
 
         <?php snippet('about') ?>
 
-        <div x-data="scrollApp()" x-init="duplicateImages()" @scroll="handleScroll" class="image-container" x-ref="container">
-                <li>
-                    <img src="content/0003_13.jpg" class="h-[600px]">
-                </li>
+        <div class="">
+            <ul class="flex flex-row">
+                <?php $projectsPage = $site->find('projects');
+                foreach ($projectsPage->children() as $project) {
+                    foreach ($project->cover()->toFiles() as $image): ?>
+                        <li>
+                            <?php echo $image->thumb([
+                                'quality' => 90,
+                                'format' => 'webp',
+                            ])->html(); ?>
+                        </li>
+                    <?php endforeach;
+                }
+                ?>
+            </ul>
         </div>
-        <!-- <ul class="flex flex-row flex-nowrap items-center">
-                    <li>
-                        <img src="content/0003_13.jpg" class="h-96 w-100%">
-                    </li>
-                    <li>
-                        <img src="content/0033_33.jpg" class="h-96 w-100%">
-                    </li>
-                    <li>
-                        <img src="content/0037_E.jpg" class="h-96 w-100%">
-                    </li>
-                    <li>
-                        <img src="content/000061630010.jpg" class="h-96 w-100%">
-                    </li>
-                    <li>
-                        <img src="content/000061660009.jpg" class="h-96 w-100%">
-                    </li>
-                </ul> -->
 
-
-
-
-                
-    <!-- Original images -->
-
-    <?php snippet('project') ?>
+        <div class="">
+            <?php snippet('project') ?>
+        </div>
 
     </main>
     <?php snippet('footer') ?>
 
-    <script>
-    function scrollApp() {
-        return {
-            container: null,
+    <!-- <script>
+        function scrollApp() {
+            return {
+                container: null,
 
-            duplicateImages() {
-                const container = this.$refs.container;
-                const images = Array.from(container.children);
-                images.forEach(img => container.appendChild(img.cloneNode(true)));
-            },
+                duplicateImages() {
+                    const container = this.$refs.container;
+                    const images = Array.from(container.children);
+                    images.forEach(img => container.appendChild(img.cloneNode(true)));
+                },
 
-            handleScroll(event) {
-                const container = this.$refs.container;
-                const scrollWidth = container.scrollWidth / 2; // Since we duplicated the images
-                const currentScroll = event.target.scrollLeft;
+                handleScroll(event) {
+                    const container = this.$refs.container;
+                    const scrollWidth = container.scrollWidth / 2; // Since we duplicated the images
+                    const currentScroll = event.target.scrollLeft;
 
-                // Reset scroll position to start before the halfway point (to make it seamless)
-                if (currentScroll >= scrollWidth) {
-                    container.scrollLeft = 0;
+                    // Reset scroll position to start before the halfway point (to make it seamless)
+                    if (currentScroll >= scrollWidth) {
+                        container.scrollLeft = 0;
+                    }
                 }
             }
         }
-    }
-</script>
+    </script> -->
     <?= vite()->js('index.js') ?>
 </body>
 
