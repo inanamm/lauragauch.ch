@@ -1,14 +1,16 @@
 <div class="relative h-full z-20 overflow-y-scroll" x-data="{ menuOpen: false }"
     x-init="() => $watch('menuOpen', (value) => document.body.style.overflow = value ? 'hidden' : 'auto')">
 
-    <button @click="menuOpen = !menuOpen; $nextTick(() => { setTimeout(() => $refs.projectOverlay.scrollTop = 0, 200); $refs.projectOverlay.style.backgroundColor = '#efefef' })"
+    <button
+        @click="menuOpen = !menuOpen; $nextTick(() => { setTimeout(() => $refs.projectOverlay.scrollTop = 0, 200); $refs.projectOverlay.style.backgroundColor = '#efefef' })"
         class="fixed bottom-1 z-10 font-serif text-base" :aria-expanded="menuOpen" aria-controls="navigation"
         aria-label="Navigation Menu">
-            Projektdetails
+        Projektdetails
     </button>
 
-    <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.350ms class="fixed top-1 left-3 z-30 gap-5 font-serif all-small-caps"
-        :aria-expanded="menuOpen" aria-controls="navigation" aria-label="Navigation Menu">
+    <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.350ms
+        class="fixed top-1 left-3 z-30 gap-5 font-serif all-small-caps" :aria-expanded="menuOpen"
+        aria-controls="navigation" aria-label="Navigation Menu">
         close
     </button>
 
@@ -20,7 +22,7 @@
         x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in-out duration-500"
         x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full">
 
-  
+
 
         <article class="top grid lg:grid-cols-6 grid-row px-3 font-sans text-2xl pb-20 gap-6">
             <div class="col-span-4 row-start-2 row-end-">

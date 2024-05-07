@@ -1,0 +1,97 @@
+Title: projekt3
+
+----
+
+Description: <p>Hallo ich bin Projekt 3</p>
+
+----
+
+Additionalinfo: 
+
+----
+
+Presskits: 
+
+----
+
+Backgroundcolor: hsl(135 60% 75%)
+
+----
+
+Cover: - file://d4skJtF25fRMC79A
+
+----
+
+Gallery:
+
+- file://irhsFHotZJQyJ3Hn
+- file://qubHlkgdgdhxxl46
+- file://SsV04bWVbarVTQ5x
+
+----
+
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: 
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Robotsindex: false
+
+----
+
+Robotsfollow: false
+
+----
+
+Robotsarchive: false
+
+----
+
+Robotsimageindex: false
+
+----
+
+Robotssnippet: false
+
+----
+
+Metainherit: 
+
+----
+
+Uuid: CS7Hsjs6H7ODY7Bw

@@ -6,27 +6,31 @@
 <body class="h-full">
     <?php snippet('header') ?>
     <main class="px-3 pt-1">
-        <div class="flex flex-row">
+        <div class="flex flex-row fixed">
             <nav class="flex gap-5 font-serif all-small-caps ">
-                <a class="" href=" ">index</a>
-                <a class="" href=" ">sort</a>
+                <a class="relative" href=" ">index</a>
+                <a class="relative" href=" ">sort</a>
             </nav>
 
         </div>
 
         <?php snippet('about') ?>
 
-        <div class="">
-            <ul class="flex flex-row">
+        <div class="pt-32 pb-32">
+            <ul class="flex flex-row gap-12 overflow-x-auto h-auto w-min items-center">
                 <?php $projectsPage = $site->find('projects');
                 foreach ($projectsPage->children() as $project) {
                     foreach ($project->cover()->toFiles() as $image): ?>
-                        <li>
-                            <?php echo $image->thumb([
+                        <fic class="w-[50rem] h-max-[96rem]">
+                            <?= $image->thumb([
                                 'quality' => 90,
                                 'format' => 'webp',
                             ])->html(); ?>
-                        </li>
+                            <figcaption class="flex flex-col font-serif">
+                                <h3><?= $project->title() ?></h3>
+                                <a href="" class="all-small-caps underline">More info</a>
+                            </figcaption>
+                        </fic>
                     <?php endforeach;
                 }
                 ?>

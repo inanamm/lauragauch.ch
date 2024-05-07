@@ -35,18 +35,21 @@ $style = "background-color: $hslaColor";
 
             <!-- ADDITIONAL INFO -->
             <div class="lg:col-start-2 lg:col-span-4 font-serif">
-                <h3 class="all-small-caps pt-6">presskits</h3>
-                <?php
-                $presskits = $page->presskits()->toStructure();
-                foreach ($presskits as $linkObject):
-                    ?>
-                    <div class="flex flex-row gap-3">
-                        <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>> <?= $linkObject->title()->or($linkObject->link()) ?>
-                        </a>
-                    </div>
+                <?php if ($page->presskits()->kt()->isNotEmpty()): ?>
+                    <h3 class="all-small-caps pt-6">presskits</h3>
                     <?php
-                endforeach;
-                ?>
+                    $presskits = $page->presskits()->toStructure();
+                    foreach ($presskits as $linkObject):
+                        ?>
+                        <div class="flex flex-row gap-3">
+                            <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>> <?= $linkObject->title()->or($linkObject->link()) ?>
+                            </a>
+                        </div>
+                        <?php
+                    endforeach;
+                    ?>
+                <?php endif; ?>
+
 
                 <?php
                 $items = $page->additionalInfo()->toStructure();
@@ -65,23 +68,28 @@ $style = "background-color: $hslaColor";
             </div>
         </div>
 
-        <section class="gallery">
-            <?php foreach ($page->cover()->toFiles() as $image): ?>
-                <li class="<?= $image->ratio() > 1 ? 'w-full' : 'w-full' ?> pb-0.5 last:p-0">
-                    <?php echo $image->thumb([
-                        'quality' => 90,
-                        'format' => 'webp',
-                    ])->html(); ?>
-                </li>
-            <?php endforeach ?>
-            <?php foreach ($page->gallery()->toFiles() as $image): ?>
-                <li class="<?= $image->ratio() > 1 ? 'w-full' : 'w-full' ?> pb-0.5 last:p-0">
-                    <?php echo $image->thumb([
-                        'quality' => 90,
-                        'format' => 'webp',
-                    ])->html(); ?>
-                </li>
-            <?php endforeach ?>
+
+        <!-- BILDER -->
+        <section class="gallery pt-24">
+            <ul class="flex flex-row gap-1 items-center">
+                <?php foreach ($page->cover()->toFiles() as $image): ?>
+                    <li class="<?= $image->ratio() > 1 ? 'w-full' : 'w-full' ?> pb-0.5 last:p-0">
+                        <?php echo $image->thumb([
+                            'quality' => 90,
+                            'format' => 'webp',
+                        ])->html(); ?>
+                    </li>
+                <?php endforeach ?>
+                <?php foreach ($page->gallery()->toFiles() as $image): ?>
+                    <li class="<?= $image->ratio() > 1 ? 'w-full' : 'w-full' ?> pb-0.5 last:p-0">
+                        <?php echo $image->thumb([
+                            'quality' => 90,
+                            'format' => 'webp',
+                        ])->html(); ?>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+
         </section>
 
     </main>

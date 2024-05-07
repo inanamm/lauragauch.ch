@@ -9,18 +9,17 @@
         </h1>
     </button>
 
-    <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.350ms class="fixed top-1 left-3 z-30 gap-5 font-serif all-small-caps"
+    <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.550ms class="fixed top-1 left-3 z-30 gap-5 font-serif all-small-caps"
         :aria-expanded="menuOpen" aria-controls="navigation" aria-label="Navigation Menu">
         close
     </button>
 
 
-    <div id="navigation" x-show="menuOpen" x-ref="overlay"
+    <div id="about" x-show="menuOpen" x-ref="overlay"
         class="h-full w-full flex flex-col fixed bottom-0 left-0 backdrop-blur-md bg-white/50 overflow-y-scroll"
-        x-transition:enter="transition duration-500 ease-in-out" x-transition:enter-start="translate-y-full"
-        x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in-out duration-500"
+        x-transition:enter="transition duration-700 ease-in-out" x-transition:enter-start="translate-y-full"
+        x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in-out duration-700"
         x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full">
-
 
 
         <article class="top grid lg:grid-cols-3 grid-row px-3 font-sans text-2xl pt-32 pb-20 gap-6">
@@ -50,7 +49,6 @@
         </article>
 
         <div class="bottom grid lg:grid-cols-3 grid-row font-serif px-3 lg:flex-row gap-6 pb-3">
-
             <div class="flex flex-col">
                 <h3 class="all-small-caps">Presskits</h3>
                 <?php
