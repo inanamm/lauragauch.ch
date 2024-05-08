@@ -3,9 +3,24 @@
 @tailwind utilities;
 
 
+/*
+ * Legal Disclaimer for Basic Package licence
+ * Basic Licence Package with limited parameters.
+ * Should the license page views limit be exceeded the license holder will be required to contact Lineto.com for an upgrade.
+ * It is strictly prohibited to rename the font and to download or use these fonts in any other media. 
+ * These Web fonts are licensed exclusively for the use on the following domain(s) and their subdomains: lauragauch.com
+ * , up to 5k monthly page viewsFor up to 5k followers on all social media channels belonging to Laura Gauch
+ */
+
+/* complete */
 @font-face {
   font-family: "GeigyLLRegular";
-  src: url("assets/GeigyLLTrialWeb-Regular.woff2") format("woff2");
+  src: url("assets/GeigyLLWeb-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "GeigyLLRegular";
+  src: url("assets/GeigyLLWeb-Regular.woff2") format("woff2");
 }
 
 @font-face {
