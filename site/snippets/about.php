@@ -4,12 +4,13 @@
     <button @click="menuOpen = !menuOpen; $nextTick(() => setTimeout(() => $refs.overlay.scrollTop = 0, 200))"
         class="fixed top-1 right-3 z-30" :aria-expanded="menuOpen" aria-controls="navigation"
         aria-label="Navigation Menu">
-        <h1 class="font-sans text-2xl">
+        <h1 class="font-sans text-lg">
             Laura Gauch
         </h1>
     </button>
 
-    <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.550ms class="fixed top-1 left-3 z-30 gap-5 font-serif all-small-caps"
+    <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.550ms 
+        class="fixed top-1 left-3 z-30 gap-5 font-serif all-small-caps text-sm hover:underline underline-offset-2"
         :aria-expanded="menuOpen" aria-controls="navigation" aria-label="Navigation Menu">
         close
     </button>
@@ -24,12 +25,14 @@
 
         <article class="top grid lg:grid-cols-3 grid-row px-3 font-sans text-2xl pt-32 pb-20 gap-6">
             <div class="col-span-2">
-                <h3 class="font-serif text-base all-small-caps">Biography</h3>
-                <?= $site->page('about')->biography() ?>
+                <h3 class="font-serif text-sm all-small-caps">Biography</h3>
+                <div class="text-lg">
+                    <?= $site->page('about')->biography() ?>
+                </div>
             </div>
-            <div class="flex flex-col gap-8">
-                <div>
-                    <h3 class="font-serif text-base all-small-caps">Contact</h3>
+            <div class="grid grid-col content-between">
+                <div class="text-lg">
+                    <h3 class="font-serif text-sm all-small-caps">Contact</h3>
 
                     <?= kirbytag([
                         'email' => $site->page('about')->email(),
@@ -40,8 +43,9 @@
                         <dd><?= Html::tel($site->page('about')->contact()) ?></dd>
                     <?php endif ?>
                 </div>
-                <div class="flex flex-col">
-                    <h3 class="font-serif text-base all-small-caps">Social Media</h3>
+
+                <div class="flex flex-col text-lg pt-6">
+                    <h3 class="font-serif text-sm all-small-caps">Social Media</h3>
                     <a href="<?= $site->page('about')->instagramLink()->toUrl() ?>" <?php e($site->page('about')->target()->toBool(), 'target="_blank"') ?>>
                         <?= $site->page('about')->instagramLinkText() ?> </a>
                 </div>
@@ -50,7 +54,8 @@
 
         <div class="bottom grid lg:grid-cols-3 grid-row font-serif px-3 lg:flex-row gap-6 pb-3">
             <div class="flex flex-col">
-                <h3 class="all-small-caps">Presskits</h3>
+                <h3 class="all-small-caps text-sm">Presskits</h3>
+                <div class="flex flex-col text-base">
                 <?php
                 $presskits = $site->page('about')->presskits()->toStructure();
                 foreach ($presskits as $linkObject):
@@ -61,14 +66,15 @@
                     <?php
                 endforeach;
                 ?>
+                </div>
 
 
-                <h3 class="all-small-caps pt-6">Selected Press</h3>
+                <h3 class="all-small-caps pt-6 text-sm">Selected Press</h3>
                 <?php
                 $presskits = $site->page('about')->press()->toStructure();
                 foreach ($presskits as $linkObject):
                     ?>
-                    <div class="flex flex-row gap-3">
+                    <div class="flex flex-row gap-3 text-base">
                         <div class="w-[10%]">
                             <?= $linkObject->date()->toDate('Y') ?>
                         </div>
@@ -81,12 +87,12 @@
                 ?>
 
 
-                <h3 class="all-small-caps pt-6">Past Exhibitions + Film Festivals</h3>
+                <h3 class="all-small-caps pt-6 text-sm">Past Exhibitions + Film Festivals</h3>
                 <?php
                 $exhibitions = $site->page('about')->exhibitions()->toStructure();
                 foreach ($exhibitions as $linkObject):
                     ?>
-                    <div class="flex flex-row gap-3">
+                    <div class="flex flex-row gap-3 text-base">
                         <div class="w-[10%]">
                             <?= $linkObject->year()->toDate('Y') ?>
                         </div>
@@ -101,12 +107,12 @@
             </div>
 
             <div class="flex flex-col">
-                <h3 class="all-small-caps">Upcoming</h3>
+                <h3 class="all-small-caps text-sm">Upcoming</h3>
                 <?php
                 $upcoming = $site->page('about')->upcoming()->toStructure();
                 foreach ($upcoming as $linkObject):
                     ?>
-                    <div class="flex flex-row gap-3">
+                    <div class="flex flex-row gap-3 text-base">
                         <div class="w-[10%]">
                             <?= $linkObject->date()->toDate('Y') ?>
                         </div>
@@ -118,11 +124,11 @@
                 endforeach;
                 ?>
 
-                <h3 class="all-small-caps pt-6">Grants, Residencies and Awards</h3>
+                <h3 class="all-small-caps pt-6 text-sm">Grants, Residencies and Awards</h3>
                 <?php $items = $site->page('about')->awards()->toStructure();
                 foreach ($items as $item):
                     ?>
-                    <div class="flex flex-row gap-3">
+                    <div class="flex flex-row gap-3 text-base">
                         <div class="w-[10%]">
                             <?= $item->year()->toDate('Y') ?>
                         </div>
@@ -132,17 +138,19 @@
                 endforeach;
                 ?>
 
-                <h3 class="all-small-caps pt-6">Website</h3>
-                <?php if ($p = page('datasecurity')): ?>
-                    <a href="<?= $p->url() ?>" target="_blank"> <?= $p->title() ?> </a>
-                <?php endif ?>
+                <h3 class="all-small-caps pt-6 text-sm">Website</h3>
+                <div class="flex flex-col text-base">
+                    <?php if ($p = page('datasecurity')): ?>
+                        <a href="<?= $p->url() ?>" target="_blank"> <?= $p->title() ?> </a>
+                    <?php endif ?>
+                    <?= $site->page('home')->imprint() ?>
+                </div>
 
-                <?= $site->page('home')->imprint() ?>
             </div>
-            <div class="flex flex-col">
-                <h3 class="all-small-caps">Selected Clients</h3>
+            <div class="flex flex-col text-base">
+                <h3 class="all-small-caps text-sm">Selected Clients</h3>
                 <?= $site->page('about')->clients() ?>
-                <h3 class="all-small-caps pt-6">Talented friends and collaborators</h3>
+                <h3 class="all-small-caps pt-6 text-sm">Talented friends and collaborators</h3>
                 <?= $site->page('about')->friends() ?>
             </div>
 

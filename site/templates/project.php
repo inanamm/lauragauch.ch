@@ -15,19 +15,20 @@ $hslaColor = "hsla($hue, $saturation, $lightness, $alpha)";
 $style = "background-color: $hslaColor";
 ?>
 
-<body class="h-full bg-blue-100" style="<?= $style ?>">
+<body class="h-full" style="<?= $style ?>">
     <?php snippet('header') ?>
 
     <main>
-        <div class=" px-3 pt-1 lg:grid lg:grid-cols-6">
+        <div class="px-3 pt-1 lg:grid lg:grid-cols-6">
 
-            <div class="button col-start-1 font-serif text-base all-small-caps"><a href="<?= site()->url() ?>">Back</a>
+            <div class="button col-start-1 font-serif text-sm all-small-caps hover:underline underline-offset-2">
+                <a href="<?= site()->url() ?>">Back</a>
             </div>
-            <div class="col-start-2 col-span-4 text-center text-2xl pb-24">
+            <div class="col-start-2 col-span-4 text-center text-lg pb-24">
                 <?= $page->title() ?>
             </div>
 
-            <article class="lg:row-start-2 lg:col-start-2 lg:col-end-6 text-2xl pb-24">
+            <article class="lg:row-start-2 lg:col-start-2 lg:col-end-6 text-lg pb-24">
                 <?= $page->description() ?>
             </article>
 
@@ -36,12 +37,12 @@ $style = "background-color: $hslaColor";
             <!-- ADDITIONAL INFO -->
             <div class="lg:col-start-2 lg:col-span-4 font-serif">
                 <?php if ($page->presskits()->kt()->isNotEmpty()): ?>
-                    <h3 class="all-small-caps pt-6">presskits</h3>
+                    <h3 class="all-small-caps pt-6 text-sm">presskits</h3>
                     <?php
                     $presskits = $page->presskits()->toStructure();
                     foreach ($presskits as $linkObject):
                         ?>
-                        <div class="flex flex-row gap-3">
+                        <div class="flex flex-row gap-3 text-base">
                             <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>> <?= $linkObject->title()->or($linkObject->link()) ?>
                             </a>
                         </div>
@@ -55,8 +56,8 @@ $style = "background-color: $hslaColor";
                 $items = $page->additionalInfo()->toStructure();
                 foreach ($items as $item): ?>
                     <div class="flex flex-col">
-                        <h3 class="font-serif text-base all-small-caps pt-4"><?= $item->additionalDetails()->kt() ?></h3>
-                        <div class="flex flex-row gap-5">
+                        <h3 class="font-serif text-sm all-small-caps pt-4"><?= $item->additionalDetails()->kt() ?></h3>
+                        <div class="flex flex-row gap-5 text-base">
                             <?php if ($item->date()->kt()->isNotEmpty()): ?>
                                 <div class="flex flex-row gap-0.5"><?= $item->date()->kt() ?>–<?= $item->dateUntil()->kt() ?>
                                 </div>

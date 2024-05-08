@@ -13,6 +13,10 @@
   src: url("assets/TimesTenLTStd-Roman.otf") format("opentype");
 }
 
+a {
+  @apply hover:underline underline-offset-2
+}
+
 .glide {
     position: relative;
     width: 100%;

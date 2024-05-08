@@ -7,7 +7,7 @@
     <?php snippet('header') ?>
     <main class="px-3 pt-1">
         <div class="flex flex-row fixed">
-            <nav class="flex gap-16 font-serif">
+            <nav class="flex gap-16 font-serif ">
                 <h2><?php snippet('projectindex') ?></h2>
                 <!-- <a>sort</a> -->
             </nav>
@@ -16,7 +16,6 @@
 
         <?php snippet('about') ?>
         
-
         <div class="pt-32 pb-32">
             <ul class="flex flex-row gap-12 overflow-x-auto h-auto w-min items-center">
                 <?php $projectsPage = $site->find('projects');
@@ -27,9 +26,9 @@
                                 'quality' => 90,
                                 'format' => 'webp',
                             ])->html(); ?>
-                            <figcaption class="flex flex-col font-serif">
+                            <figcaption class="flex flex-col font-serif text-base">
                                 <h3><?= $project->title() ?></h3>
-                                <a href="" class="all-small-caps underline">More info</a>
+                                <a href="" class="all-small-caps text-sm">More info</a>
                             </figcaption>
                         </fic>
                     <?php endforeach;
