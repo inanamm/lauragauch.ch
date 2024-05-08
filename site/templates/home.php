@@ -7,14 +7,15 @@
     <?php snippet('header') ?>
     <main class="px-3 pt-1">
         <div class="flex flex-row fixed">
-            <nav class="flex gap-5 font-serif all-small-caps ">
-                <a class="relative" href=" ">index</a>
-                <a class="relative" href=" ">sort</a>
+            <nav class="flex gap-16 font-serif">
+                <h2><?php snippet('projectindex') ?></h2>
+                <!-- <a>sort</a> -->
             </nav>
 
         </div>
 
         <?php snippet('about') ?>
+        
 
         <div class="pt-32 pb-32">
             <ul class="flex flex-row gap-12 overflow-x-auto h-auto w-min items-center">
