@@ -1,4 +1,4 @@
-<div class="relative h-full z-50 overflow-y-scroll " x-data="{ menuOpen: false }"
+<div class="relative h-full z-50 overflow-y-scroll " x-data="{ menuOpen: true }"
     x-init="() => $watch('menuOpen', (value) => document.body.style.overflow = value ? 'hidden' : 'auto')">
 
     <button @click="menuOpen = !menuOpen; $nextTick(() => setTimeout(() => $refs.overlay.scrollTop = 0, 200))"
@@ -152,12 +152,10 @@
                 <?= $site->page('about')->clients() ?>
                 <h3 class="all-small-caps pt-6 text-sm">Talented friends and collaborators</h3>
                 <?= $site->page('about')->friends() ?>
+                <!-- <article class="pt-12">
+                    <?php snippet('signupform') ?>
+                </article> -->
             </div>
-
         </div>
-
     </div>
-
 </div>
-
-<?php snippet('footer') ?>
