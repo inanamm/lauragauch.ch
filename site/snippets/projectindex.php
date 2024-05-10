@@ -3,13 +3,32 @@
 
   <button
     @click="menuOpen = !menuOpen; $nextTick(() => { setTimeout(() => $refs.projectIndexOverlay.scrollTop = 0, 200); $refs.projectIndexOverlay.style.backgroundColor = '#efefef' })"
-    class="all-small-caps fixed top-1 font-serif text-sm hover:underline underline-offset-2" :aria-expanded="menuOpen"
+    class="fixed
+        bottom-2.5 lg:top-2 lg:bottom-auto
+        right-3 lg:left-3 lg:right-auto
+        font-serif all-small-caps text-sm
+        lg:hover:underline lg:underline-offset-2
+        rounded-lg lg:rounded-none
+        bg-white/65 lg:bg-transparent
+        px-2 lg:p-0
+        py-0.5
+        backdrop-blur-sm lg:backdrop-blur-0"
+		:aria-expanded="menuOpen"
     aria-controls="navigation" aria-label="Navigation Menu">
     Index
   </button>
 
   <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.550ms
-          class="fixed top-1 left-3 z-30 gap-5 font-serif all-small-caps text-sm hover:underline underline-offset-2"
+          class="fixed bottom-2.5 lg:top-2 lg:bottom-auto
+        right-3 lg:left-3 lg:right-auto
+        z-30
+        font-serif all-small-caps text-sm
+        lg:hover:underline lg:underline-offset-2
+        rounded-lg lg:rounded-none
+        bg-white/65 lg:bg-transparent
+        px-2 lg:p-0
+        py-0.5
+        backdrop-blur-sm lg:backdrop-blur-0"
           :aria-expanded="menuOpen"
           aria-controls="navigation" aria-label="Navigation Menu">
     close
