@@ -13,7 +13,7 @@
 </header>
 
 <main class="row-span-6">
-  <ul class="flex overflow-x-scroll n gap-12 w-full items-center h-full">
+  <ul class="flex overflow-x-scroll gap-12 w-full items-center h-full no-scrollbar">
     <?php $projectsPage = $site->find('projects');
     foreach ($projectsPage->children() as $project) {
 
@@ -26,7 +26,6 @@
       $saturation = trim($hslParts[1]);
       $lightness = trim($hslParts[2]);
       $hslaColor = "hsla($hue, $saturation, $lightness, $alpha)";
-      $style = "background-color: $hslaColor";
 
       $kirbyPressKits = $project->pressKits()->toStructure();
       $pressKits = [];

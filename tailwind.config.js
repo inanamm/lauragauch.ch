@@ -41,6 +41,17 @@ module.exports = {
   variants: {},
   plugins: [
     require('tailwindcss-opentype'),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".no-scrollbar::-webkit-scrollbar": {
+          display: "none",
+        },
+        ".no-scollbar": {
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+        },
+      };
+      addUtilities(newUtilities);
+    },
   ],
-
 }; 
