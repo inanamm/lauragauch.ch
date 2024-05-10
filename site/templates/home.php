@@ -3,8 +3,8 @@
 
 <?php snippet('head') ?>
 
-<body class="h-full grid grid-rows-10">
-<header class="row-span-2">
+<body class="h-full grid grid-rows-12">
+<header class="row-span-3">
   <nav class="flex gap-16 font-serif ">
     <h2 class="ml-3"><?php snippet('projectindex') ?></h2>
     <?php snippet('about') ?>
@@ -13,7 +13,7 @@
 </header>
 
 <main class="row-span-6">
-  <ul class="flex overflow-x-scroll gap-12 w-full items-center h-full no-scrollbar">
+  <ul class="flex overflow-x-scroll gap-12 w-full items-center h-full no-scrollbar scroll-smooth snap-x snap-mandatory">
     <?php $projectsPage = $site->find('projects');
     foreach ($projectsPage->children() as $project) {
 
@@ -47,7 +47,16 @@
       ];
 
       foreach ($project->cover()->toFiles() as $image): ?>
-        <figure class="h-full flex-none" data-project='<?= json_encode($projectInfo) ?>'>
+        <figure class="h-full flex-none snap-always snap-center" data-project='<?= json_encode($projectInfo) ?>'>
+          <?= $image->thumb([
+            'quality' => 90,
+            'format' => 'webp',
+          ])->html(); ?>
+        </figure>
+      <?php endforeach;
+
+      foreach ($project->gallery()->toFiles() as $image): ?>
+        <figure class="h-full flex-none snap-always snap-center" data-project='<?= json_encode($projectInfo) ?>'>
           <?= $image->thumb([
             'quality' => 90,
             'format' => 'webp',

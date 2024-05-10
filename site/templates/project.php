@@ -4,7 +4,7 @@
 <?php snippet('head') ?>
 <?php
 $hslColor = $page->backgroundColor()->escape();
-$alpha = 0.5; // 50% opacity
+$alpha = 1; // 50% opacity
 $hslColor = trim($hslColor);
 $hslColor = substr($hslColor, 4, -1);
 $hslParts = explode(' ', $hslColor);
@@ -15,7 +15,7 @@ $hslaColor = "hsla($hue, $saturation, $lightness, $alpha)";
 $style = "background-color: $hslaColor";
 ?>
 
-<body class="h-full" style="<?= $style ?>">
+<body class="h-full opacity-50" style="<?= $style ?>">
     <?php snippet('header') ?>
 
     <main>
