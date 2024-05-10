@@ -10,6 +10,6 @@ fields:
     nodes: false
 
 options:
-  list: 
+  list:
     admin: true
     editor: false
