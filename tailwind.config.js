@@ -25,7 +25,14 @@ module.exports = {
           "1rem",
           {
             lineHeight: "1.35rem",
-            letterSpacing: "0.055rem",
+            letterSpacing: "0.085rem",
+          },
+        ],
+        md: [
+          "1.45rem",
+          {
+            lineHeight: "1.65rem",
+            letterSpacing: "0.03rem",
           },
         ],
         lg: [
@@ -35,6 +42,9 @@ module.exports = {
             letterSpacing: "0.03rem",
           },
         ],
+      },
+      lineHeight: {
+        'extra': '0.75',
       },
     },
   },
@@ -46,7 +56,7 @@ module.exports = {
         ".no-scrollbar::-webkit-scrollbar": {
           display: "none",
         },
-        ".no-scollbar": {
+        ".no-scrollbar": {
           "-ms-overflow-style": "none",
           "scrollbar-width": "none",
         },
@@ -54,4 +64,4 @@ module.exports = {
       addUtilities(newUtilities);
     },
   ],
-}; 
+};

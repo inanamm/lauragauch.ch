@@ -4,7 +4,7 @@
     <button @click="menuOpen = !menuOpen; $nextTick(() => setTimeout(() => $refs.overlay.scrollTop = 0, 200))"
         class="fixed top-1 right-3 z-30" :aria-expanded="menuOpen" aria-controls="navigation"
         aria-label="Navigation Menu">
-        <h1 class="font-sans text-lg">
+        <h1 class="font-sans lg:text-lg text-md">
             Laura Gauch
         </h1>
     </button>
@@ -36,12 +36,12 @@
         <article class="top grid lg:grid-cols-3 grid-row px-3 font-sans text-2xl pt-32 pb-20 gap-6">
             <div class="col-span-2">
                 <h3 class="font-serif text-sm all-small-caps">Biography</h3>
-                <div class="text-lg">
+                <div class="lg:text-lg text-md">
                     <?= $site->page('about')->biography() ?>
                 </div>
             </div>
             <div class="grid grid-col content-between">
-                <div class="text-lg">
+                <div class="lg:text-lg text-md">
                     <h3 class="font-serif text-sm all-small-caps">Contact</h3>
 
                     <?= kirbytag([
@@ -54,7 +54,7 @@
                     <?php endif ?>
                 </div>
 
-                <div class="flex flex-col text-lg pt-6">
+                <div class="flex flex-col lg:text-lg text-md pt-6">
                     <h3 class="font-serif text-sm all-small-caps">Social Media</h3>
                     <a href="<?= $site->page('about')->instagramLink()->toUrl() ?>" <?php e($site->page('about')->target()->toBool(), 'target="_blank"') ?>>
                         <?= $site->page('about')->instagramLinkText() ?> </a>

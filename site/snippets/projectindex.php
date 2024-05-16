@@ -1,4 +1,4 @@
-<div class="relative h-full z-30 overflow-y-scroll" x-data="{ menuOpen: true }"
+<div class="relative h-full z-30 overflow-y-scroll no-scrollbar" x-data="{ menuOpen: false }"
 	x-init="() => $watch('menuOpen', (value) => document.body.style.overflow = value ? 'hidden' : 'auto')">
 
 	<button
@@ -32,7 +32,7 @@
 	</button>
 
 	<div id="index" x-show="menuOpen" x-ref="projectIndexOverlay"
-		class="h-full w-full flex flex-col fixed bottom-0 left-0 backdrop-blur-md bg-white/50 overflow-y-scroll"
+		class="h-full w-full flex flex-col fixed bottom-0 left-0 backdrop-blur-md bg-white/50 overflow-y-scroll no-scrollbar"
 		x-transition:enter="transition duration-700 ease-in-out" x-transition:enter-start="translate-y-full"
 		x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in-out duration-700"
 		x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full">
