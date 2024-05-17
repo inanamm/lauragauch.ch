@@ -36,7 +36,7 @@
         x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full">
 
 
-        <article class="top fixed grid w-full lg:grid-cols-6 grid-row px-3 font-sans text-lg pb-20 gap-6">
+        <article class="top fixed grid w-full lg:grid-cols-6 grid-row px-3 font-sans lg:text-lg text-md pb-20 gap-6">
             <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.350ms
                 class="fixed top-2 left-3 z-30 gap-5 font-serif all-small-caps text-sm hover:underline underline-offset-2"
                 :aria-expanded="menuOpen" aria-controls="navigation" aria-label="Navigation Menu">

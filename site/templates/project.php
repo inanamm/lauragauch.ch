@@ -15,20 +15,21 @@ $hslaColor = "hsla($hue, $saturation, $lightness, $alpha)";
 $style = "background-color: $hslaColor";
 ?>
 
-<body class="h-full opacity-50" style="<?= $style ?>">
+
+<body style="<?= $style ?>" class="h-full ">
     <?php snippet('header') ?>
 
-    <main>
+    <main class="bg-white/10 h-full overflow-scroll ">
         <div class="px-3 pt-1 lg:grid lg:grid-cols-6">
 
-            <div class="button col-start-1 font-serif text-sm all-small-caps hover:underline underline-offset-2">
+            <div class="button absolute col-start-1 font-serif text-sm all-small-caps hover:underline underline-offset-2">
                 <a href="<?= site()->url() ?>">Back</a>
             </div>
-            <div class="col-start-2 col-span-4 text-center text-lg pb-24">
+            <div class="col-start-2 col-span-4 text-center lg:text-lg text-md pt-16 lg:pt-24">
                 <?= $page->title() ?>
             </div>
 
-            <article class="lg:row-start-2 lg:col-start-2 lg:col-end-6 text-lg pb-24">
+            <article class="lg:row-start-2 lg:col-start-2 lg:col-end-6 lg:text-lg text-md pt-24 pb-16">
                 <?= $page->description() ?>
             </article>
 
@@ -67,35 +68,42 @@ $style = "background-color: $hslaColor";
                     </div>
                 <?php endforeach ?>
             </div>
+
+            <!-- BILDER -->
+            <section class="py-24 lg:col-start-2 lg:col-span-4">
+                <div class="flex flex-wrap last:pb-0 w-full gap-1 ">
+                    <?php foreach ($page->cover()->toFiles() as $image): ?>
+                        <figure class="h-52 lg:h-96">
+                            <?php echo $image->thumb([
+                                'quality' => 90,
+                                'format' => 'webp',
+                            ])->html(); ?>
+                        </figure>
+                    <?php endforeach ?>
+    
+                    <?php foreach ($page->gallery()->toFiles() as $image): ?>
+                        <figure class=" h-52 lg:h-96">
+                            <?php echo $image->thumb([
+                                'quality' => 90,
+                                'format' => 'webp',
+                            ])->html(); ?>
+                        </figure>
+                    <?php endforeach ?>
+                </div>
+            </section>
         </div>
-
-
-        <!-- BILDER -->
-        <section class="gallery pt-24">
-            <ul class="flex flex-row gap-1 items-center">
-                <?php foreach ($page->cover()->toFiles() as $image): ?>
-                    <li class="<?= $image->ratio() > 1 ? 'w-full' : 'w-full' ?> pb-0.5 last:p-0">
-                        <?php echo $image->thumb([
-                            'quality' => 90,
-                            'format' => 'webp',
-                        ])->html(); ?>
-                    </li>
-                <?php endforeach ?>
-                <?php foreach ($page->gallery()->toFiles() as $image): ?>
-                    <li class="<?= $image->ratio() > 1 ? 'w-full' : 'w-full' ?> pb-0.5 last:p-0">
-                        <?php echo $image->thumb([
-                            'quality' => 90,
-                            'format' => 'webp',
-                        ])->html(); ?>
-                    </li>
-                <?php endforeach ?>
-            </ul>
-
-        </section>
-
     </main>
-
     <?= vite()->js('index.js') ?>
 </body>
+
+<script>
+    function correctFigureSize(figureElement) {
+        figureElement.onload = function () {
+            const aspectRatio = figureElement.naturalWidth / figureElement.naturalHeight;
+            const containerHeight = figureElement.closest('figure').clientHeight;
+            figureElement.closest('figure').style.width = `${containerHeight * aspectRatio}px`;
+        };
+    }
+</script>
 
 </html>

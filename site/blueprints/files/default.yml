@@ -1,7 +1,7 @@
 title: Image
 
 accept:
-  extension: jpg, png, jpeg, webp
+  extension: jpg, png, jpeg, webp, mp4
 
 columns:
   main:
