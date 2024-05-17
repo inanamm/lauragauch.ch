@@ -117,11 +117,13 @@
     }
 
     // Set the correct information on the project drawer
-    function showActiveProjectInfoOnDrawer({ title, description, backgroundColor, pressKits }) {
+    function showActiveProjectInfoOnDrawer({ title, description, backgroundColor, pressKits, url }) {
       // Set the project title
       document.getElementById("project-title").innerText = title
       // Set the background color
       document.getElementById("navigation").style.backgroundColor = backgroundColor
+      // Set the share link
+      document.getElementById("project-url").href = url
 
       // Clear and set the description
       const descriptionElement = document.getElementById("project-description")

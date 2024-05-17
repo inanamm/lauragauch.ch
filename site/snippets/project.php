@@ -44,8 +44,8 @@
             </button>
             <div class="lg:row-start-1 row-start-2 lg:col-start-2 lg:col-end-6 lg:text-lg text-md pb-8 lg:pb-24 pt-12 lg:pt-2">
                 <h2 id="project-title" class="lg:text-lg text-md text-center"></h2>
-                <h3 class="font-serif text-sm all-small-caps pb-16 lg:pb-24 text-center">Share this project</h3>
-                <article id="project-description"></article>
+                <a id="project-url" href="" target="_blank" class="block font-serif text-sm all-small-caps text-center pt-1.5">Share this project</a>
+                <article id="project-description" class="pt-16 lg:pt-24"></article>
 
                 <h3 class="all-small-caps font-serif text-sm pt-12">Presskits</h3>
                 <div id="project-presskits" class="flex flex-col font-serif text-base"></div>

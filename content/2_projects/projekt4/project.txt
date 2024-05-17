@@ -14,7 +14,7 @@ Presskits:
 
 ----
 
-Backgroundcolor: hsl(244 61% 35%)
+Backgroundcolor: hsl(244 75% 72%)
 
 ----
 
@@ -70,10 +70,6 @@ Twitterauthor:
 
 ----
 
-Metainherit: 
-
-----
-
 Robotsindex: false
 
 ----
@@ -91,6 +87,10 @@ Robotsimageindex: false
 ----
 
 Robotssnippet: false
+
+----
+
+Metainherit: 
 
 ----
 
