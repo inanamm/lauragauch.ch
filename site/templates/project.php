@@ -26,11 +26,11 @@ $style = "background-color: $hslaColor";
                 <a href="<?= site()->url() ?>">Back</a>
             </div>
             <div class="col-start-2 col-span-4 text-center lg:text-lg text-md pt-16 lg:pt-24">
-                <?= $page->title() ?>
+                <?= $page->title()->kt() ?>
             </div>
 
             <article class="lg:row-start-2 lg:col-start-2 lg:col-end-6 lg:text-lg text-md pt-24 pb-16">
-                <?= $page->description() ?>
+                <?= $page->description()->kt() ?>
             </article>
 
 
