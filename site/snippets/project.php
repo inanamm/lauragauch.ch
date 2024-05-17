@@ -5,12 +5,25 @@
         x-show="menuOpen" :aria-expanded="menuOpen.toString()" style="display: none;">
     </div>
 
-    <div class="fixed flex flex-col items-center bottom-3 lg:bottom-1 inset-x-20 font-serif text-base leading-tight">
-        <p class="text-center" id="project-more-info">title</p>
+    <div class="fixed flex flex-col items-center bottom-2.5 lg:bottom-1 inset-x-20 font-serif text-base leading-tight">
+        <p class="text-center hidden lg:flex" id="project-more-info">title</p>
         <button
             @click="menuOpen = !menuOpen; $nextTick(() => { setTimeout(() => $refs.projectOverlay.scrollTop = 0, 200); })"
             :aria-expanded="menuOpen" aria-controls="navigation"
-            class="hover:underline underline-offset-2 all-small-caps text-sm" aria-label="Navigation Menu">
+            class="
+            hover:underline 
+            underline-offset-2 
+            all-small-caps 
+            text-sm
+            font-serif
+            lg:hover:underline lg:underline-offset-2
+            rounded-lg lg:rounded-none
+            bg-white/65 lg:bg-transparent
+            px-2 lg:p-0
+            py-0.5
+            backdrop-blur-sm lg:backdrop-blur-0
+            z-20" 
+            aria-label="Navigation Menu">
             More Info
         </button>
     </div>

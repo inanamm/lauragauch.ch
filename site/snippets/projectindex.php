@@ -17,7 +17,8 @@
 		Index
 	</button>
 
-	<button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.550ms class="fixed bottom-2.5 lg:top-2 lg:bottom-auto
+	<button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.550ms 
+		class="fixed bottom-2.5 lg:top-2 lg:bottom-auto
 		right-3 lg:left-3 lg:right-auto
 		z-30
 		font-serif all-small-caps text-sm
