@@ -18,14 +18,10 @@ Backgroundcolor: hsl(135 60% 75%)
 
 ----
 
-Cover: - file://d4skJtF25fRMC79A
-
-----
-
 Gallery:
 
-- file://irhsFHotZJQyJ3Hn
 - file://qubHlkgdgdhxxl46
+- file://irhsFHotZJQyJ3Hn
 - file://SsV04bWVbarVTQ5x
 
 ----
@@ -91,6 +87,10 @@ Robotssnippet: false
 ----
 
 Metainherit: 
+
+----
+
+Cover: - file://d4skJtF25fRMC79A
 
 ----
 

@@ -49,17 +49,6 @@
 					</li>
 					<div class="gallery flex flex-wrap pb-12 last:pb-0 w-full gap-1">
 						<?php
-						// cover image
-						$coverImage = $project->cover()->toFile();
-						if ($coverImage): ?>
-							<figure class="h-32 lg:h-60">
-								<?= $coverImage->thumb([
-									'quality' => 90,
-									'format' => 'webp',
-								])->html(); ?>
-							</figure>
-						<?php endif; ?>
-						<?php
 						// gallery images
 						foreach ($project->gallery()->toFiles() as $image): ?>
 							<figure class="h-32 lg:h-60">

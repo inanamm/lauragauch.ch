@@ -147,21 +147,6 @@ tabs:
           images:
             type: fields
             fields:
-              cover:
-                type: files
-                label: Cover
-                layout: cards
-                size: medium
-                max: 1
-                required: true
-                info: "{{ file.dimensions }}"
-                template: default
-                query: site.images
-                uploads:
-                  parent: site
-                image:
-                  cover: true
-                  ratio: 1/1
               gallery:
                 type: files
                 label: Gallery
@@ -169,5 +154,11 @@ tabs:
                 query: site.images
                 uploads:
                   parent: site
+              vimeo:
+                type: link
+                options:
+                  - url
+
+
 
   seo: seo/page

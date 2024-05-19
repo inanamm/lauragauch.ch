@@ -1,5 +1,6 @@
 title: Laura Gauch
 
+
 tabs:
 #tab1 PAGES & PROJECTS
   pages:
@@ -26,7 +27,7 @@ tabs:
         layout: list
         empty: No projects yet
         image:
-          query: page.images.template("cover").first
+          query: page.gallery.toFiles.first
           ratio: 3/2
           cover: true
 
@@ -38,7 +39,7 @@ tabs:
         size: medium
         empty: No projects yet
         image:
-          query: page.images.template("cover").first
+          query: page.gallery.toFiles.first
           ratio: 3/2
           cover: true
 
@@ -50,7 +51,7 @@ tabs:
         size: medium
         empty: No projects yet
         image:
-          query: page.images.template("cover").first
+          query: page.gallery.toFiles.first
           ratio: 3/2
           cover: true
 
