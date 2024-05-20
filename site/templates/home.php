@@ -29,7 +29,6 @@
 
 </main>
 
-<?= vite()->js('index.js') ?>
 <?= vite()->js('home.js') ?>
 </body>
 
