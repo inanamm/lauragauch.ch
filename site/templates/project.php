@@ -62,19 +62,9 @@ $style = "background-color: $hslaColor";
                 <?php endforeach ?>
             </div>
 
-            <!-- VIDEO -->
-            <section class="py-24 lg:col-start-2 lg:col-span-4">
-                <div class="flex flex-wrap last:pb-0 w-full gap-1 ">
-                    <?php if ($page->vimeo()->isNotEmpty()): ?>
-                        <?= vimeo('<?= $page->()->vimeo()->url() ?>') ?>
-                    <?php endif; ?>
-                </div>
-            </section>
-
             <!-- BILDER -->
             <section class="py-24 lg:col-start-2 lg:col-span-4">
                 <div class="flex flex-wrap last:pb-0 w-full gap-1">
-
                     <!-- VIDEO -->
                     <?php if ($page->vimeo()->isNotEmpty()): ?>
                         <div class="video-responsive lg:h-96 h-52">
