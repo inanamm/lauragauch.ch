@@ -92,6 +92,7 @@ $style = "background-color: $hslaColor";
 
     <?= vite()->js('index.js') ?>
 </body>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Get the Vimeo URL from the PHP variable and log it to the console
