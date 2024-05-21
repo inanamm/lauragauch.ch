@@ -1,5 +1,4 @@
-<div class="relative h-full z-20 overflow-y-scroll no-scrollbar" x-data="{ menuOpen: false }"
-    x-init="() => $watch('menuOpen', (value) => document.body.style.overflow = value ? 'hidden' : 'auto')">
+<div class="relative h-full z-20 overflow-y-scroll no-scrollbar" x-data="drawer">
 
     <div class="h-screen w-full fixed inset-0" @click="menuOpen = false" x-show="menuOpen"
         :aria-expanded="menuOpen.toString()" style="display: none;">
@@ -53,12 +52,12 @@
 
                 <article id="project-description" class="pt-16 lg:pt-24"></article>
 
-                <h3 class="all-small-caps font-serif text-sm pt-12">Presskits</h3>
-                <div id="project-presskits" class="flex flex-col font-serif text-base"></div>
+        <h3 class="all-small-caps font-serif text-sm pt-12">Presskits</h3>
+        <div id="project-presskits" class="flex flex-col font-serif text-base"></div>
 
-            </div>
-        </article>
-    </div>
+      </div>
+    </article>
+  </div>
 
 </div>
 
