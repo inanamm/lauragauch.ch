@@ -67,14 +67,15 @@ $style = "background-color: $hslaColor";
                 <div class="flex flex-wrap last:pb-0 w-full gap-1">
 
                     <!-- VIDEO -->
-                    <div class="video-responsive lg:h-96 h-52">
-                        <?php if ($page->vimeo()->isNotEmpty()): ?>
+                    <?php if ($page->vimeo()->isNotEmpty()): ?>
+                        <div class="video-responsive lg:h-96 h-52">
                             <div class="relative w-full h-52 lg:h-96 max-h-96 overflow-hidden">
-                                <iframe id="vimeo-iframe" class="w-full h-full" src="https://player.vimeo.com/video/<?= $page->vimeo()->escape()?>"
+                                <iframe id="vimeo-iframe" class="w-full h-full"
+                                    src="https://player.vimeo.com/video/<?= $page->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
                                     frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                             </div>
-                        <?php endif; ?>
-                    </div>
+                        </div>
+                    <?php endif; ?>
 
                     <?php foreach ($page->gallery()->toFiles() as $image): ?>
                         <figure class="h-52 lg:h-96">
@@ -92,7 +93,7 @@ $style = "background-color: $hslaColor";
     <?= vite()->js('index.js') ?>
 </body>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         // Get the Vimeo URL from the PHP variable and log it to the console
         console.log('Vimeo URL:', '<?= $page->vimeo()->escape() ?>');
     });

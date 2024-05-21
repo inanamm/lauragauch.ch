@@ -2,15 +2,42 @@ Title: projekt3
 
 ----
 
-Description: <p>Hallo ich bin Projekt 3</p>
+Description: <p>Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab. 3</p>
 
 ----
 
-Additionalinfo: 
+Additionalinfo:
+
+- 
+  additionaldetails: support
+  value: '<p>Martina Holenstein</p>'
+  date: ""
+  dateuntil: ""
+- 
+  additionaldetails: collaboration
+  value: '<p><a href="https://martinaholenstein.ch/" target="_blank" title="Martina Holenstein">martina holenstein</a></p>'
+  date: ""
+  dateuntil: ""
+- 
+  additionaldetails: links
+  value: '<p><a href="https://martinaholenstein.ch/" target="_blank" title="here">see here</a></p>'
+  date: ""
+  dateuntil: ""
+- 
+  additionaldetails: nextViewings
+  value: '<p>Kino Xenix</p>'
+  date: 2024-05-21
+  dateuntil: ""
 
 ----
 
-Presskits: 
+Presskits:
+
+- 
+  toggle: 'true'
+  title: Infoblatt
+  target: 'true'
+  link: https://martinaholenstein.ch/
 
 ----
 
@@ -20,9 +47,15 @@ Backgroundcolor: hsl(135 60% 75%)
 
 Gallery:
 
-- file://qubHlkgdgdhxxl46
-- file://irhsFHotZJQyJ3Hn
-- file://SsV04bWVbarVTQ5x
+- file://pUQaVUxaig7yKuig
+- file://NUwDZnQEu8VpUbCh
+- file://btq93DqABTPm3Rd2
+- file://B8997BRxeOfz85z8
+- file://2HGfkRJPPt8528NI
+- file://ZIfN1FidcqFDtafs
+- file://IfSVRnnWOakBembe
+- file://gm0Y1b0eUp1NBIxH
+- file://cXTfks8WwR37U5YF
 
 ----
 
