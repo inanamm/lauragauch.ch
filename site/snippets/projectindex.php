@@ -17,8 +17,7 @@
 		Index
 	</button>
 
-	<button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.550ms 
-		class="fixed bottom-2.5 lg:top-2 lg:bottom-auto
+	<button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.550ms class="fixed bottom-2.5 lg:top-2 lg:bottom-auto
 		right-3 lg:left-3 lg:right-auto
 		z-30
 		font-serif all-small-caps text-sm
@@ -50,6 +49,15 @@
 					<div class="gallery flex flex-wrap pb-12 last:pb-0 w-full gap-1">
 						<?php
 						// gallery images
+						if ($project->vimeo()->isNotEmpty()) { ?>
+							<figure class="videoindex relative w-full h-32 lg:h-60 max-h-96 overflow-hidden">
+								<iframe id="vimeo-iframe" class="w-full h-full"
+									src="https://player.vimeo.com/video/<?= $project->vimeo()->escape() ?>" frameborder="0"
+									webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							</figure>
+						<?php } ?>
+
+						<?php
 						foreach ($project->gallery()->toFiles() as $image): ?>
 							<figure class="h-32 lg:h-60">
 								<?= $image->thumb([

@@ -103,11 +103,16 @@ figure img {
   direction: rtl;
 }
 
-
 .video-responsive {
   position: relative;
   height: 24rem;
   width: calc(24rem * 16 / 9);
+}
+
+.videoindex {
+  position: relative;
+  height: 15rem;
+  width: calc(15rem * 16 / 9);
 }
 
 @media (max-width: 1023px) {
@@ -115,6 +120,12 @@ figure img {
     position: relative;
     height: 13rem;
     width: calc(13rem * 16 / 9);
+  }
+
+  .videoindex {
+    position: relative;
+    height: 8rem;
+    width: calc(8rem * 16 / 9);
   }
 }
 
