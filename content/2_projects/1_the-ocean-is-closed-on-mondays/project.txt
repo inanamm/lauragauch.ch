@@ -18,6 +18,11 @@ Additionalinfo:
   value: '<p>Migros Kulturprozent</p>'
   date: ""
   dateuntil: ""
+- 
+  additionaldetails: collaboration
+  value: '<p>Guido Offermans</p>'
+  date: ""
+  dateuntil: ""
 
 ----
 
@@ -35,10 +40,6 @@ Backgroundcolor: hsl(220 100% 50%)
 
 ----
 
-Cover: - file://VrE4xVP1eOpjabJl
-
-----
-
 Gallery:
 
 - file://UpgKnkRDduDGdHLE
@@ -48,6 +49,10 @@ Gallery:
 - file://B8997BRxeOfz85z8
 - file://gm0Y1b0eUp1NBIxH
 - file://aAxedf2IVOpups5g
+
+----
+
+Vimeo: 401613699
 
 ----
 
@@ -112,6 +117,10 @@ Robotssnippet: false
 ----
 
 Metainherit: 
+
+----
+
+Cover: - file://VrE4xVP1eOpjabJl
 
 ----
 

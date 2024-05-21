@@ -155,9 +155,7 @@ tabs:
                 uploads:
                   parent: site
               vimeo:
-                type: link
-                options:
-                  - url
+                type: text
 
 
 

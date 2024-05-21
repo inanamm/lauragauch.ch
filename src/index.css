@@ -102,3 +102,36 @@ figure img {
 .glide--rtl {
   direction: rtl;
 }
+
+
+.video-responsive {
+  position: relative;
+  height: 24rem;
+  width: calc(24rem * 16 / 9);
+}
+
+@media (max-width: 1023px) {
+  .video-responsive {
+    position: relative;
+    height: 13rem;
+    width: calc(13rem * 16 / 9);
+  }
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

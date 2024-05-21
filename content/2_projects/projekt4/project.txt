@@ -2,7 +2,7 @@ Title: projekt4
 
 ----
 
-Description: <p>Hallo ich bin Projekt 3</p>
+Description: <p>Hallo ich bin Projekt 4</p>
 
 ----
 
@@ -26,7 +26,7 @@ Gallery:
 
 ----
 
-Vimeo: https://vimeo.com/567452947
+Vimeo: 567452947
 
 ----
 
