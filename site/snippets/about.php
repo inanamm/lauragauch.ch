@@ -17,7 +17,7 @@
         font-serif all-small-caps text-sm 
         lg:hover:underline lg:underline-offset-2 
         rounded-lg lg:rounded-none 
-        bg-white/65 lg:bg-transparent
+        bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent
         px-2 lg:p-0
         py-0.5 
         backdrop-blur-sm lg:backdrop-blur-0"

@@ -15,8 +15,23 @@ $style = "background-color: $hslaColor";
     <main class="bg-white/10 h-full overflow-scroll no-scrollbar">
         <div class="px-3 pt-1 lg:grid lg:grid-cols-6">
 
-            <div
-                class="button absolute col-start-1 font-serif text-sm all-small-caps hover:underline underline-offset-2">
+            <a href="<?= site()->url() ?>"
+                class="font-sans lg:text-lg text-md fixed top-1 right-3 z-30 hover:no-underline">
+                Laura Gauch
+            </a>
+
+            <div class="
+                fixed
+                bottom-2.5 lg:top-2 lg:bottom-auto
+                right-3 lg:left-3 lg:right-auto
+                font-serif all-small-caps text-sm
+                lg:hover:underline lg:underline-offset-2
+                rounded-lg lg:rounded-none
+                bg-white/45 lg:bg-transparent
+                px-2 lg:p-0
+                py-0.5
+                backdrop-blur-sm lg:backdrop-blur-0
+                z-30">
                 <a href="<?= site()->url() ?>">Back</a>
             </div>
             <div class="col-start-2 col-span-4 text-center lg:text-lg text-md pt-16 lg:pt-24">
