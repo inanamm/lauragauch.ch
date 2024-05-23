@@ -1,4 +1,4 @@
-<div class="relative h-full z-20 overflow-y-scroll no-scrollbar" x-data="drawer">
+<div class="dark:text-white relative h-full z-20 overflow-y-scroll no-scrollbar" x-data="drawer">
 
     <div class="h-screen w-full fixed inset-0" @click="menuOpen = false" x-show="menuOpen"
         :aria-expanded="menuOpen.toString()" style="display: none;">
@@ -47,8 +47,6 @@
                     class="block font-serif text-sm all-small-caps text-center pt-1.5"
                     data-copy-to-clipboard="project-url">Share this project
                 </a>
-
-
 
                 <article id="project-description" class="pt-16 lg:pt-24"></article>
 

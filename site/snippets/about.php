@@ -1,4 +1,4 @@
-<div class="relative h-full z-50 overflow-y-scroll " x-data="{ menuOpen: false }"
+<div class="dark:text-white relative h-full z-50 overflow-y-scroll " x-data="{ menuOpen: false }"
     x-init="() => $watch('menuOpen', (value) => document.body.style.overflow = value ? 'hidden' : 'auto')">
 
     <button @click="menuOpen = !menuOpen; $nextTick(() => setTimeout(() => $refs.overlay.scrollTop = 0, 200))"
@@ -27,7 +27,7 @@
 
 
     <div id="about" x-show="menuOpen" x-ref="overlay"
-        class="h-full w-full flex flex-col fixed bottom-0 left-0 backdrop-blur-md bg-white/50 overflow-y-scroll pb-6"
+        class="h-full w-full flex flex-col fixed bottom-0 left-0 backdrop-blur-md bg-white/50 dark:bg-black/50 overflow-y-scroll pb-6"
         x-transition:enter="transition duration-700 ease-in-out" x-transition:enter-start="translate-y-full"
         x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in-out duration-700"
         x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full">

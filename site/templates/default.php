@@ -3,7 +3,7 @@
 
 <?php snippet('head') ?>
 
-<body>
+<body class="dark:text-white">
 	<?php snippet('header') ?>
 	<main>
 		<h1><?= $page->title() ?></h1>

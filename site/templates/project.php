@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-screen">
+<html lang="en" class="h-screen dark:text-white">
 
 <?php snippet('head') ?>
 <?php
@@ -9,10 +9,10 @@ $style = "background-color: $hslaColor";
 <script src="https://player.vimeo.com/api/player.js"></script>
 
 
-<body style="<?= $style ?>" class="h-full ">
+<body style="<?= $style ?>" class="h-full no-scrollbar">
     <?php snippet('header') ?>
 
-    <main class="bg-white/10 h-full overflow-scroll ">
+    <main class="bg-white/10 h-full overflow-scroll no-scrollbar">
         <div class="px-3 pt-1 lg:grid lg:grid-cols-6">
 
             <div
