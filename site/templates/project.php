@@ -42,9 +42,10 @@ $style = "background-color: $hslaColor";
                 <?= $page->description()->kt() ?>
             </article>
 
-
             <!-- ADDITIONAL INFO -->
             <div class="lg:col-start-2 lg:col-span-4 font-serif">
+
+                <!-- PRESSKITS -->
                 <?php if ($page->presskits()->kt()->isNotEmpty()): ?>
                     <h3 class="all-small-caps pt-6 text-sm">presskits</h3>
                     <?php
@@ -60,21 +61,57 @@ $style = "background-color: $hslaColor";
                     ?>
                 <?php endif; ?>
 
-
-                <?php
-                $items = $page->additionalInfo()->toStructure();
-                foreach ($items as $item): ?>
-                    <div class="flex flex-col">
-                        <h3 class="font-serif text-sm all-small-caps pt-4"><?= $item->additionalDetails()->kt() ?></h3>
-                        <div class="flex flex-row gap-5 text-base">
-                            <?php if ($item->date()->kt()->isNotEmpty()): ?>
-                                <div class="flex flex-row gap-0.5"><?= $item->date()->kt() ?>–<?= $item->dateUntil()->kt() ?>
-                                </div>
-                            <?php endif; ?>
-                            <?= $item->value()->kt() ?>
+                <!-- COLLABORATION -->
+                <?php if ($page->collaboration()->kt()->isNotEmpty()): ?>
+                    <h3 class="all-small-caps pt-6 text-sm">in collaboration with</h3>
+                    <?php
+                    $presskits = $page->collaboration()->toStructure();
+                    foreach ($presskits as $linkObject):
+                        ?>
+                        <div class="flex flex-row gap-3 text-base">
+                            <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>> <?= $linkObject->name()->or($linkObject->link()) ?>
+                            </a>
                         </div>
-                    </div>
-                <?php endforeach ?>
+                        <?php
+                    endforeach;
+                    ?>
+                <?php endif; ?>
+
+                <!-- SUPPORT OF -->
+                <?php if ($page->supportOf()->kt()->isNotEmpty()): ?>
+                    <h3 class="all-small-caps pt-6 text-sm">With the Support of</h3>
+                    <?php
+                    $presskits = $page->supportOf()->toStructure();
+                    foreach ($presskits as $linkObject):
+                        ?>
+                        <div class="flex flex-row gap-3 text-base">
+                            <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>> <?= $linkObject->name()->or($linkObject->link()) ?>
+                            </a>
+                        </div>
+                        <?php
+                    endforeach;
+                    ?>
+                <?php endif; ?>
+
+
+                <!-- NEXT VIEWINGS -->
+                <?php if ($page->nextViewings()->toStructure()->isNotEmpty()): ?>
+                    <?php
+                    $items = $page->nextViewings()->toStructure();
+                    foreach ($items as $item): ?>
+                        <div class="flex flex-col">
+                            <h3 class="all-small-caps pt-6 text-sm">Next Viewings</h3>
+                            <div class="flex flex-wrap gap-x-5 text-base">
+                                <?php if ($item->date()->isNotEmpty()): ?>
+                                    <div class="flex flex-row gap-0.5"><?= $item->date()->toDate('%B, %d') ?> – <?= $item->dateUntil()->toDate('%B, %d %G') ?>
+                                    </div>
+                                <?php endif; ?>
+                                <?= $item->name()->kt() ?>
+                            </div>
+                        </div>
+                    <?php endforeach ?>
+                <?php endif; ?>
+
             </div>
 
             <!-- BILDER -->

@@ -84,11 +84,11 @@
                 $presskits = $site->page('about')->press()->toStructure();
                 foreach ($presskits as $linkObject):
                     ?>
-                    <div class="flex flex-row gap-3 text-base">
-                        <div class="w-[10%]">
-                            <?= $linkObject->date()->toDate('Y') ?>
+                    <div class="flex gap-x-3 text-base">
+                        <div class="">
+                            <?= $linkObject->date()->toDate('%G') ?>
                         </div>
-                        <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                        <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
                             <?= $linkObject->title()->or($linkObject->link()) ?>
                         </a>
                     </div>
@@ -102,11 +102,11 @@
                 $exhibitions = $site->page('about')->exhibitions()->toStructure();
                 foreach ($exhibitions as $linkObject):
                     ?>
-                    <div class="flex flex-row gap-3 text-base">
-                        <div class="w-[10%]">
-                            <?= $linkObject->year()->toDate('Y') ?>
+                    <div class="flex gap-x-3 text-base">
+                        <div class="">
+                            <?= $linkObject->year()->toDate('%G') ?>
                         </div>
-                        <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                        <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
                             <?= $linkObject->title()->or($linkObject->link()) ?>
                         </a>
                     </div>
@@ -122,11 +122,12 @@
                 $upcoming = $site->page('about')->upcoming()->toStructure();
                 foreach ($upcoming as $linkObject):
                     ?>
-                    <div class="flex flex-row gap-3 text-base">
-                        <div class="w-[10%]">
-                            <?= $linkObject->date()->toDate('Y') ?>
+                    <div class="flex gap-x-3 text-base">
+                        <div class="">
+                            <?= $linkObject->date()->toDate('%b, %d') ?>
                         </div>
-                        <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                        <a class="flex flex-wrap"
+                        href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
                             <?= $linkObject->title()->or($linkObject->link()) ?>
                         </a>
                     </div>
@@ -138,11 +139,11 @@
                 <?php $items = $site->page('about')->awards()->toStructure();
                 foreach ($items as $item):
                     ?>
-                    <div class="flex flex-row gap-3 text-base">
-                        <div class="w-[10%]">
-                            <?= $item->year()->toDate('Y') ?>
+                    <div class="flex gap-x-3 text-base">
+                        <div class="">
+                            <?= $item->year()->toDate('%G') ?>
                         </div>
-                        <?= $item->title()->kt() ?>
+                        <div class="flex flex-wrap"><?= $item->title()->kt() ?></div>
                     </div>
                     <?php
                 endforeach;

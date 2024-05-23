@@ -19,5 +19,8 @@ return [
   ],
   'panel' => [
     'install'             => true
+  ],
+  'date'  => [
+    'handler' => 'strftime'
   ]
 ];

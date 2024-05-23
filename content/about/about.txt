@@ -10,7 +10,10 @@ Presskits:
 
 - 
   toggle: 'true'
-  title: Presskit 1
+  title: >
+    Presskit 1 f jdksl fjdkls jfdkls fjkdls
+    jfkdls fjkdsl fjkdsl fjkdsl fjkdsl
+    fjkdsl fjkslda
   target: 'true'
   link: https://www.google.com/
   date: 2024-04-01
@@ -45,7 +48,11 @@ Presskits:
 Press:
 
 - 
-  title: Selected Press 1
+  title: >
+    Selected Press 1 blablabla s fhdskl
+    jkfdls jfkdls afjkdls fjkdls fjkdls
+    fjkdsl fdkjsla fdsl fjdksl fjdksl jfkdsl
+    jfkdsl jfkdsl fklsd
   link: https://www.google.com/
   target: 'true'
   date: 2024-04-11
@@ -101,14 +108,16 @@ Press:
 
 ----
 
-Clients: <ul><li><a href="https://oysurf.com/" target="_blank">Oy Surf</a></li><li><a href="https://martinaholenstein.ch/" target="_blank">fdsdsafdsa</a></li><li>fdsfdsaf</li><li>fdafds</li><li>dfsafdsa</li><li>fdsa</li></ul>
+Clients: <ul><li><a href="https://oysurf.com/" target="_blank">Oy Surf</a></li><li><a href="https://martinaholenstein.ch/" target="_blank">fdsdsafdsa</a></li><li>fdsfdsaf</li><li>fdafds</li><li>dfsafdsa</li><li>fdsa jfkdls fjklds fjdkls fkdsl fjkdsl fkjdsl fkdsl fdkjslf skl fs (:s fds fdsfdsfjhdsfjkdslfjkdsl jfkdlsfjksld</li></ul>
 
 ----
 
 Upcoming:
 
 - 
-  title: MoMa
+  title: >
+    MoMa fjdkls jfkdls jfkdsl fjkdsl fjkdsl
+    fdkjsla
   link: https://www.google.com/
   target: 'true'
   date: 2024-08-16
@@ -120,7 +129,7 @@ Upcoming:
 Exhibitions:
 
 - 
-  title: Museum für Gestaltung
+  title: 'Museum für Gestaltung  fjkdls fjdkls fjkdsl fjkdsl fkdl fdskla fjdkls fjkdls fkjdsl fjkdls fjdksl öfs'
   link: ""
   target: 'false'
   year: 2022-10-04

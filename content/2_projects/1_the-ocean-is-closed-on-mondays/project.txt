@@ -6,23 +6,21 @@ Description: <p>The Ocean Is Closed on Mondays is a short film exploring what’
 
 ----
 
-Additionalinfo:
+Supportof:
 
 - 
-  additionaldetails: nextViewings
-  value: '<p>Swiss Art Awards</p>'
-  date: 2024-06-11
-  dateuntil: 2024-06-28
+  toggle: 'true'
+  name: Migros Kulturprozent
+  target: true
+  link: https://google.com
+
+----
+
+Collaboration:
+
 - 
-  additionaldetails: support
-  value: '<p>Migros Kulturprozent</p>'
-  date: ""
-  dateuntil: ""
-- 
-  additionaldetails: collaboration
-  value: '<p>Guido Offermans</p>'
-  date: ""
-  dateuntil: ""
+  toggle: 'true'
+  name: '<p><a href="https://martinaholenstein.ch" target="_blank">Martina holenstein</a></p>'
 
 ----
 
@@ -33,6 +31,16 @@ Presskits:
   title: The Ocean is Closed on Mondays
   target: 'true'
   link: https://www.google.com/
+
+----
+
+Nextviewings:
+
+- 
+  toggle: 'true'
+  name: '<p><a href="https://google.com" target="_blank" title="MoMa Google">MOMA</a> Modern Museum of Arts in  New York City</p>'
+  date: 2024-05-09
+  dateuntil: 2024-05-29
 
 ----
 
@@ -135,3 +143,16 @@ Color: #529648
 ----
 
 Uuid: lJtun2TlkMLmQAfy
+
+----
+
+Nextviewingss:
+
+- 
+  toggle: 'true'
+  name: '<p><a href="https://google.com" target="_blank" title="MoMa Google">MoMa</a></p>'
+  date: 2001-01-18
+  dateuntil: 2024-05-20
+  title: null
+  target: true
+  link: ""
