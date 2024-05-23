@@ -51,6 +51,22 @@ module.exports = {
   variants: {},
   plugins: [
     require('tailwindcss-opentype'),
+    function ({ addBase, theme }) {
+      addBase({
+        '.dark .text-sm': {
+          letterSpacing: "0.105rem",
+        },
+        '.dark .text-base': {
+          letterSpacing: "0.095rem",
+        },
+        '.dark .text-md': {
+          letterSpacing: "0.035rem",
+        },
+        '.dark .text-lg': {
+          letterSpacing: "0.035rem",
+        },
+      });
+    },
     function ({ addUtilities }) {
       const newUtilities = {
         ".no-scrollbar::-webkit-scrollbar": {
