@@ -25,35 +25,12 @@
     ?>
   </ul>
 
+  <button x-data
+          @click="$store.darkMode.toggle()"
+          class="fixed w-4 h-4 bottom-3 z-30 left-3 bg-neutral-900 rounded-full dark:bg-white"
+  ></button>
+
   <?php snippet('projectDrawer') ?>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      let darkMode = localStorage.getItem('darkMode') === 'true';
-
-      const updateDarkMode = () => {
-        document.documentElement.classList.toggle('dark', darkMode);
-        button.classList.toggle('bg-white', darkMode);
-        button.classList.toggle('bg-neutral-900', !darkMode);
-        button.classList.toggle('text-black', darkMode);
-        button.classList.toggle('text-white', !darkMode);
-      };
-
-      const toggleDarkMode = () => {
-        darkMode = !darkMode;
-        localStorage.setItem('darkMode', darkMode);
-        updateDarkMode();
-      };
-
-      const button = document.createElement('button');
-      button.className = 'fixed w-4 h-4 bottom-3 z-20 left-3 bg-neutral-900 rounded-full';
-      button.addEventListener('click', toggleDarkMode);
-
-      updateDarkMode();
-
-      document.body.appendChild(button);
-    });
-  </script>
 
 </main>
 

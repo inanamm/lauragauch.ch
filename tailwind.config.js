@@ -5,7 +5,7 @@ module.exports = {
     'site/templates/**/*.php',
     'site/snippets/**/*.php',
   ],
-  darkMode: "class",
+  darkMode: 'selector',
   theme: {
     extend: {
       fontFamily: {
@@ -51,7 +51,7 @@ module.exports = {
   variants: {},
   plugins: [
     require('tailwindcss-opentype'),
-    function ({ addBase, theme }) {
+    function ({addBase, theme}) {
       addBase({
         '.dark .text-sm': {
           letterSpacing: "0.105rem",
@@ -67,7 +67,7 @@ module.exports = {
         },
       });
     },
-    function ({ addUtilities }) {
+    function ({addUtilities}) {
       const newUtilities = {
         ".no-scrollbar::-webkit-scrollbar": {
           display: "none",
