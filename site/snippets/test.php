@@ -3,7 +3,7 @@
   class="top lg:grid w-full h-full lg:grid-cols-6 grid-row px-3 font-sans lg:text-lg text-md pb-20 gap-6 overflow-scroll no-scrollbar"
 >
 
-  <div class="col-start-2 col-span-4 text-center lg:text-lg text-md pt-16 lg:pt-3">
+  <div class="col-start-2 col-span-4 text-center lg:text-lg text-md pt-16 lg:pt-18">
     <?= $page->title()->kt() ?>
     <a id="project-url" href="" target="_blank"
        class="leading-tight block font-serif text-sm all-small-caps text-center pt-1.5"
