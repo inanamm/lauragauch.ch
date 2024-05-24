@@ -52,7 +52,7 @@
 						if ($project->vimeo()->isNotEmpty()) { ?>
 							<figure class="videoindex relative w-full h-32 lg:h-60 max-h-96 overflow-hidden">
 								<iframe id="vimeo-iframe" class="w-full h-full"
-									src="https://player.vimeo.com/video/<?= $project->vimeo()->escape() ?>" frameborder="0"
+									src="https://player.vimeo.com/video/<?= $project->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0" frameborder="0"
 									webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 							</figure>
 						<?php } ?>
