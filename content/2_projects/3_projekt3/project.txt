@@ -6,28 +6,11 @@ Description: <p>Blablablblablab Blablablblablab Blablablblablab Blablablblablab 
 
 ----
 
-Additionalinfo:
+Supportof: 
 
-- 
-  additionaldetails: support
-  value: '<p>Martina Holenstein</p>'
-  date: ""
-  dateuntil: ""
-- 
-  additionaldetails: collaboration
-  value: '<p><a href="https://martinaholenstein.ch/" target="_blank" title="Martina Holenstein">martina holenstein</a></p>'
-  date: ""
-  dateuntil: ""
-- 
-  additionaldetails: links
-  value: '<p><a href="https://martinaholenstein.ch/" target="_blank" title="here">see here</a></p>'
-  date: ""
-  dateuntil: ""
-- 
-  additionaldetails: nextViewings
-  value: '<p>Kino Xenix</p>'
-  date: 2024-05-21
-  dateuntil: ""
+----
+
+Collaboration: 
 
 ----
 
@@ -38,6 +21,10 @@ Presskits:
   title: Infoblatt
   target: 'true'
   link: https://martinaholenstein.ch/
+
+----
+
+Nextviewings: 
 
 ----
 
@@ -60,9 +47,6 @@ Gallery:
 ----
 
 Vimeo: 
-- file://qubHlkgdgdhxxl46
-- file://irhsFHotZJQyJ3Hn
-- file://SsV04bWVbarVTQ5x
 
 ----
 
@@ -127,6 +111,31 @@ Robotssnippet: false
 ----
 
 Metainherit: 
+
+----
+
+Additionalinfo:
+
+- 
+  additionaldetails: support
+  value: '<p>Martina Holenstein</p>'
+  date: ""
+  dateuntil: ""
+- 
+  additionaldetails: collaboration
+  value: '<p><a href="https://martinaholenstein.ch/" target="_blank" title="Martina Holenstein">martina holenstein</a></p>'
+  date: ""
+  dateuntil: ""
+- 
+  additionaldetails: links
+  value: '<p><a href="https://martinaholenstein.ch/" target="_blank" title="here">see here</a></p>'
+  date: ""
+  dateuntil: ""
+- 
+  additionaldetails: nextViewings
+  value: '<p>Kino Xenix</p>'
+  date: 2024-05-21
+  dateuntil: ""
 
 ----
 
