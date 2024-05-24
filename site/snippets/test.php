@@ -1,18 +1,18 @@
 <article
   style="background-color: <?= $bgColor ?>"
-  class="top grid w-full h-full lg:grid-cols-6 grid-row px-3 font-sans lg:text-lg text-md pb-20 gap-6 overflow-scroll backdrop-blur-md"
+  class="top lg:grid w-full h-full lg:grid-cols-6 grid-row px-3 font-sans lg:text-lg text-md pb-20 gap-6 overflow-scroll no-scrollbar"
 >
 
-  <div class="col-start-2 col-span-4 text-center lg:text-lg text-md pt-16 lg:pt-24">
+  <div class="col-start-2 col-span-4 text-center lg:text-lg text-md pt-16 lg:pt-3">
     <?= $page->title()->kt() ?>
+    <a id="project-url" href="" target="_blank"
+       class="leading-tight block font-serif text-sm all-small-caps text-center pt-1.5"
+       data-copy-to-clipboard="project-url">Share this project
+    </a>
   </div>
 
-  <a id="project-url" href="" target="_blank"
-     class="block font-serif text-sm all-small-caps text-center pt-1.5"
-     data-copy-to-clipboard="project-url">Share this project
-  </a>
 
-  <article class="lg:row-start-2 lg:col-start-2 lg:col-end-6 lg:text-lg text-md pt-24 pb-16">
+  <article class="lg:row-start-2 lg:col-start-2 lg:col-end-6 lg:text-lg text-md pt-24 pb-16 ">
     <?= $page->description()->kt() ?>
   </article>
 
