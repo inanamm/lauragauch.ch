@@ -37,7 +37,7 @@
   ></button>
 
 
-  <div class="fixed flex flex-col items-center bottom-2.5 lg:bottom-1 inset-x-20 font-serif text-base leading-tight">
+  <div class="dark:text-white fixed flex flex-col items-center bottom-2.5 lg:bottom-1 inset-x-20 font-serif text-base leading-tight">
     <p class="text-center hidden lg:flex" id="project-more-info">title</p>
     <button
       x-data
@@ -54,7 +54,7 @@
             px-2 lg:p-0
             py-0.5
             backdrop-blur-sm lg:backdrop-blur-0
-            z-20"
+            z-20 dark:text-white"
       aria-label="Navigation Menu"
     >
       More Info
