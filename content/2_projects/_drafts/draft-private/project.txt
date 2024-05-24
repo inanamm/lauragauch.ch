@@ -6,11 +6,23 @@ Description: <p>Blablablblablab Blablablblablab Blablablblablab Blablablblablab 
 
 ----
 
-Additionalinfo: 
+Supportof: 
+
+----
+
+Collaboration:
+
+- 
+  toggle: 'true'
+  name: '<p>Guido</p>'
 
 ----
 
 Presskits: 
+
+----
+
+Nextviewings: 
 
 ----
 
@@ -92,6 +104,10 @@ Robotssnippet: default
 ----
 
 Metainherit: 
+
+----
+
+Additionalinfo: 
 
 ----
 

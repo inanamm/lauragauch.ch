@@ -53,7 +53,7 @@ $style = "background-color: $hslaColor";
                     foreach ($presskits as $linkObject):
                         ?>
                         <div class="flex flex-row gap-3 text-base">
-                            <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>> <?= $linkObject->title()->or($linkObject->link()) ?>
+                            <a href="<?= $linkObject->link()->toUrl() ?>"<?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>> <?= $linkObject->title()->or($linkObject->link()) ?>
                             </a>
                         </div>
                         <?php
@@ -65,12 +65,11 @@ $style = "background-color: $hslaColor";
                 <?php if ($page->collaboration()->kt()->isNotEmpty()): ?>
                     <h3 class="all-small-caps pt-6 text-sm">in collaboration with</h3>
                     <?php
-                    $presskits = $page->collaboration()->toStructure();
-                    foreach ($presskits as $linkObject):
+                    $collabs = $page->collaboration()->toStructure();
+                    foreach ($collabs as $object):
                         ?>
                         <div class="flex flex-row gap-3 text-base">
-                            <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>> <?= $linkObject->name()->or($linkObject->link()) ?>
-                            </a>
+                            <a href="<?= $object->name()->text() ?>" <?= $object->target()->toBool() ? 'target="_blank"' : '' ?>></a>
                         </div>
                         <?php
                     endforeach;

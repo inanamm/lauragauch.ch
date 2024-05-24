@@ -6,34 +6,31 @@ Description: <p>1 Blablablblablab Blablablblablab Blablablblablab Blablablblabla
 
 ----
 
-Additionalinfo:
-
-- 
-  additionaldetails: nextViewings
-  value: '<p>Moma</p>'
-  date: 2024-05-03
-  dateuntil: 2024-05-31
+Supportof: 
 
 ----
 
-Presskits: 
+Collaboration:
+
+- 
+  toggle: 'true'
+  name: '<p><a href="https://google.com" target="_blank" title="blabla">Guido</a></p>'
+
+----
+
+Presskits:
+
+- 
+  toggle: 'true'
+  title: '<p><a href="mailto:laura@lauragauch.com">Hallo</a></p>'
+
+----
+
+Nextviewings: 
 
 ----
 
 Backgroundcolor: hsl(0 100% 66%)
-
-----
-
-Gallery:
-
-- file://dJaSb8HjLMfq8mnO
-- file://ki2GpPc6JVWefRaO
-- file://aAxedf2IVOpups5g
-- file://cXTfks8WwR37U5YF
-
-----
-
-Vimeo: 
 
 ----
 
@@ -44,6 +41,10 @@ Gallery:
 - file://cubAdMZH2nQs4RXy
 - file://UuJsekzHqTxUYk0g
 - file://UpgKnkRDduDGdHLE
+
+----
+
+Vimeo: 
 
 ----
 
@@ -108,6 +109,16 @@ Robotssnippet: false
 ----
 
 Metainherit: 
+
+----
+
+Additionalinfo:
+
+- 
+  additionaldetails: nextViewings
+  value: '<p>Moma</p>'
+  date: 2024-05-03
+  dateuntil: 2024-05-31
 
 ----
 
