@@ -12,6 +12,7 @@
   "dependencies": {
     "@glidejs/glide": "^3.6.0",
     "alpinejs": "^3.13.10",
+    "htmx.org": "^1.9.12",
     "motion": "^10.17.0",
     "swup": "^4.6.1",
     "tailwindcss-opentype": "^1.1.0"

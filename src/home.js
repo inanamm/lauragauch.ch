@@ -1,36 +1,15 @@
 import Alpine from "alpinejs";
-import drawer from './drawer.js'
+import Htmx from 'htmx.org';
+
+import projectDrawer from './projectDrawer.js'
+import darkMode from './darkMode.js'
+
+window.htmx = Htmx;
+console.log('initialized htmx');
 
 window.Alpine = Alpine;
-Alpine.data('drawer', drawer);
-
-Alpine.store('darkMode', {
-  init() {
-    const systemPrefersDarkMode = localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    this.on = systemPrefersDarkMode
-
-    if (systemPrefersDarkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  },
-
-  on: false,
-
-  toggle() {
-    this.on = !this.on
-    if (this.on) {
-      localStorage.theme = 'dark'
-      document.documentElement.classList.add('dark')
-    } else {
-      localStorage.theme = 'light'
-      document.documentElement.classList.remove('dark')
-    }
-  }
-})
-
-
+Alpine.store('darkMode', darkMode);
+Alpine.store('projectDrawer', projectDrawer);
 Alpine.start();
 
 class ProjectImageHandler {
@@ -79,6 +58,28 @@ class ProjectImageHandler {
     document.getElementById("project-more-info").innerText = title;
   }
 
+  showStructures(items, elementId) {
+    const presskitsElement = document.getElementById(elementId);
+    const presskitsTitleElement = document.getElementById(`${elementId}-title`);
+    while (presskitsElement.firstChild) {
+      presskitsElement.removeChild(presskitsElement.firstChild);
+    }
+
+    presskitsTitleElement.style.display = "block"
+    if (!items.length) {
+      presskitsTitleElement.style.display = "none";
+    }
+    items.forEach(kit => {
+      const anchorTag = document.createElement('a');
+      anchorTag.href = kit.link;
+      anchorTag.innerText = kit.title;
+      if (!!kit.toggle) {
+        anchorTag.target = "_blank";
+      }
+      presskitsElement.appendChild(anchorTag.cloneNode(true));
+    });
+  }
+
   showActiveProjectInfoOnDrawer({title, description, backgroundColor, pressKits, url}) {
     document.getElementById("project-title").innerText = title;
     document.getElementById("navigation").style.backgroundColor = backgroundColor;
@@ -92,19 +93,11 @@ class ProjectImageHandler {
     const descriptionNodes = parser.parseFromString(description, "text/html");
     Array.from(descriptionNodes.body.childNodes).forEach(item => descriptionElement.appendChild(item.cloneNode(true)));
 
-    const presskitsElement = document.getElementById("project-presskits");
-    while (presskitsElement.firstChild) {
-      presskitsElement.removeChild(presskitsElement.firstChild);
-    }
-    pressKits.forEach(kit => {
-      const anchorTag = document.createElement('a');
-      anchorTag.href = kit.link;
-      anchorTag.innerText = kit.title;
-      if (!!kit.toggle) {
-        anchorTag.target = "_blank";
-      }
-      presskitsElement.appendChild(anchorTag.cloneNode(true));
-    });
+    this.showStructures(pressKits, "project-presskits");
+    this.showStructures(pressKits, "project-collaborations");
+    this.showStructures(pressKits, "project-support");
+    this.showStructures(pressKits, "project-viewings");
+
   }
 }
 

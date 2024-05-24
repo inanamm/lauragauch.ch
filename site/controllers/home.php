@@ -21,6 +21,7 @@ return function ($site) {
             }
 
             $projectInfo = (object)[
+                "id" => $project->id(),
                 "image" => $image,
                 "title" => $project->title()->value(),
                 "url" => $project->url(),
