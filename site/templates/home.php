@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="h-screen dark dark:bg-black">
+<html lang="en" class="h-screen dark dark:bg-black transition-colors duration-700">
 
 <?php snippet('head') ?>
 
-<body class="h-full grid grid-rows-12 bg:white dark:bg-black no-scrollbar">
+<body class="h-full grid grid-rows-12 bg:white no-scrollbar">
 <header class="row-span-3">
   <nav class="flex gap-16 font-serif ">
     <h2 class="ml-3"><?php snippet('projectIndex') ?></h2>
