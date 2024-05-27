@@ -16,6 +16,7 @@
     class="flex flex-col lg:flex-row lg:overflow-x-scroll gap-1 lg:gap-10 w-full items-center px-12 lg:px-0 lg:h-full no-scrollbar scroll-smooth snap-y lg:snap-x snap-mandatory pb-24 lg:pb-0">
     <?php foreach ($projects as $project): ?>
       <figure
+        @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
         hx-get="/htmx/<?= $project->id ?>" hx-trigger="click" hx-target="#content"
         class="h-full flex-none snap-always snap-center opacity-90 hover:opacity-100"
         data-project='<?= json_encode($project->title) ?>'
@@ -41,11 +42,11 @@
   <div
     class="dark:text-white fixed flex flex-col items-center bottom-2.5 lg:bottom-1 inset-x-20 font-serif text-base leading-tight"
   >
-    <p class="text-center hidden lg:flex" id="project-more-info">title</p>
-
+    <p class="text-center hidden lg:flex"
+       x-data x-text="$store.activeProject.activeProjectName"></p>
     <button
       x-data
-      @click="$store.projectDrawer.toggle(); $nextTick(() => { setTimeout(() => $refs.projectOverlay.scrollTop = 0, 200); })"
+      @click="$store.projectDrawer.toggle(); $nextTick(() => { htmx.ajax('GET', `/htmx/${$store.activeProject.activeProjectId}`, '#content'); })"
       :aria-expanded="$store.projectDrawer.open"
       aria-controls="navigation"
       class="hover:underline underline-offset-2 all-small-caps text-sm font-serif lg:hover:underline lg:underline-offset-2 rounded-lg lg:rounded-none
@@ -61,8 +62,5 @@
   <?php snippet('projectDrawer') ?>
 
 </main>
-
-<?= vite()->js('home.js') ?>
 </body>
-
 </html>
