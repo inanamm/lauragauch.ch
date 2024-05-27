@@ -46,28 +46,3 @@
 
   </div>
 </div>
-
-<script>
-  // Function to copy text to clipboard
-  function copyToClipboard(text) {
-    var textarea = document.createElement('textarea');
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
-  }
-
-  // Event listener to copy text to clipboard
-  document.addEventListener('click', function (event) {
-    var target = event.target;
-    if (target.closest("[data-copy-to-clipboard]")) {
-      event.preventDefault(); // Prevent default link behavior
-      copyToClipboard(target.dataset.copyToClipboard);
-      target.classList.add("is-active");
-      setTimeout(function () {
-        target.classList.remove("is-active");
-      }, 1000);
-    }
-  });
-</script>

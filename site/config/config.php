@@ -1,7 +1,5 @@
 <?php
 
-use Kirby\Cms\Response;
-
 return [
     'locale' => [
         'en_CH.utf-8'
@@ -30,10 +28,10 @@ return [
         [
             'pattern' => 'htmx/projects/(:any)',
             'action' => function ($pageId,) {
-                $firstPage = page('projects')->find($pageId);
-                return snippet('test', [
-                    'page' => $firstPage,
-                    "bgColor" => slothieHelpers()->HSLtoHSLA($firstPage->backgroundColor()->value(), 0.8),
+                $projectPage = page('projects')->find($pageId);
+                return snippet('projectInfo', [
+                    'page' => $projectPage,
+                    "backgroundColor" => slothieHelpers()->HSLtoHSLA($projectPage->backgroundColor()->value(), 0.8),
                 ], true);
             }
         ],

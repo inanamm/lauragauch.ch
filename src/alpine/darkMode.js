@@ -14,6 +14,10 @@ export default {
 
   toggle() {
     this.on = !this.on
+    this.applyDarkMode();
+  },
+
+  applyDarkMode() {
     if (this.on) {
       localStorage.theme = 'dark'
       document.documentElement.classList.add('dark')
@@ -22,4 +26,5 @@ export default {
       document.documentElement.classList.remove('dark')
     }
   }
+
 }

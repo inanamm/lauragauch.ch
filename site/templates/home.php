@@ -17,8 +17,8 @@
     <?php foreach ($projects as $project): ?>
       <figure
         hx-get="/htmx/<?= $project->id ?>" hx-trigger="click" hx-target="#content"
-        class="h-full flex-none snap-always snap-center"
-        data-project='<?= json_encode($project) ?>'
+        class="h-full flex-none snap-always snap-center opacity-90 hover:opacity-100"
+        data-project='<?= json_encode($project->title) ?>'
         x-data
         @click="$store.projectDrawer.toggle()"
       >
@@ -31,28 +31,25 @@
     ?>
   </ul>
 
-  <button x-data
-          @click="$store.darkMode.toggle()"
-          class="fixed w-4 h-4 bottom-3 z-30 left-3 bg-neutral-900 rounded-full dark:bg-white"
+  <button
+    x-data
+    @click="$store.darkMode.toggle()"
+    class="fixed w-4 h-4 bottom-3 z-30 left-3 bg-neutral-900 rounded-full dark:bg-white"
   ></button>
 
 
-  <div class="dark:text-white fixed flex flex-col items-center bottom-2.5 lg:bottom-1 inset-x-20 font-serif text-base leading-tight">
+  <div
+    class="dark:text-white fixed flex flex-col items-center bottom-2.5 lg:bottom-1 inset-x-20 font-serif text-base leading-tight"
+  >
     <p class="text-center hidden lg:flex" id="project-more-info">title</p>
+
     <button
       x-data
       @click="$store.projectDrawer.toggle(); $nextTick(() => { setTimeout(() => $refs.projectOverlay.scrollTop = 0, 200); })"
       :aria-expanded="$store.projectDrawer.open"
       aria-controls="navigation"
-      class="hover:underline underline-offset-2
-            all-small-caps
-            text-sm
-            font-serif
-            lg:hover:underline lg:underline-offset-2
-            rounded-lg lg:rounded-none
-            bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent
-            px-2 lg:p-0
-            py-0.5
+      class="hover:underline underline-offset-2 all-small-caps text-sm font-serif lg:hover:underline lg:underline-offset-2 rounded-lg lg:rounded-none
+            bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent px-2 lg:p-0 py-0.5
             backdrop-blur-sm lg:backdrop-blur-0
             z-20 dark:text-white"
       aria-label="Navigation Menu"
