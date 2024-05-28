@@ -1,8 +1,10 @@
 <button
   x-ref="copyToClipboardRef"
-  class="leading-tight block font-serif text-sm all-small-caps text-center pt-1 overflow-hidden hover:underline
-  bottom-2.5 lg:top-2 lg:bottom-auto
-        right-3 lg:left-3 lg:right-auto
+  class="leading-tight font-serif text-sm all-small-caps text-center pt-1 overflow-hidden hover:underline
+        lg:block absolute lg:relative
+        bottom-2.5 lg:bottom-auto
+        left-auto right-auto
+        bg-white/65 lg:bg-transparent
         lg:hover:underline lg:underline-offset-2 
         rounded-lg lg:rounded-none 
         px-2 lg:p-0
