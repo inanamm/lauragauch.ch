@@ -1,9 +1,9 @@
 <article
   style="background-color: <?= $backgroundColor ?>"
-  class="top lg:grid w-full h-full lg:grid-cols-6 grid-row px-3 font-sans lg:text-lg text-md pb-20 gap-6 overflow-scroll no-scrollbar"
+  class="top lg:grid w-full h-full lg:grid-cols-6 grid-row px-3 font-sans lg:text-lg text-md pb-20 gap-6 overflow-scroll no-scrollbar scroll-smooth"
 >
 
-  <div class="flex flex-col items-center col-start-2 col-span-4 text-center lg:text-lg text-md pt-16 lg:pt-18">
+  <div class="flex flex-col items-center col-start-2 col-span-4 text-center lg:text-lg text-md pt-3 lg:pt-18">
     <?= $page->title()->kt() ?>
     <?php snippet(
       'copyToClipboard', ["copyText" => $page->url(), "buttonText" => "Share this project"]) ?>

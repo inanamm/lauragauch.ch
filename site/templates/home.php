@@ -40,7 +40,7 @@
 
 
   <div
-    class="dark:text-white fixed flex flex-col items-center bottom-2.5 lg:bottom-1 inset-x-20 font-serif text-base leading-tight"
+    class="flex dark:text-white fixed flex-col items-center bottom-2.5 lg:bottom-1 inset-x-20 font-serif text-base leading-tight"
   >
     <p class="text-center hidden lg:flex"
        x-data x-text="$store.activeProject.activeProjectName"></p>

@@ -2,8 +2,8 @@
     x-init="() => $watch('menuOpen', (value) => document.body.style.overflow = value ? 'hidden' : 'auto')">
 
     <button @click="menuOpen = !menuOpen; $nextTick(() => setTimeout(() => $refs.overlay.scrollTop = 0, 200))"
-        class="fixed top-1 right-3 z-30" :aria-expanded="menuOpen" aria-controls="navigation"
-        aria-label="Navigation Menu">
+        class="fixed top-1 right-3 z-30" :aria-expanded="menuOpen.toString()" aria-controls="about"
+        aria-label="About">
         <h1 class="font-sans lg:text-lg text-md">
             Laura Gauch
         </h1>
@@ -21,15 +21,15 @@
         px-2 lg:p-0
         py-0.5 
         backdrop-blur-sm lg:backdrop-blur-0"
-        :aria-expanded="menuOpen" aria-controls="navigation" aria-label="Navigation Menu">
+        :aria-expanded="menuOpen.toString()" aria-controls="about" aria-label="About">
         close
     </button>
 
 
     <div id="about" x-show="menuOpen" x-ref="overlay"
         class="h-full w-full flex flex-col fixed bottom-0 left-0 backdrop-blur-md bg-white/50 dark:bg-black/50 overflow-y-scroll pb-6"
-        x-transition:enter="transition duration-700 ease-in-out" x-transition:enter-start="translate-y-full"
-        x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in-out duration-700"
+        x-transition:enter="transition duration-1000 ease-in-out" x-transition:enter-start="translate-y-full"
+        x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in-out duration-1000"
         x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full">
 
 

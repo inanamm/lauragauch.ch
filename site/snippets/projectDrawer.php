@@ -1,14 +1,15 @@
 <div
-  class="grid grid-rows-5 lg:grid-rows-3 dark:text-white fixed inset-0 h-screen z-40 overflow-y-scroll no-scrollbar"
+  class="grid grid-rows-5 lg:grid-rows-3 dark:text-white fixed inset-0 h-screen z-40 overflow-y-scroll no-scrollbar "
   x-data
   x-show="$store.projectDrawer.open"
-  x-transition:enter="transition duration-500 ease-in-out"
+  x-transition:enter="transition duration-1000 ease-in-out"
   x-transition:enter-start="translate-y-full"
   x-transition:enter-end="translate-y-0"
-  x-transition:leave="transition ease-in-out duration-500"
+  x-transition:leave="transition ease-in-out duration-1000"
   x-transition:leave-start="translate-y-0"
   x-transition:leave-end="translate-y-full"
 >
+
 
   <div x-data class="flex h-full w-full opacity-0 row-span-1 lg:row-span-1"
        @click="$store.projectDrawer.toggle()"
@@ -37,8 +38,8 @@
       backdrop-blur-sm lg:backdrop-blur-0
       "
       :aria-expanded="$store.projectDrawer.open"
-      aria-controls="navigation"
-      aria-label="Navigation Menu"
+      aria-controls="projectDetails"
+      aria-label="Project Details"
     >
       close
     </button>
