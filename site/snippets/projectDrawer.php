@@ -1,5 +1,5 @@
 <div
-  class="grid grid-rows-5 lg:grid-rows-3 dark:text-white fixed inset-0 h-screen z-40 overflow-y-scroll no-scrollbar "
+  class="grid grid-rows-5 lg:grid-rows-3 dark:text-white fixed inset-0 h-screen z-30 overflow-y-scroll no-scrollbar "
   x-data
   x-show="$store.projectDrawer.open"
   x-transition:enter="transition duration-1000 ease-in-out"
@@ -27,7 +27,7 @@
       @click="$store.projectDrawer.toggle()"
       x-show="$store.projectDrawer.open"
       x-transition:enter.delay.350ms
-      class="fixed z-40 gap-5 font-serif all-small-caps text-sm hover:underline underline-offset-2
+      class="fixed z-50 gap-5 font-serif all-small-caps text-sm hover:underline underline-offset-2
       bottom-2.5 lg:top-2 lg:bottom-auto
       right-3 lg:left-3 lg:right-auto
       lg:hover:underline lg:underline-offset-2

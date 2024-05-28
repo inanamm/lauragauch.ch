@@ -11,14 +11,14 @@ return function ($site) {
 
         foreach ($images as $image) {
 
-            $pressKits = [];
-            foreach ($project->pressKits()->toStructure() as $pressKit) {
-                $pressKits[] = (object)[
-                    "title" => $pressKit->title()->value(),
-                    "link" => $pressKit->link()->value(),
-                    "toggle" => $pressKit->toggle()->value(),
-                ];
-            }
+            // $pressKits = [];
+            // foreach ($project->pressKits()->toStructure() as $pressKit) {
+            //     $pressKits[] = (object)[
+            //         "title" => $pressKit->title()->value(),
+            //         "link" => $pressKit->link()->value(),
+            //         "toggle" => $pressKit->toggle()->value(),
+            //     ];
+            // }
 
             $projectInfo = (object)[
                 "id" => $project->id(),
@@ -27,7 +27,7 @@ return function ($site) {
                 "url" => $project->url(),
                 "description" => $project->description()->value(),
                 "backgroundColor" => slothieHelpers()->HSLtoHSLA($project->backgroundColor()->value(), 0.8),
-                "pressKits" => $pressKits,
+                // "pressKits" => $pressKits,
             ];
 
             $formattedProjects[] = $projectInfo;

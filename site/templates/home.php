@@ -5,7 +5,7 @@
 
 <body class="h-full grid grid-rows-12 bg:white no-scrollbar">
 <header class="row-span-3">
-  <nav class="flex gap-16 font-serif ">
+  <nav class="flex gap-16 font-serif">
     <h2 class="ml-3"><?php snippet('projectIndex') ?></h2>
     <?php snippet('about') ?>
   </nav>
@@ -52,7 +52,7 @@
       class="hover:underline underline-offset-2 all-small-caps text-sm font-serif lg:hover:underline lg:underline-offset-2 rounded-lg lg:rounded-none
             bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent px-2 lg:p-0 py-0.5
             backdrop-blur-sm lg:backdrop-blur-0
-            z-20 dark:text-white"
+            z-40 dark:text-white"
       aria-label="Navigation Menu"
     >
       More Info

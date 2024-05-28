@@ -2,24 +2,24 @@
     x-init="() => $watch('menuOpen', (value) => document.body.style.overflow = value ? 'hidden' : 'auto')">
 
     <button @click="menuOpen = !menuOpen; $nextTick(() => setTimeout(() => $refs.overlay.scrollTop = 0, 200))"
-        class="fixed top-1 right-3 z-30" :aria-expanded="menuOpen.toString()" aria-controls="about"
+        class="fixed top-1 right-3 z-50" :aria-expanded="menuOpen.toString()" aria-controls="about"
         aria-label="About">
         <h1 class="font-sans lg:text-lg text-md">
             Laura Gauch
         </h1>
     </button>
 
-    <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.550ms 
+    <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.800ms 
         class="fixed 
         bottom-2.5 lg:top-2 lg:bottom-auto
         right-3 lg:left-3 lg:right-auto
-        z-30 
         font-serif all-small-caps text-sm 
         lg:hover:underline lg:underline-offset-2 
         rounded-lg lg:rounded-none 
         bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent
         px-2 lg:p-0
         py-0.5 
+        z-50
         backdrop-blur-sm lg:backdrop-blur-0"
         :aria-expanded="menuOpen.toString()" aria-controls="about" aria-label="About">
         close
