@@ -2,7 +2,7 @@ Title: The Ocean Is Closed on Mondays
 
 ----
 
-Description: <p>The Ocean Is Closed on Mondays is a short film exploring what’s lost through the process of assimilation, reflecting on the challenges that come with Immigration through a survey of the Latinx/Hispanic Community in New York City. The film unravels on the notes of a poem written by Laura Gauch and Elisabet Velasquez. The Ocean Is Closed on Mondays is a short film exploring what’s lost through the process of assimilation, reflecting on the challenges that come with Immigration through a survey of the Latinx/Hispanic Community in New York City. The film unravels on the notes of a poem written by Laura Gauch and Elisabet Velasquez.The Ocean Is Closed on Mondays is a short film exploring what’s lost through the process of assimilation, reflecting on the challenges that come with Immigration through a survey of the Latinx/Hispanic Community in New York City. The film unravels on the notes of a poem written by Laura Gauch and Elisabet Velasquez.The Ocean Is Closed on Mondays is a short film exploring what’s lost through the process of assimilation, reflecting on the challenges that come with Immigration through a survey of the Latinx/Hispanic Community in New York City. The film unravels on the notes of a poem written by Laura Gauch and Elisabet Velasquez.The Ocean Is Closed on Mondays is a short film exploring what’s lost through the process of assimilation, reflecting on the challenges that come with Immigration through a survey of the Latinx/Hispanic Community in New York City. The film unravels on the notes of a poem written by Laura Gauch and Elisabet Velasquez.</p><p>hello kljfdklsjfkdlsjf kdlsa. (: "i am english"</p>
+Description: <p>The Ocean Is Closed on Mondays is a short film exploring what’s lost through the process of assimilation, reflecting on the challenges that come with Immigration through a survey of the Latinx/Hispanic Community in New York City. The film unravels on the notes of a poem written by Laura Gauch and Elisabet Velasquez.</p><p>hello kljfdklsjfkdlsjf kdlsa. (: "i am english"</p>
 
 ----
 
@@ -13,6 +13,9 @@ Supportof:
   name: Migros Kulturprozent
   target: true
   link: https://google.com
+- 
+  toggle: 'true'
+  name: '<p><a href="https://example.com" target="_blank" title="ich">Martina</a></p>'
 
 ----
 
@@ -20,7 +23,10 @@ Collaboration:
 
 - 
   toggle: 'true'
-  name: '<p><a href="https://martinaholenstein.ch" target="_blank">Martina holenstein</a></p>'
+  name: '<p><a href="https://martinaholenstein.ch" target="_blank">Martina Holenstein</a></p>'
+- 
+  toggle: 'true'
+  name: '<p>Guido</p>'
 
 ----
 
@@ -31,6 +37,9 @@ Presskits:
   title: The Ocean is Closed on Mondays
   target: 'true'
   link: https://www.google.com/
+- 
+  toggle: 'true'
+  title: '<p>The <a href="https://example.com" title="OCEAN">OCEAN</a></p>'
 
 ----
 
@@ -41,10 +50,20 @@ Nextviewings:
   name: '<p><a href="https://google.com" target="_blank" title="MoMa Google">MOMA</a> Modern Museum of Arts in  New York City</p>'
   date: 2024-05-09
   dateuntil: 2024-05-29
+- 
+  toggle: 'true'
+  name: '<p>hallotest</p>'
+  date: 2025-08-15
+  dateuntil: 2025-01-30
+- 
+  toggle: 'true'
+  name: '<p>wohnzimmerbar</p>'
+  date: 2024-05-22
+  dateuntil: ""
 
 ----
 
-Backgroundcolor: hsl(220 100% 50%)
+Backgroundcolor: hsl(220 100% 77%)
 
 ----
 

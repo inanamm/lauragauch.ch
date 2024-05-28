@@ -49,12 +49,10 @@ $style = "background-color: $hslaColor";
                 <?php if ($page->presskits()->kt()->isNotEmpty()): ?>
                     <h3 class="all-small-caps pt-6 text-sm">presskits</h3>
                     <?php
-                    $presskits = $page->presskits()->toStructure();
-                    foreach ($presskits as $linkObject):
+                    foreach ($page->presskits()->toStructure() as $presskit):
                         ?>
                         <div class="flex flex-row gap-3 text-base">
-                            <a href="<?= $linkObject->link()->toUrl() ?>"<?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>> <?= $linkObject->title()->or($linkObject->link()) ?>
-                            </a>
+                            <?= $presskit->title() ?>
                         </div>
                         <?php
                     endforeach;
@@ -65,11 +63,10 @@ $style = "background-color: $hslaColor";
                 <?php if ($page->collaboration()->kt()->isNotEmpty()): ?>
                     <h3 class="all-small-caps pt-6 text-sm">in collaboration with</h3>
                     <?php
-                    $collabs = $page->collaboration()->toStructure();
-                    foreach ($collabs as $object):
+                    foreach ($page->collaboration()->toStructure() as $collab):
                         ?>
                         <div class="flex flex-row gap-3 text-base">
-                            <a href="<?= $object->name()->text() ?>" <?= $object->target()->toBool() ? 'target="_blank"' : '' ?>></a>
+                            <?= $collab->name() ?>
                         </div>
                         <?php
                     endforeach;
@@ -80,36 +77,41 @@ $style = "background-color: $hslaColor";
                 <?php if ($page->supportOf()->kt()->isNotEmpty()): ?>
                     <h3 class="all-small-caps pt-6 text-sm">With the Support of</h3>
                     <?php
-                    $presskits = $page->supportOf()->toStructure();
-                    foreach ($presskits as $linkObject):
+                    foreach ($page->supportOf()->toStructure() as $support):
                         ?>
                         <div class="flex flex-row gap-3 text-base">
-                            <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>> <?= $linkObject->name()->or($linkObject->link()) ?>
-                            </a>
+                            <?= $support->name() ?>
                         </div>
                         <?php
                     endforeach;
                     ?>
                 <?php endif; ?>
 
-
                 <!-- NEXT VIEWINGS -->
                 <?php if ($page->nextViewings()->toStructure()->isNotEmpty()): ?>
+                    <h3 class="all-small-caps pt-6 text-sm">Next Viewings</h3>
                     <?php
                     $items = $page->nextViewings()->toStructure();
                     foreach ($items as $item): ?>
                         <div class="flex flex-col">
-                            <h3 class="all-small-caps pt-6 text-sm">Next Viewings</h3>
                             <div class="flex flex-wrap gap-x-5 text-base">
-                                <?php if ($item->date()->isNotEmpty()): ?>
-                                    <div class="flex flex-row gap-0.5"><?= $item->date()->toDate('%B, %d') ?> – <?= $item->dateUntil()->toDate('%B, %d %G') ?>
+                                <?php if ($item->dateUntil()->isNotEmpty()): ?>
+                                    <div class="flex flex-row gap-0.5">
+                                        <?= $item->date()->toDate('%B, %d') ?>–<?= $item->dateUntil()->toDate('%B, %d %G') ?>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="flex flex-row gap-0.5">
+                                        <?= $item->date()->toDate('%B, %d %G') ?>
                                     </div>
                                 <?php endif; ?>
-                                <?= $item->name()->kt() ?>
+                                <div>
+                                    <?= $item->name()->kt() ?>
+                                </div>
                             </div>
                         </div>
                     <?php endforeach ?>
                 <?php endif; ?>
+
 
             </div>
 
