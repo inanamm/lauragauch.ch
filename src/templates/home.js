@@ -10,7 +10,6 @@ import activeProject from "../alpine/activeProject.js";
 window.htmx = Htmx;
 console.log('initialized htmx');
 
-Alpine.plugin(collapse)
 window.Alpine = Alpine;
 Alpine.store('darkMode', darkMode);
 Alpine.store('projectDrawer', projectDrawer);

@@ -8,8 +8,9 @@
         lg:hover:underline lg:underline-offset-2 
         rounded-lg lg:rounded-none 
         px-2 lg:p-0
-        py-0.5 
-        backdrop-blur-sm lg:backdrop-blur-0 transition ease-in-out"
+        py-0.5
+        backdrop-blur-sm lg:backdrop-filter-none
+        transition ease-in-out"
   x-data="copyToClipboard('<?= $copyText ?>')"
   @click="copyToClipboard"
 >

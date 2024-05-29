@@ -35,7 +35,7 @@
       bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent
       px-2 lg:p-0
       py-0.5
-      backdrop-blur-sm lg:backdrop-blur-0
+      backdrop-blur-sm lg:backdrop-filter-none
       "
       :aria-expanded="$store.projectDrawer.open"
       aria-controls="projectDetails"
