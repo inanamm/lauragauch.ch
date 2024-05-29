@@ -1,5 +1,6 @@
 import Alpine from "alpinejs";
 import Htmx from 'htmx.org';
+import {collapse} from "@alpinejs/collapse";
 
 import projectDrawer from '../alpine/projectDrawer.js'
 import darkMode from '../alpine/darkMode.js'
@@ -9,6 +10,7 @@ import activeProject from "../alpine/activeProject.js";
 window.htmx = Htmx;
 console.log('initialized htmx');
 
+Alpine.plugin(collapse)
 window.Alpine = Alpine;
 Alpine.store('darkMode', darkMode);
 Alpine.store('projectDrawer', projectDrawer);

@@ -1,16 +1,23 @@
 <article style="background-color: <?= $backgroundColor ?>"
-  class="top lg:grid w-full h-full lg:grid-cols-6 grid-row px-3 font-sans lg:text-lg text-md pb-20 gap-6 overflow-scroll no-scrollbar scroll-smooth">
+         class="top lg:grid w-full h-full lg:grid-cols-6 grid-row px-3 font-sans lg:text-lg text-md pb-20 gap-6 overflow-scroll no-scrollbar scroll-smooth">
 
 
   <div class="flex flex-col items-center col-start-2 col-span-4 text-center lg:text-lg text-md pt-3 lg:pt-18">
     <?= $page->title()->kt() ?>
-    
+
+    <?php snippet('dropdown') ?>
+
+    <!--  example dropdown  -->
+    <div x-data="{ expanded: false }" class="relative my-4">
+      <button @click="expanded = ! expanded">Toggle Content</button>
+
+      <div x-show="expanded" x-collapse class="absolute my-2 overflow-hidden">
         <?php snippet(
           'copyToClipboard',
           ["copyText" => $page->url(), "buttonText" => "Share this project"]
         ) ?>
-
-        <?php snippet('dropdown') ?>
+      </div>
+    </div>
 
   </div>
 
@@ -31,7 +38,7 @@
         <div class="flex flex-row gap-3 text-base">
           <?= $presskit->title() ?>
         </div>
-        <?php
+      <?php
       endforeach;
       ?>
     <?php endif; ?>
@@ -45,7 +52,7 @@
         <div class="flex flex-row gap-3 text-base">
           <?= $collab->name() ?>
         </div>
-        <?php
+      <?php
       endforeach;
       ?>
     <?php endif; ?>
@@ -59,7 +66,7 @@
         <div class="flex flex-row gap-3 text-base">
           <?= $support->name() ?>
         </div>
-        <?php
+      <?php
       endforeach;
       ?>
     <?php endif; ?>
