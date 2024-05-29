@@ -36,14 +36,12 @@ $style = "background-color: $hslaColor";
             </div>
             <div class="col-start-2 col-span-4 text-center lg:text-lg text-md pt-16 lg:pt-24">
                 <?= $page->title()->kt() ?>
-                <?php snippet('dropdown')?> 
-
             </div>
 
             <article class="lg:row-start-2 lg:col-start-2 lg:col-end-6 lg:text-lg text-md pt-24 pb-16">
                 <?= $page->description()->kt() ?>
             </article>
-            
+
             <!-- ADDITIONAL INFO -->
             <div class="lg:col-start-2 lg:col-span-4 font-serif">
 
@@ -56,7 +54,7 @@ $style = "background-color: $hslaColor";
                         <div class="flex flex-row gap-3 text-base">
                             <?= $presskit->title() ?>
                         </div>
-                        
+
                         <?php
                     endforeach;
                     ?>

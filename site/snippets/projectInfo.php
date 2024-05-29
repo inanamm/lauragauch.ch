@@ -1,5 +1,5 @@
 <article style="background-color: <?= $backgroundColor ?>"
-         class="top lg:grid w-full h-full lg:grid-cols-6 grid-row px-3 font-sans lg:text-lg text-md pb-20 gap-6 overflow-scroll no-scrollbar scroll-smooth">
+  class="top lg:grid w-full h-full lg:grid-cols-6 grid-row px-3 font-sans lg:text-lg text-md pb-20 gap-6 overflow-scroll no-scrollbar scroll-smooth">
 
 
   <div class="flex flex-col items-center col-start-2 col-span-4 text-center lg:text-lg text-md pt-3 lg:pt-18">
@@ -8,14 +8,21 @@
     <?php snippet('dropdown', slots: true) ?>
     <?php snippet(
       'copyToClipboard',
-      ["copyText" => $page->url(), "buttonText" => "Share this project"]
+      ["copyText" => $page->url(), "buttonText" => "Copy link"]
     ) ?>
-    <?php snippet(
-      'copyToClipboard',
-      ["copyText" => $page->url(), "buttonText" => "Share insta"]
-    ) ?>
+    <a href="https://www.instagram.com/" target="_blank"
+      class="font-serif text-sm all-small-caps text-center lg:hover:underline lg:underline-offset-2">
+      <?php snippet(
+        'copyToClipboard',
+        ["copyText" => $page->url(), "buttonText" => "Share on instagram"]
+      ) ?>
+    </a>
+    <a href="mailto:?subject=Check out this project by Laura Gauch&body=Here is the link to Laura Gauch's website: <?= $page->url() ?>"
+      class="font-serif text-sm all-small-caps text-center lg:hover:underline lg:underline-offset-2">
+      Share via Email
+    </a>
     <?php endsnippet() ?>
-
+    
   </div>
 
 
@@ -35,7 +42,7 @@
         <div class="flex flex-row gap-3 text-base">
           <?= $presskit->title() ?>
         </div>
-      <?php
+        <?php
       endforeach;
       ?>
     <?php endif; ?>
@@ -49,7 +56,7 @@
         <div class="flex flex-row gap-3 text-base">
           <?= $collab->name() ?>
         </div>
-      <?php
+        <?php
       endforeach;
       ?>
     <?php endif; ?>
@@ -63,7 +70,7 @@
         <div class="flex flex-row gap-3 text-base">
           <?= $support->name() ?>
         </div>
-      <?php
+        <?php
       endforeach;
       ?>
     <?php endif; ?>
@@ -95,4 +102,3 @@
 
   </div>
 </article>
-

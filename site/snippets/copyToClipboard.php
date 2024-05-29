@@ -1,6 +1,6 @@
 <button
   x-ref="copyToClipboardRef"
-  class=" font-serif text-sm all-small-caps text-center pt-1 overflow-hidden hover:underline
+  class="font-serif text-sm all-small-caps text-center pt-1 overflow-hidden hover:underline
         lg:block absolute lg:relative
         bottom-2.5 lg:bottom-auto
         left-auto right-auto
