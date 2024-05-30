@@ -40,7 +40,7 @@
     >
       close
     </button>
-    <div id="content" class="h-full"></div>
+    <div id="content" class="h-full rounded-t-2xl"></div>
   </div>
 </div>
 
