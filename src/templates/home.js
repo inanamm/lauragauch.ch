@@ -17,25 +17,3 @@ Alpine.data("copyToClipboard", copyToClipboard);
 
 Alpine.start();
 console.log('initialized Alpine');
-
-class ProjectImageHandler {
-  init() {
-    const imageElements = document.querySelectorAll('main figure img');
-    imageElements.forEach((imageElement) => {
-      this.correctFigureSize(imageElement);
-    });
-  }
-
-  correctFigureSize(figureElement) {
-    figureElement.onload = () => {
-      const aspectRatio = figureElement.naturalWidth / figureElement.naturalHeight;
-      const containerHeight = figureElement.closest('figure').clientHeight;
-      figureElement.closest('figure').style.width = `${containerHeight * aspectRatio}px`;
-    };
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const handler = new ProjectImageHandler();
-  handler.init();
-});
