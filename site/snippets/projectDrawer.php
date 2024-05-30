@@ -14,7 +14,7 @@
   <div
     class="flex h-full w-full opacity-0 row-span-1 lg:row-span-1"
     x-data
-    @keyup.escape="console.log('hello')"
+    @click="$store.projectDrawer.closeDrawer()"
   ></div>
 
   <div
