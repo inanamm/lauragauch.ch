@@ -18,10 +18,10 @@
       <figure
         @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
         hx-get="/htmx/<?= $project->id ?>" hx-trigger="click" hx-target="#content"
-        class="h-full flex-none snap-always snap-center opacity-90 hover:opacity-100"
+        class="h-full flex-none snap-always snap-center opacity-90 hover:opacity-100 cursor-crosshair"
         data-project='<?= json_encode($project->title) ?>'
         x-data
-        @click="$store.projectDrawer.toggle()"
+        @click="$store.projectDrawer.openDrawer();"
       >
         <?= $project->image->thumb([
           'quality' => 90,
@@ -45,7 +45,7 @@
        x-data x-text="$store.activeProject.activeProjectName"></p>
     <button
       x-data
-      @click="$store.projectDrawer.toggle(); $nextTick(() => { htmx.ajax('GET', `/htmx/${$store.activeProject.activeProjectId}`, '#content'); })"
+      @click="$store.projectDrawer.openDrawer(); $nextTick(() => { htmx.ajax('GET', `/htmx/${$store.activeProject.activeProjectId}`, '#content'); })"
       :aria-expanded="$store.projectDrawer.open"
       aria-controls="navigation"
       class="hover:underline underline-offset-2 all-small-caps text-sm font-serif lg:hover:underline lg:underline-offset-2 rounded-lg lg:rounded-none

@@ -8,16 +8,19 @@
   x-transition:leave="transition duration-1000 ease-in-out"
   x-transition:leave-start="translate-y-0"
   x-transition:leave-end="translate-y-full"
-  @click.away="$store.projectDrawer.toggle()"
 >
-  <div class="flex h-full w-full opacity-0 row-span-1 lg:row-span-1"></div>
+  <div
+    class="flex h-full w-full opacity-0 row-span-1 lg:row-span-1"
+    x-data
+    @click="$store.projectDrawer.closeDrawer()"
+  ></div>
 
   <div
     x-ref="projectOverlay"
     class="w-full h-full overflow-y-scroll rounded-t-2xl drop-shadow-sm no-scrollbar row-span-4 lg:row-span-2 backdrop-blur-md"
   >
     <button
-      @click="$store.projectDrawer.toggle()"
+      @click="$store.projectDrawer.closeDrawer()"
       x-show="$store.projectDrawer.open"
       x-transition:enter.delay.350ms
       class="fixed z-50 gap-5 font-serif all-small-caps text-sm hover:underline underline-offset-2
@@ -38,3 +41,4 @@
     <div id="content" class="h-full"></div>
   </div>
 </div>
+
