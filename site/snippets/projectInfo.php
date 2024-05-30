@@ -11,18 +11,19 @@
       ["copyText" => $page->url(), "buttonText" => "Copy link"]
     ) ?>
     <a href="https://www.instagram.com/" target="_blank"
-      class="font-serif text-sm all-small-caps text-center lg:hover:underline lg:underline-offset-2">
+      class="font-serif text-sm all-small-caps lg:hover:underline lg:underline-offset-2 ">
       <?php snippet(
         'copyToClipboard',
-        ["copyText" => $page->url(), "buttonText" => "Share on instagram"]
+        ["copyText" => $page->url(), "buttonText" => "Share on Instagram"]
       ) ?>
     </a>
     <a href="mailto:?subject=Check out this project by Laura Gauch&body=Here is the link to Laura Gauch's website: <?= $page->url() ?>"
-      class="font-serif text-sm all-small-caps text-center lg:hover:underline lg:underline-offset-2">
+      class="all-small-caps text-sm font-serif flex flex-col text-left lg:underline-offset-2 lg:hover:underline lg:rounded-none rounded-lg
+">
       Share via Email
     </a>
     <?php endsnippet() ?>
-    
+
   </div>
 
 
