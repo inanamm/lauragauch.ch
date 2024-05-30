@@ -1,0 +1,122 @@
+Title: Serious Draft Nr. 1
+
+----
+
+Description: <p>I am a completely fresh new project with a perfectly designed project page. Of course I still have my flaws but I'm trying my best to be as perfect as possible &lt;3</p>
+
+----
+
+Supportof:
+
+- 
+  toggle: 'true'
+  name: '<p>Nummer 1</p>'
+
+----
+
+Collaboration:
+
+- 
+  toggle: 'true'
+  name: '<p>Nummer 2</p>'
+
+----
+
+Presskits:
+
+- 
+  toggle: 'true'
+  title: '<p><a href="https://example.com" target="_blank">See here</a></p>'
+
+----
+
+Nextviewings:
+
+- 
+  toggle: 'true'
+  name: '<p>Here!</p>'
+  date: 2025-08-01
+  dateuntil: 2025-01-31
+
+----
+
+Backgroundcolor: hsl(190 50% 74%)
+
+----
+
+Gallery:
+
+- file://A4pxZz6q7xvghqkH
+- file://zanHsSTXlgQ13hNN
+
+----
+
+Vimeo: 
+
+----
+
+Metatitle: 
+
+----
+
+Metatemplate: 
+
+----
+
+Usetitletemplate: true
+
+----
+
+Metadescription: 
+
+----
+
+Ogtemplate: 
+
+----
+
+Useogtemplate: true
+
+----
+
+Ogdescription: 
+
+----
+
+Ogimage: 
+
+----
+
+Twittercardtype: 
+
+----
+
+Twitterauthor: 
+
+----
+
+Robotsindex: default
+
+----
+
+Robotsfollow: default
+
+----
+
+Robotsarchive: default
+
+----
+
+Robotsimageindex: default
+
+----
+
+Robotssnippet: default
+
+----
+
+Metainherit: 
+
+----
+
+Uuid: NST4IUzEaNo2Dytc

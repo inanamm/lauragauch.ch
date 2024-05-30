@@ -18,9 +18,12 @@
       ) ?>
     </a>
     <a href="mailto:?subject=Check out this project by Laura Gauch&body=Here is the link to Laura Gauch's website: <?= $page->url() ?>"
-      class="all-small-caps text-sm font-serif flex flex-col text-left lg:underline-offset-2 lg:hover:underline lg:rounded-none rounded-lg
+      class="all-small-caps text-sm font-serif flex flex-col text-left lg:text-center  lg:underline-offset-2 lg:hover:underline lg:rounded-none rounded-lg
 ">
       Share via Email
+    </a>
+    <a href="<?= $page->url() ?>"class="all-small-caps text-sm font-serif flex flex-col lg:text-center text-left lg:underline-offset-2 lg:hover:underline lg:rounded-none rounded-lg">
+      See full project
     </a>
     <?php endsnippet() ?>
 
