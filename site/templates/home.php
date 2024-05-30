@@ -35,7 +35,7 @@
   <button
     x-data
     @click="$store.darkMode.toggle()"
-    class="fixed w-4 h-4 bottom-3 z-30 left-3 bg-neutral-900 rounded-full dark:bg-white"
+    class="fixed w-4 h-4 bottom-3 z-30 left-3 bg-neutral-900 rounded-full dark:bg-white cursor-crosshair"
   ></button>
 
   <div
@@ -51,7 +51,7 @@
       class="hover:underline underline-offset-2 all-small-caps text-sm font-serif lg:hover:underline lg:underline-offset-2 rounded-lg lg:rounded-none
             bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent px-2 lg:p-0 py-0.5
             backdrop-blur-sm lg:backdrop-filter-none
-            z-40 dark:text-white"
+            z-40 dark:text-white cursor-crosshair"
       aria-label="Navigation Menu"
     >
       More Info

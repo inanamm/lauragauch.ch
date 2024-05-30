@@ -6,7 +6,7 @@
 >
 
   <button @click="menuOpen = !menuOpen; $nextTick(() => setTimeout(() => $refs.overlay.scrollTop = 0, 200))"
-          class="fixed top-1 right-3 z-50" :aria-expanded="menuOpen.toString()" aria-controls="about"
+          class="fixed top-1 right-3 z-50 cursor-crosshair" :aria-expanded="menuOpen.toString()" aria-controls="about"
           aria-label="About">
     <h1 class="font-sans lg:text-lg text-md">
       Laura Gauch
@@ -27,7 +27,7 @@
         px-2 lg:p-0
         py-0.5 
         z-50
-        backdrop-blur-sm lg:backdrop-blur-0"
+        backdrop-blur-sm lg:backdrop-blur-0 cursor-crosshair"
     :aria-expanded="menuOpen.toString()" aria-controls="about" aria-label="About">
     close
   </button>

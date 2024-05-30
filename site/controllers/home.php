@@ -2,7 +2,7 @@
 
 return function ($site) {
     $projectsPage = $site->find('projects');
-    $kirbyProjects = $projectsPage->children();
+    $kirbyProjects = $projectsPage->children()->listed();
 
     $formattedProjects = [];
 
@@ -10,15 +10,6 @@ return function ($site) {
         $images = $project->gallery()->toFiles();
 
         foreach ($images as $image) {
-
-            // $pressKits = [];
-            // foreach ($project->pressKits()->toStructure() as $pressKit) {
-            //     $pressKits[] = (object)[
-            //         "title" => $pressKit->title()->value(),
-            //         "link" => $pressKit->link()->value(),
-            //         "toggle" => $pressKit->toggle()->value(),
-            //     ];
-            // }
 
             $projectInfo = (object)[
                 "id" => $project->id(),
@@ -32,6 +23,7 @@ return function ($site) {
 
             $formattedProjects[] = $projectInfo;
         }
+        
     }
 
     shuffle($formattedProjects);

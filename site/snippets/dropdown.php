@@ -25,7 +25,7 @@
     <div class="lg:relative lg:inline-block fixed bottom-2.5 left-3 right-auto items-center lg:left-0  dark:text-white lg:rounded-none rounded-lg lg:px-0 align-left">
         <button x-ref="button" x-on:click="toggle()" :aria-expanded="open" :aria-controls="$id('dropdown-button')"
             type="button" class="
-            all-small-caps text-sm font-serif flex flex-col lg:underline-offset-2 lg:hover:underline lg:rounded-none rounded-lg z-40 lg:backdrop-filter-none backdrop-blur-sm px-2 lg:py-0 py-0.5 lg:bg-transparent bg-white/65 dark:bg-white/25 dark:lg:bg-transparent">
+            all-small-caps text-sm font-serif flex flex-col lg:underline-offset-2 lg:hover:underline lg:rounded-none rounded-lg z-40 lg:backdrop-filter-none backdrop-blur-sm px-2 lg:py-0 py-0.5 lg:bg-transparent bg-white/65 dark:bg-white/25 dark:lg:bg-transparent cursor-crosshair">
             Share this project
         </button>
 

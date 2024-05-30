@@ -30,7 +30,7 @@
   </div>
 
 
-  <article class="lg:row-start-2 lg:col-start-2 lg:col-end-6 lg:text-lg text-md pt-24 pb-16 ">
+  <article class="lg:row-start-2 lg:col-start-2 lg:col-end-6 lg:text-lg text-md pt-24 pb-16 flex flex-col gap-3">
     <?= $page->description()->kt() ?>
   </article>
 
