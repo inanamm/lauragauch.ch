@@ -2,7 +2,7 @@ Title: project1
 
 ----
 
-Description: <p>"Urban Landscapes" is a captivating photography project that delves into the intricate tapestry of urban life, capturing the essence of cityscapes through the lens of a camera. With a keen eye for detail and a passion for storytelling, this project aims to showcase the beauty, diversity, and complexity of urban environments around the world.</p><p>Through a series of stunning photographs, the project explores the dynamic interplay between architecture, people, and culture within bustling city centers. From towering skyscrapers to quaint alleyways, each image offers a unique perspective on the urban landscape, inviting viewers to embark on a visual journey through the heart of the city.</p><p></p><p>Drawing inspiration from the vibrant energy and constant evolution of urban spaces, the photographer seeks to capture fleeting moments of everyday life, uncovering hidden gems amidst the chaos of the metropolis. Whether it's the hustle and bustle of a busy street corner or the serenity of an empty park at dawn, each photograph tells a compelling story and invites viewers to pause, reflect, and immerse themselves in the urban experience.</p><p>With a blend of artistic vision and technical skill, "Urban Landscapes" celebrates the beauty of the cityscape while offering a fresh perspective on urban living. Through its captivating imagery and evocative storytelling, this project aims to inspire curiosity, ignite imagination, and foster a deeper appreciation for the vibrant tapestry of urban life.</p>
+Description: <p>"Urban Landscapes" is a captivating photography project that delves into the intricate tapestry of urban life, capturing the essence of cityscapes through the lens of a camera. With a keen eye for detail and a passion for storytelling, this project aims to showcase the beauty, diversity, and complexity of urban environments around the world.</p><p>Through a series of stunning photographs, the project explores the dynamic interplay between architecture, people, and culture within bustling city centers. From towering skyscrapers to quaint alleyways, each image offers a unique perspective on the urban landscape, inviting viewers to embark on a visual journey through the heart of the city.</p><p>Drawing inspiration from the vibrant energy and constant evolution of urban spaces, the photographer seeks to capture fleeting moments of everyday life, uncovering hidden gems amidst the chaos of the metropolis. Whether it's the hustle and bustle of a busy street corner or the serenity of an empty park at dawn, each photograph tells a compelling story and invites viewers to pause, reflect, and immerse themselves in the urban experience.</p><p>With a blend of artistic vision and technical skill, "Urban Landscapes" celebrates the beauty of the cityscape while offering a fresh perspective on urban living. Through its captivating imagery and evocative storytelling, this project aims to inspire curiosity, ignite imagination, and foster a deeper appreciation for the vibrant tapestry of urban life.</p>
 
 ----
 
@@ -27,6 +27,10 @@ Presskits:
 ----
 
 Nextviewings: 
+
+----
+
+Year: 2020
 
 ----
 

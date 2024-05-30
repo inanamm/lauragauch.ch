@@ -158,6 +158,7 @@ tabs:
               year:
                 label: Year
                 type: text
+                required: true
           color:
             type: fields
             fields:

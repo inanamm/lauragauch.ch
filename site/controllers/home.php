@@ -18,7 +18,6 @@ return function ($site) {
                 "url" => $project->url(),
                 "description" => $project->description()->value(),
                 "backgroundColor" => slothieHelpers()->HSLtoHSLA($project->backgroundColor()->value(), 0.8),
-                // "pressKits" => $pressKits,
             ];
 
             $formattedProjects[] = $projectInfo;

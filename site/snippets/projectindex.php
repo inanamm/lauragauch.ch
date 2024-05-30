@@ -48,7 +48,8 @@
         $projects = $site->page('projects')->children()->published();
         foreach ($projects as $project): ?>
           <li class="all-small-caps text-sm">
-            <?= $project->title()->or($project->link()) ?>
+            <?= $project->title()->or($project->link()) ?>, <?= $project->year()->escape() ?>
+
           </li>
           <div class="gallery flex flex-wrap pb-12 last:pb-0 w-full gap-1">
             <?php

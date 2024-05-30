@@ -41,7 +41,7 @@
 
     <!-- YEAR LOCATION -->
     <?php if ($page->year()->isNotEmpty()): ?>
-      <h3 class="all-small-caps pt-6 text-sm">Where and when</h3>
+      <h3 class="all-small-caps pt-6 text-sm">Year</h3>
       <div class="flex flex-row gap-3 text-base">
         <?= $page->year()->escape() ?>
       </div>

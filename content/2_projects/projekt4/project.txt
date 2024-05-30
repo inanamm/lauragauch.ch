@@ -6,11 +6,23 @@ Description: <p>Blablablblablab Blablablblablab Blablablblablab Blablablblablab 
 
 ----
 
-Additionalinfo: 
+Supportof: 
+
+----
+
+Collaboration: 
 
 ----
 
 Presskits: 
+
+----
+
+Nextviewings: 
+
+----
+
+Year: 2012
 
 ----
 
@@ -93,6 +105,10 @@ Robotssnippet: false
 ----
 
 Metainherit: 
+
+----
+
+Additionalinfo: 
 
 ----
 
