@@ -8,11 +8,13 @@
   x-transition:leave="transition duration-1000 ease-in-out"
   x-transition:leave-start="translate-y-0"
   x-transition:leave-end="translate-y-full"
+  @keyup.escape.window="$store.projectDrawer.closeDrawer()"
+
 >
   <div
     class="flex h-full w-full opacity-0 row-span-1 lg:row-span-1"
     x-data
-    @click="$store.projectDrawer.closeDrawer()"
+    @keyup.escape="console.log('hello')"
   ></div>
 
   <div
