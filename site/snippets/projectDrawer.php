@@ -1,29 +1,22 @@
 <div
-  class="grid grid-rows-5 lg:grid-rows-3 dark:text-white fixed inset-0 h-screen z-30 overflow-y-scroll no-scrollbar "
+  class="grid grid-rows-5 lg:grid-rows-3 dark:text-white fixed inset-0 h-screen z-30 no-scrollbar"
   x-data
   x-show="$store.projectDrawer.open"
   x-transition:enter="transition duration-1000 ease-in-out"
   x-transition:enter-start="translate-y-full"
   x-transition:enter-end="translate-y-0"
-  x-transition:leave="transition ease-in-out duration-1000"
+  x-transition:leave="transition duration-1000 ease-in-out"
   x-transition:leave-start="translate-y-0"
   x-transition:leave-end="translate-y-full"
+  @click.away="$store.projectDrawer.toggle()"
 >
-
-
-  <div x-data class="flex h-full w-full opacity-0 row-span-1 lg:row-span-1"
-       @click="$store.projectDrawer.toggle()"
-       x-show="$store.projectDrawer.open"
-       :aria-expanded="$store.projectDrawer.open"
-  ></div>
+  <div class="flex h-full w-full opacity-0 row-span-1 lg:row-span-1"></div>
 
   <div
-    x-data
     x-ref="projectOverlay"
     class="w-full h-full overflow-y-scroll rounded-t-2xl drop-shadow-sm no-scrollbar row-span-4 lg:row-span-2 backdrop-blur-md"
   >
     <button
-      x-data
       @click="$store.projectDrawer.toggle()"
       x-show="$store.projectDrawer.open"
       x-transition:enter.delay.350ms
@@ -43,6 +36,5 @@
       close
     </button>
     <div id="content" class="h-full"></div>
-
   </div>
 </div>

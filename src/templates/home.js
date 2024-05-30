@@ -1,6 +1,5 @@
 import Alpine from "alpinejs";
 import Htmx from 'htmx.org';
-import {collapse} from "@alpinejs/collapse";
 
 import projectDrawer from '../alpine/projectDrawer.js'
 import darkMode from '../alpine/darkMode.js'
