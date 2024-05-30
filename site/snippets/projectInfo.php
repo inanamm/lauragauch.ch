@@ -22,7 +22,8 @@
 ">
       Share via Email
     </a>
-    <a href="<?= $page->url() ?>"class="all-small-caps text-sm font-serif flex flex-col lg:text-center text-left lg:underline-offset-2 lg:hover:underline lg:rounded-none rounded-lg">
+    <a href="<?= $page->url() ?>"
+      class="all-small-caps text-sm font-serif flex flex-col lg:text-center text-left lg:underline-offset-2 lg:hover:underline lg:rounded-none rounded-lg">
       See full project
     </a>
     <?php endsnippet() ?>
@@ -36,6 +37,15 @@
 
   <!-- ADDITIONAL INFO -->
   <div class="lg:col-start-2 lg:col-span-4 font-serif">
+
+
+    <!-- YEAR LOCATION -->
+    <?php if ($page->year()->isNotEmpty()): ?>
+      <h3 class="all-small-caps pt-6 text-sm">Where and when</h3>
+      <div class="flex flex-row gap-3 text-base">
+        <?= $page->year()->escape() ?>
+      </div>
+    <?php endif; ?>
 
     <!-- PRESSKITS -->
     <?php if ($page->presskits()->kt()->isNotEmpty()): ?>

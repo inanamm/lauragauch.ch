@@ -45,6 +45,14 @@ $style = "background-color: $hslaColor";
             <!-- ADDITIONAL INFO -->
             <div class="lg:col-start-2 lg:col-span-4 font-serif">
 
+                <!-- YEAR LOCATION -->
+                <?php if ($page->year()->isNotEmpty()): ?>
+                    <h3 class="all-small-caps pt-6 text-sm">Where and when</h3>
+                    <div class="flex flex-row gap-3 text-base">
+                        <?= $page->year()->escape() ?>
+                    </div>
+                <?php endif; ?>
+
                 <!-- PRESSKITS -->
                 <?php if ($page->presskits()->kt()->isNotEmpty()): ?>
                     <h3 class="all-small-caps pt-6 text-sm">presskits</h3>

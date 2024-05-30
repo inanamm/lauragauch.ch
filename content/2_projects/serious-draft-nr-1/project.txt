@@ -40,6 +40,10 @@ Nextviewings:
 
 ----
 
+Year: Zurich, 2024
+
+----
+
 Backgroundcolor: hsl(190 50% 74%)
 
 ----
