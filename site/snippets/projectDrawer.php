@@ -2,10 +2,10 @@
   class="grid grid-rows-5 lg:grid-rows-3 dark:text-white fixed inset-0 h-screen z-30 no-scrollbar"
   x-data
   x-show="$store.projectDrawer.open"
-  x-transition:enter="transition duration-1000 ease-in-out"
+  x-transition:enter="transition lg:duration-1000 duration-700 ease-in-out"
   x-transition:enter-start="translate-y-full"
   x-transition:enter-end="translate-y-0"
-  x-transition:leave="transition duration-1000 ease-in-out"
+  x-transition:leave="transition lg:duration-1000 duration-700 ease-in-out"
   x-transition:leave-start="translate-y-0"
   x-transition:leave-end="translate-y-full"
   @keyup.escape.window="$store.projectDrawer.closeDrawer()"

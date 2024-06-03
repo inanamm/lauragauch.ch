@@ -37,8 +37,8 @@
 
   <div id="index" x-show="menuOpen" x-ref="projectIndexOverlay"
        class="h-full w-full flex flex-col fixed bottom-0 left-0 backdrop-blur-md bg-white/50 dark:bg-black/50 overflow-y-scroll no-scrollbar"
-       x-transition:enter="transition duration-1000 ease-in-out" x-transition:enter-start="translate-y-full"
-       x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in-out duration-1000"
+       x-transition:enter="transition lg:duration-1000 duration-700 ease-in-out" x-transition:enter-start="translate-y-full"
+       x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in-out lg:duration-1000 duration-700 "
        x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full">
 
 
