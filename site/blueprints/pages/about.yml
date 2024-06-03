@@ -288,7 +288,7 @@ columns:
             type: line
 
           headlineC:
-            label: Imprint
+            label: Additional
             type: headline
             numbered: false 
 
@@ -330,27 +330,5 @@ columns:
             text: 
               - "No"
               - "Yes"
-
-          # lineB2:
-          #   type: line
-
-          # addressOffice:
-          #   label: Address Office
-          #   type: object
-          #   fields:
-          #     description:
-          #       label: Description
-          #       type: text
-          #     companyName:
-          #       label: Name
-          #       type: text
-          #     street:
-          #       label: Street
-          #       type: text
-          #     postalCode:
-          #       label: PLZ
-          #       type: text
-          #     place:
-          #       label: Place
 
 seo: seo/site

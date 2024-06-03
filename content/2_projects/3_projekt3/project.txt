@@ -2,7 +2,7 @@ Title: projekt3
 
 ----
 
-Description: 
+Description: <p>I am a completely fresh new project with a perfectly designed project page. Of course I still have my flaws but I'm trying my best to be as perfect as possible &lt;3</p>
 
 ----
 

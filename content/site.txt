@@ -75,3 +75,7 @@ Linkedin:
 ----
 
 Imprint: <p>All Images © <a href="https://lauragauch.com">Laura Gauch</a><br>Developed and designed by <a href="https://martinaholenstein.ch/" target="_blank">Martina Holenstein</a> and <a href="https://github.com/GuidoOffermans" target="_blank">Guido Offermans</a></p>
+
+----
+
+Description: <p>I am a completely fresh new project with a perfectly designed project page. Of course I still have my flaws but I'm trying my best to be as perfect as possible &lt;3</p>
