@@ -6,7 +6,7 @@
 <body class="h-full w-full grid grid-rows-12 bg:white no-scrollbar">
 <header class="flex row-span-3">
   <nav class="flex gap-16 font-serif">
-    <h2 class="ml-3"><?php snippet('projectIndex') ?></h2>
+    <h2 class="ml-3"><?php snippet('projectindex') ?></h2>
     <?php snippet('about') ?>
   </nav>
 </header>

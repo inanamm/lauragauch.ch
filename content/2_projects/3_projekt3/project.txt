@@ -2,7 +2,7 @@ Title: projekt3
 
 ----
 
-Description: <p>Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab Blablablblablab. 3</p>
+Description: 
 
 ----
 

@@ -36,6 +36,12 @@ figure img {
   @apply h-full w-auto object-contain;
 }
 
+@media (max-width: 1023px) {
+figure img {
+  @apply h-auto;
+}
+}
+
 .video-responsive {
   position: relative;
   height: 24rem;
