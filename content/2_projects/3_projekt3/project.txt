@@ -32,6 +32,10 @@ Year: 2022
 
 ----
 
+Requesttoggle: true
+
+----
+
 Backgroundcolor: hsl(135 60% 75%)
 
 ----
@@ -115,6 +119,10 @@ Robotssnippet: false
 ----
 
 Metainherit: 
+
+----
+
+Toggle: true
 
 ----
 

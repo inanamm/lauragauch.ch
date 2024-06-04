@@ -34,7 +34,7 @@ $style = "background-color: $hslaColor";
                 z-30">
                 <a href="<?= site()->url() ?>">Back</a>
             </div>
-            
+
             <div class="col-start-2 col-span-4 text-center lg:text-lg text-md pt-16 pb-4 lg:pt-24">
                 <?= $page->title()->kt() ?>
             </div>
@@ -48,6 +48,12 @@ $style = "background-color: $hslaColor";
 
             <!-- ADDITIONAL INFO -->
             <div class="lg:col-start-2 lg:col-span-4 font-serif">
+
+                <!-- REQUEST FULL MOVIE -->
+                <?php if ($page->requestToggle()->toBool() === true): ?>
+                    <a href="mailto:?subject=Request access to full film by Laura Gauch&body=Hi! I saw the trailer to <?= $page->title() ?> on your website. Is it possible to get access to the full film? Thank you!"
+                        class="all-small-caps pt-6 text-sm">Full Film on Request</a>
+                <?php endif; ?>
 
                 <!-- YEAR LOCATION -->
                 <?php if ($page->year()->isNotEmpty()): ?>

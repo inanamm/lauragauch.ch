@@ -44,6 +44,10 @@ Year: 2024
 
 ----
 
+Toggle: true
+
+----
+
 Backgroundcolor: hsl(190 50% 74%)
 
 ----

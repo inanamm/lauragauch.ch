@@ -156,9 +156,18 @@ tabs:
             type: fields
             fields:
               year:
+                width: 1/2
                 label: Year
                 type: text
                 required: true
+              requestToggle:
+                width: 1/2
+                label: Button to request full film
+                type: toggle
+                text:
+                  - "Don't show"
+                  - "Show" 
+                default: false       
           color:
             type: fields
             fields:
