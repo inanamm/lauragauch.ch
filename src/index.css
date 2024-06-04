@@ -37,8 +37,11 @@ figure img {
 }
 
 @media (max-width: 1023px) {
-figure img {
-  @apply h-auto;
+.homeGallery figure img {
+  height: auto;
+}
+.galleryImages {
+  height: full;
 }
 }
 
@@ -68,13 +71,13 @@ figure img {
   }
 }
 
-.embed-container {
+/* .embed-container {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   max-width: 100%;
-}
+} */
 
 .embed-container iframe,
 .embed-container object,
