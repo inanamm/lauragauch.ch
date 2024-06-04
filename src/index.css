@@ -36,15 +36,6 @@ figure img {
   @apply h-full w-auto object-contain;
 }
 
-@media (max-width: 1023px) {
-.homeGallery figure img {
-  height: auto;
-}
-.galleryImages {
-  height: full;
-}
-}
-
 .video-responsive {
   position: relative;
   height: 24rem;
@@ -57,7 +48,23 @@ figure img {
   width: calc(15rem * 16 / 9);
 }
 
+.videohome {
+  position: relative;
+  height: 50svh;
+  width: calc(50svh * 16 / 9);
+}
+
 @media (max-width: 1023px) {
+  .homeGallery figure img {
+    height: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  
+  .galleryImages {
+    height: full;
+  }
+
   .video-responsive {
     position: relative;
     height: 13rem;
@@ -68,6 +75,14 @@ figure img {
     position: relative;
     height: 8rem;
     width: calc(8rem * 16 / 9);
+  }
+
+  .videohome {
+    position: relative;
+    height: calc((100svw - 6rem) * 9 / 16);
+    width: 100svw;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 

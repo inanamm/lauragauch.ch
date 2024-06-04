@@ -13,7 +13,7 @@
 
 <main class="lg:row-span-6 no-scrollbar">
   <ul
-    class="homeGallery flex flex-col lg:flex-row lg:overflow-x-scroll overflow-x-hidden gap-1 lg:gap-10 w-full max-w-full items-center px-12 lg:px-0 lg:h-full no-scrollbar scroll-smooth snap-y lg:snap-x snap-mandatory pb-24 lg:pb-0">
+    class="homeGallery flex flex-col lg:flex-row lg:overflow-x-scroll overflow-x-hidden gap-1 lg:gap-10 w-full max-w-full items-center lg:px-0 lg:h-full no-scrollbar scroll-smooth lg:snap-x snap-mandatory pb-24 lg:pb-0">
     <?php foreach ($projects as $project): ?>
       <?php if ($project->type === "image"): ?>
         <figure
@@ -32,8 +32,8 @@
       <?php endif; ?>
 
       <?php if ($project->type === "video"): ?>
-        <div class="flex snap-always snap-center">
-          <figure class="videoindex relative w-full h-32 lg:h-60 max-h-96 overflow-hidden">
+        <div class="flex snap-center snap-always max-h-max opacity-90 hover:opacity-100 cursor-crosshair bg-red-200">
+          <figure class="videohome relative w-full h- overflow-hidden ">
             <iframe id="vimeo-iframe" class="w-full h-full"
                     src="https://player.vimeo.com/video/<?= $project->videoCode ?>?title=0&byline=0&portrait=0&autopause=0"
                     frameborder="0"
