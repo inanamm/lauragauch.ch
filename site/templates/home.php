@@ -15,19 +15,32 @@
   <ul
     class="homeGallery flex flex-col lg:flex-row lg:overflow-x-scroll overflow-x-hidden gap-1 lg:gap-10 w-full max-w-full items-center px-12 lg:px-0 lg:h-full no-scrollbar scroll-smooth snap-y lg:snap-x snap-mandatory pb-24 lg:pb-0">
     <?php foreach ($projects as $project): ?>
-      <figure
-        @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
-        hx-get="/htmx/<?= $project->id ?>" hx-trigger="click" hx-target="#content"
-        class="h-full flex-none snap-always snap-center opacity-90 hover:opacity-100 cursor-crosshair"
-        data-project='<?= json_encode($project->title) ?>'
-        x-data
-        @click="$store.projectDrawer.openDrawer();"
-      >
-        <?= $project->image->thumb([
-          'quality' => 90,
-          'format' => 'webp',
-        ])->html(); ?>
-      </figure>
+      <?php if ($project->type === "image"): ?>
+        <figure
+          @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
+          hx-get="/htmx/<?= $project->id ?>" hx-trigger="click" hx-target="#content"
+          class="h-full flex-none snap-always snap-center opacity-90 hover:opacity-100 cursor-crosshair"
+          data-project='<?= json_encode($project->title) ?>'
+          x-data
+          @click="$store.projectDrawer.openDrawer();"
+        >
+          <?= $project->image->thumb([
+            'quality' => 90,
+            'format' => 'webp',
+          ])->html(); ?>
+        </figure>
+      <?php endif; ?>
+
+      <?php if ($project->type === "video"): ?>
+        <div class="flex snap-always snap-center">
+          <figure class="videoindex relative w-full h-32 lg:h-60 max-h-96 overflow-hidden">
+            <iframe id="vimeo-iframe" class="w-full h-full"
+                    src="https://player.vimeo.com/video/<?= $project->videoCode ?>?title=0&byline=0&portrait=0&autopause=0"
+                    frameborder="0"
+                    webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </figure>
+        </div>
+      <?php endif; ?>
     <?php endforeach;
     ?>
   </ul>
@@ -37,7 +50,7 @@
     @click="$store.darkMode.toggle()"
     class="fixed w-4 h-4 bottom-3 z-30 left-3 bg-neutral-900 rounded-full dark:bg-white cursor-crosshair"
   >
-</button>
+  </button>
 
   <div
     class="flex dark:text-white fixed flex-col items-center bottom-2.5 lg:bottom-1 inset-x-20 font-serif text-base leading-tight"
