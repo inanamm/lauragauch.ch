@@ -32,7 +32,7 @@
       <?php endif; ?>
 
       <?php if ($project->type === "video"): ?>
-        <div class="flex snap-center snap-always max-h-max opacity-90 hover:opacity-100 cursor-crosshair bg-red-200">
+        <div class="flex snap-center snap-always max-h-max opacity-90 hover:opacity-100 cursor-crosshair">
           <figure class="videohome relative w-full h- overflow-hidden ">
             <iframe id="vimeo-iframe" class="w-full h-full"
                     src="https://player.vimeo.com/video/<?= $project->videoCode ?>?title=0&byline=0&portrait=0&autopause=0"
