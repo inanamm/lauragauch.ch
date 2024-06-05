@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-screen dark dark:bg-black transition-colors duration-700">
+<html lang="en" class="h-screen dark dark:bg-black transition-colors duration-700 no-scrollbar">
 
 <?php snippet('head') ?>
 
