@@ -13,13 +13,13 @@
 
 <main class="lg:row-span-6 no-scrollbar">
   <ul
-    class="homeGallery flex flex-col lg:flex-row lg:overflow-x-scroll overflow-x-hidden gap-1 lg:gap-10 w-full max-w-full items-center lg:px-0 lg:h-full no-scrollbar scroll-smooth lg:snap-x snap-mandatory pb-24 lg:pb-0">
+    class="homeGallery flex flex-col lg:flex-row lg:overflow-x-scroll overflow-x-hidden gap-1 lg:gap-10 w-full max-w-full items-center lg:px-0 lg:h-full no-scrollbar scroll-smooth pb-24 lg:pb-0 snap-x">
     <?php foreach ($projects as $project): ?>
       <?php if ($project->type === "image"): ?>
         <figure
           @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
           hx-get="/htmx/<?= $project->id ?>" hx-trigger="click" hx-target="#content"
-          class="h-full flex-none snap-always snap-center opacity-90 hover:opacity-100 cursor-crosshair"
+          class="h-full flex-none opacity-90 hover:opacity-100 cursor-crosshair"
           data-project='<?= json_encode($project->title) ?>'
           x-data
           @click="$store.projectDrawer.openDrawer();"
@@ -32,8 +32,14 @@
       <?php endif; ?>
 
       <?php if ($project->type === "video"): ?>
-        <div class="flex snap-center snap-always max-h-max opacity-90 hover:opacity-100 cursor-crosshair">
-          <figure class="videohome relative w-full h- overflow-hidden ">
+        <div class="flex max-h-max opacity-90 hover:opacity-100 cursor-crosshair">
+          <figure 
+          @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
+          hx-get="/htmx/<?= $project->id ?>" hx-trigger="click" hx-target="#content"
+          data-project='<?= json_encode($project->title) ?>'
+          x-data
+          @click="$store.projectDrawer.openDrawer();"
+          class="videohome relative w-full overflow-hidden">
             <iframe id="vimeo-iframe" class="w-full h-full"
                     src="https://player.vimeo.com/video/<?= $project->videoCode ?>?title=0&byline=0&portrait=0&autopause=0"
                     frameborder="0"
