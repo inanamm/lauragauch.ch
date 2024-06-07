@@ -10,38 +10,9 @@ Presskits:
 
 - 
   toggle: 'true'
-  title: >
-    Presskit 1 f jdksl fjdkls jfdkls fjkdls
-    jfkdls fjkdsl fjkdsl fjkdsl fjkdsl
-    fjkdsl fjkslda
+  title: Hi
   target: 'true'
-  link: https://www.google.com/
-  date: 2024-04-01
-- 
-  toggle: 'true'
-  title: Presskit 2
-  target: 'true'
-  link: https://www.google.com/
-- 
-  toggle: 'true'
-  title: Presskit 3
-  target: 'true'
-  link: https://www.google.com/
-- 
-  toggle: 'true'
-  title: Presskit 4
-  target: 'true'
-  link: https://www.google.com/
-- 
-  toggle: 'true'
-  title: Presskit 5
-  target: 'true'
-  link: https://www.google.com/
-- 
-  toggle: 'true'
-  title: Presskit 6
-  target: 'true'
-  link: https://www.google.com/
+  link: ""
 
 ----
 
@@ -120,7 +91,7 @@ Upcoming:
     fdkjsla
   link: https://www.google.com/
   target: 'true'
-  date: 2024-08-16
+  date: 2025-04-20
   toggle: 'true'
   year: ""
 
@@ -204,10 +175,6 @@ Email: laura@lauragauch.com
 
 ----
 
-Contact: +41 79 780 24 83
-
-----
-
 Instagramlink: https://github.com/GuidoOffermans
 
 ----
@@ -217,6 +184,10 @@ Instagramlinktext: bylauragauch
 ----
 
 Target: true
+
+----
+
+Contact: 
 
 ----
 

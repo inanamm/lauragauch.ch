@@ -181,7 +181,7 @@ columns:
                 label: Date
                 type: date
                 width: 1/2
-                display: YYYY-MM
+                display: YYYY-MM-DD
               toggle:
                 label: Visible
                 type: toggle
@@ -311,9 +311,6 @@ columns:
           email:
             label: Email
             type: email
-          contact:
-            label: Phone
-            type: tel
 
           lineB1:
             type: line
