@@ -1,4 +1,4 @@
-<div class="dark:text-white relative h-full z-30 lg:z-50 overflow-y-scroll " x-data="{ menuOpen: true }"
+<div class="dark:text-white relative h-full z-30 lg:z-50 overflow-y-scroll " x-data="{ menuOpen: false }"
   x-init="() => $watch('menuOpen', (value) => document.body.style.overflow = value ? 'hidden' : 'auto')"
   @keyup.escape.window="menuOpen = false;">
 
