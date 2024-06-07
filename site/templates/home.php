@@ -11,7 +11,7 @@
     </nav>
   </header>
 
-  <main class="lg:row-span-6 no-scrollbar lg:overflow-x-scroll">
+  <main class="scrollContainer lg:row-span-6 no-scrollbar lg:overflow-x-scroll">
     <ul
       class="homeGallery flex flex-col lg:flex-row lg:overflow-x-scroll overflow-x-hidden gap-1 lg:gap-10 w-full max-w-full items-center lg:px-0 lg:h-full no-scrollbar scroll-smooth pb-24 lg:pb-0 snap-x">
       <?php foreach ($projects as $project): ?>

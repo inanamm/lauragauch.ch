@@ -1,5 +1,5 @@
 <div
-  class="dark:text-white relative h-full z-50 overflow-y-scroll "
+  class="dark:text-white relative h-full z-30 lg:z-50 overflow-y-scroll "
   x-data="{ menuOpen: false }"
   x-init="() => $watch('menuOpen', (value) => document.body.style.overflow = value ? 'hidden' : 'auto')"
   @keyup.escape.window="menuOpen = false;"
@@ -11,6 +11,23 @@
     <h1 class="font-sans lg:text-lg text-md">
       Laura Gauch
     </h1>
+  </button>
+
+  <button
+    @click="menuOpen = !menuOpen; $nextTick(() => { setTimeout(() => $refs.projectIndexOverlay.scrollTop = 0, 200); $refs.projectIndexOverlay.style.backgroundColor = 'bg-white/50' })"
+    class="fixed
+		bottom-10 lg:top-2 lg:bottom-auto
+		lg:right-auto right-3 
+		font-serif all-small-caps text-sm
+		lg:hover:underline lg:underline-offset-2
+		rounded-lg lg:rounded-none
+		bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent
+		px-2 lg:p-0
+		py-0.5
+    z-0
+		backdrop-blur-sm lg:backdrop-blur-0 cursor-crosshair" :aria-expanded="menuOpen" aria-controls="navigation"
+    aria-label="About">
+    About
   </button>
 
   <button
