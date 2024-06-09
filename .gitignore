@@ -5,15 +5,15 @@ Icon
 .DS_Store
 
 # Frontend
-/public/assets/
-/public/dist/
+/public_html/assets/
+/public_html/dist/
 /src/public/
 
 # Temporary files
 # ---------------
 
-/public/media/*
-!/public/media/index.html
+/public_html/media/*
+!/public_html/media/index.html
 
 # Editors
 # (sensitive workspace files)

@@ -15,7 +15,7 @@ export default ({mode}) => ({
   },
 
   build: {
-    outDir: resolve(process.cwd(), "public/dist"),
+    outDir: resolve(process.cwd(), "public_html/dist"),
     emptyOutDir: true,
     rollupOptions: {input},
   },

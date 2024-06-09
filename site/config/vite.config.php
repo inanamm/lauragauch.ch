@@ -3,7 +3,7 @@
 // Configure your settings in the "vite.config.js" file instead.
 return [
   'rootDir' => 'src',
-  'outDir' => 'public/dist',
+  'outDir' => 'public_html/dist',
   'assetsDir' => 'assets',
   'legacy' => false
 ];
