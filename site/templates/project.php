@@ -64,54 +64,94 @@ $style = "background-color: $hslaColor";
                 <?php endif; ?>
 
                 <!-- PRESSKITS -->
-                <?php if ($page->presskits()->kt()->isNotEmpty()): ?>
+                <?php
+                $presskits = $page->presskits()->toStructure();
+                $hasVisiblePresskits = false;
+                $visiblePresskits = [];
+
+                foreach ($presskits as $presskit) {
+                    if ($presskit->toggle()->toBool() === true) {
+                        $visiblePresskits[] = $presskit;
+                        $hasVisiblePresskits = true;
+                    }
+                }
+                ?>
+
+                <?php if ($hasVisiblePresskits): ?>
                     <h3 class="all-small-caps pt-6 text-sm">presskits</h3>
-                    <?php
-                    foreach ($page->presskits()->toStructure() as $presskit):
-                        ?>
+                    <?php foreach ($visiblePresskits as $presskit): ?>
                         <div class="flex flex-row gap-3 text-base">
                             <?= $presskit->title() ?>
                         </div>
-
-                        <?php
-                    endforeach;
-                    ?>
+                    <?php endforeach; ?>
                 <?php endif; ?>
 
+
                 <!-- COLLABORATION -->
-                <?php if ($page->collaboration()->kt()->isNotEmpty()): ?>
+                <?php
+                $collaborations = $page->collaboration()->toStructure();
+                $hasVisibleCollaborations = false;
+                $visibleCollaborations = [];
+
+                foreach ($collaborations as $collab) {
+                    if ($collab->toggle()->toBool() === true) {
+                        $visibleCollaborations[] = $collab;
+                        $hasVisibleCollaborations = true;
+                    }
+                }
+                ?>
+
+                <?php if ($hasVisibleCollaborations): ?>
                     <h3 class="all-small-caps pt-6 text-sm">in collaboration with</h3>
-                    <?php
-                    foreach ($page->collaboration()->toStructure() as $collab):
-                        ?>
+                    <?php foreach ($visibleCollaborations as $collab): ?>
                         <div class="flex flex-row gap-3 text-base">
                             <?= $collab->name() ?>
                         </div>
-                        <?php
-                    endforeach;
-                    ?>
+                    <?php endforeach; ?>
                 <?php endif; ?>
 
+
                 <!-- SUPPORT OF -->
-                <?php if ($page->supportOf()->kt()->isNotEmpty()): ?>
+                <?php
+                $supports = $page->supportOf()->toStructure();
+                $hasVisibleSupports = false;
+                $visibleSupports = [];
+
+                foreach ($supports as $support) {
+                    if ($support->toggle()->toBool() === true) {
+                        $visibleSupports[] = $support;
+                        $hasVisibleSupports = true;
+                    }
+                }
+                ?>
+
+                <?php if ($hasVisibleSupports): ?>
                     <h3 class="all-small-caps pt-6 text-sm">With the Support of</h3>
-                    <?php
-                    foreach ($page->supportOf()->toStructure() as $support):
-                        ?>
+                    <?php foreach ($visibleSupports as $support): ?>
                         <div class="flex flex-row gap-3 text-base">
                             <?= $support->name() ?>
                         </div>
-                        <?php
-                    endforeach;
-                    ?>
+                    <?php endforeach; ?>
                 <?php endif; ?>
 
+
                 <!-- NEXT VIEWINGS -->
-                <?php if ($page->nextViewings()->toStructure()->isNotEmpty()): ?>
+                <?php
+                $viewings = $page->nextViewings()->toStructure();
+                $hasVisibleViewings = false;
+                $visibleViewings = [];
+
+                foreach ($viewings as $item) {
+                    if ($item->toggle()->toBool() === true) {
+                        $visibleViewings[] = $item;
+                        $hasVisibleViewings = true;
+                    }
+                }
+                ?>
+
+                <?php if ($hasVisibleViewings): ?>
                     <h3 class="all-small-caps pt-6 text-sm">Next Viewings</h3>
-                    <?php
-                    $items = $page->nextViewings()->toStructure();
-                    foreach ($items as $item): ?>
+                    <?php foreach ($visibleViewings as $item): ?>
                         <div class="flex flex-col">
                             <div class="flex flex-wrap gap-x-5 text-base">
                                 <?php if ($item->dateUntil()->isNotEmpty()): ?>
@@ -128,8 +168,9 @@ $style = "background-color: $hslaColor";
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach ?>
+                    <?php endforeach; ?>
                 <?php endif; ?>
+
 
             </div>
 
