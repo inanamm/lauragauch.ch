@@ -13,6 +13,11 @@ Presskits:
   title: Hi
   target: 'true'
   link: ""
+- 
+  toggle: 'true'
+  title: Hi 2
+  target: 'true'
+  link: ""
 
 ----
 
@@ -33,13 +38,13 @@ Press:
   link: https://www.google.com/
   target: 'true'
   date: 2024-04-11
-  toggle: 'true'
+  toggle: 'false'
 - 
   title: Selected Press 3
   link: https://www.google.com/
   target: 'true'
   date: 2024-04-11
-  toggle: 'true'
+  toggle: 'false'
 - 
   title: Selected Press 4
   link: https://www.google.com/
@@ -63,7 +68,7 @@ Press:
   link: https://www.google.com/
   target: 'true'
   date: 2024-04-11
-  toggle: 'true'
+  toggle: 'false'
 - 
   title: Selected Press 8
   link: https://www.google.com

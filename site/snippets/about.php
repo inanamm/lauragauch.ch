@@ -79,31 +79,53 @@
 
     <div class="bottom grid lg:grid-cols-3 grid-row font-serif px-3 gap-6 lg:flex-row pb-3">
       <div class="flex flex-col gap-y-6 pb-6">
-        <?php if ($site->page('about')->presskits()->isNotEmpty()): ?>
+
+        <!-- PRESSKITS -->
+        <?php
+        $presskits = $site->page('about')->presskits()->toStructure();
+        $hasVisiblePresskits = false;
+        $visiblePresskits = [];
+
+        foreach ($presskits as $linkObject) {
+          if ($linkObject->toggle()->toBool() === true) {
+            $visiblePresskits[] = $linkObject;
+            $hasVisiblePresskits = true;
+          }
+        }
+        ?>
+
+        <?php if ($hasVisiblePresskits): ?>
           <div class="presskits">
             <h3 class="all-small-caps text-sm">Presskits</h3>
             <div class="flex flex-col text-base">
-              <?php
-              $presskits = $site->page('about')->presskits()->toStructure();
-              foreach ($presskits as $linkObject):
-                ?>
+              <?php foreach ($visiblePresskits as $linkObject): ?>
                 <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
                   <?= $linkObject->title()->or($linkObject->link()) ?>
                 </a>
-                <?php
-              endforeach;
-              ?>
+              <?php endforeach; ?>
             </div>
           </div>
         <?php endif; ?>
 
-        <?php if ($site->page('about')->press()->isNotEmpty()): ?>
+
+        <!-- PRESS -->
+        <?php
+        $pressItems = $site->page('about')->press()->toStructure();
+        $hasVisiblePressItems = false;
+        $visiblePressItems = [];
+
+        foreach ($pressItems as $linkObject) {
+          if ($linkObject->toggle()->toBool() === true) {
+            $visiblePressItems[] = $linkObject;
+            $hasVisiblePressItems = true;
+          }
+        }
+        ?>
+
+        <?php if ($hasVisiblePressItems): ?>
           <div class="selectedPress">
             <h3 class="all-small-caps text-sm">Selected Press</h3>
-            <?php
-            $presskits = $site->page('about')->press()->toStructure();
-            foreach ($presskits as $linkObject):
-              ?>
+            <?php foreach ($visiblePressItems as $linkObject): ?>
               <div class="flex gap-x-3 text-base">
                 <div class="">
                   <?= $linkObject->date()->toDate('%G') ?>
@@ -112,19 +134,29 @@
                   <?= $linkObject->title()->or($linkObject->link()) ?>
                 </a>
               </div>
-              <?php
-            endforeach;
-            ?>
+            <?php endforeach; ?>
           </div>
         <?php endif; ?>
 
-        <?php if ($site->page('about')->exhibitions()->isNotEmpty()): ?>
+
+        <!-- EXHIBITIONS -->
+        <?php
+        $exhibitions = $site->page('about')->exhibitions()->toStructure();
+        $hasVisibleExhibitions = false;
+        $visibleExhibitions = [];
+
+        foreach ($exhibitions as $linkObject) {
+          if ($linkObject->toggle()->toBool() === true) {
+            $visibleExhibitions[] = $linkObject;
+            $hasVisibleExhibitions = true;
+          }
+        }
+        ?>
+
+        <?php if ($hasVisibleExhibitions): ?>
           <div class="exhibition">
             <h3 class="all-small-caps text-sm">Past Exhibitions + Film Festivals</h3>
-            <?php
-            $exhibitions = $site->page('about')->exhibitions()->toStructure();
-            foreach ($exhibitions as $linkObject):
-              ?>
+            <?php foreach ($visibleExhibitions as $linkObject): ?>
               <div class="flex gap-x-3 text-base">
                 <div class="">
                   <?= $linkObject->year()->toDate('%G') ?>
@@ -133,21 +165,30 @@
                   <?= $linkObject->title()->or($linkObject->link()) ?>
                 </a>
               </div>
-              <?php
-            endforeach;
-            ?>
+            <?php endforeach; ?>
           </div>
         <?php endif; ?>
       </div>
 
+      <!-- UPCOMING -->
       <div class="flex flex-col gap-y-6 pb-6">
-        <?php if ($site->page('about')->upcoming()->isNotEmpty()): ?>
+        <?php
+        $upcoming = $site->page('about')->upcoming()->toStructure();
+        $hasVisibleUpcoming = false;
+        $visibleUpcoming = [];
+
+        foreach ($upcoming as $linkObject) {
+          if ($linkObject->toggle()->toBool() === true) {
+            $visibleUpcoming[] = $linkObject;
+            $hasVisibleUpcoming = true;
+          }
+        }
+        ?>
+
+        <?php if ($hasVisibleUpcoming): ?>
           <div class="flex flex-col upcoming">
             <h3 class="all-small-caps text-sm">Upcoming</h3>
-            <?php
-            $upcoming = $site->page('about')->upcoming()->toStructure();
-            foreach ($upcoming as $linkObject):
-              ?>
+            <?php foreach ($visibleUpcoming as $linkObject): ?>
               <div class="flex gap-x-3 text-base">
                 <div class="block">
                   <?= str_replace(' ', '&nbsp;', $linkObject->date()->toDate('%B, %d %G')) ?>
@@ -156,28 +197,35 @@
                   <?= $linkObject->title()->or($linkObject->link()) ?>
                 </a>
               </div>
-
-              <?php
-            endforeach;
-            ?>
+            <?php endforeach; ?>
           </div>
         <?php endif; ?>
 
-        <?php if ($site->page('about')->awards()->isNotEmpty()): ?>
+        <!-- AWARDS -->
+        <?php
+        $items = $site->page('about')->awards()->toStructure();
+        $hasVisibleAwards = false;
+        $visibleAwards = [];
+
+        foreach ($items as $item) {
+          if ($item->toggle()->toBool() === true) {
+            $visibleAwards[] = $item;
+            $hasVisibleAwards = true;
+          }
+        }
+        ?>
+
+        <?php if ($hasVisibleAwards): ?>
           <div class="grants">
             <h3 class="all-small-caps text-sm">Grants, Residencies and Awards</h3>
-            <?php $items = $site->page('about')->awards()->toStructure();
-            foreach ($items as $item):
-              ?>
+            <?php foreach ($visibleAwards as $item): ?>
               <div class="flex gap-x-3 text-base">
                 <div class="">
                   <?= $item->year()->toDate('%G') ?>
                 </div>
                 <div class="flex flex-wrap"><?= $item->title()->kt() ?></div>
               </div>
-              <?php
-            endforeach;
-            ?>
+            <?php endforeach; ?>
           </div>
         <?php endif; ?>
 
