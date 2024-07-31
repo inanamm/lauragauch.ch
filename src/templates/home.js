@@ -17,3 +17,11 @@ Alpine.data("copyToClipboard", copyToClipboard);
 
 Alpine.start();
 console.log('initialized Alpine');
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img').forEach(function(img) {
+    img.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+    });
+  });
+});

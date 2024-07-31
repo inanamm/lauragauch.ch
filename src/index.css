@@ -60,7 +60,7 @@ figure img {
     padding-left: 3rem;
     padding-right: 3rem;
   }
-  
+
   .galleryImages {
     height: full;
   }
@@ -88,4 +88,11 @@ figure img {
 
 a {
   cursor: crosshair;
+}
+
+img {
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }
