@@ -48,7 +48,6 @@ module.exports = {
       },
     },
   },
-  variants: {},
   plugins: [
     require('tailwindcss-opentype'),
     function ({addBase, theme}) {
