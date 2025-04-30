@@ -1,4 +1,4 @@
-<div class="dark:text-white relative h-full z-30 lg:z-50 overflow-y-scroll " x-data="{ menuOpen: false }"
+<div class="dark:text-white relative h-full z-30 lg:z-50" x-data="{ menuOpen: false }"
   x-init="() => $watch('menuOpen', (value) => document.body.style.overflow = value ? 'hidden' : 'auto')"
   @keyup.escape.window="menuOpen = false;">
 
@@ -22,9 +22,9 @@
     px-2 lg:p-0
     py-0.5
     z-0
-    backdrop-blur-sm lg:backdrop-blur-0 cursor-crosshair" :aria-expanded="menuOpen" aria-controls="navigation"
+    backdrop-blur-xs lg:backdrop-blur-0 cursor-crosshair" :aria-expanded="menuOpen" aria-controls="navigation"
     aria-label="About">
-    About
+    about
   </button>
 
   <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.800ms class="fixed
@@ -37,7 +37,7 @@
         px-2 lg:p-0
         py-0.5 
         z-50
-        backdrop-blur-sm lg:backdrop-blur-0 cursor-crosshair" :aria-expanded="menuOpen.toString()"
+        backdrop-blur-xs lg:backdrop-blur-0 cursor-crosshair" :aria-expanded="menuOpen.toString()"
     aria-controls="about" aria-label="About">
     close
   </button>
@@ -53,14 +53,14 @@
 
     <article class="top grid lg:grid-cols-3 grid-row px-3 font-sans text-2xl pt-32 pb-20 gap-6">
       <div class="col-span-2">
-        <h3 class="font-serif text-sm all-small-caps">Biography</h3>
+        <h3 class="font-serif text-sm all-small-caps">biography</h3>
         <div class="lg:text-lg text-md">
           <?= $site->page('about')->biography() ?>
         </div>
       </div>
       <div class="flex flex-col">
         <div class="lg:text-lg text-md">
-          <h3 class="font-serif text-sm all-small-caps">Contact</h3>
+          <h3 class="font-serif text-sm all-small-caps">contact</h3>
 
           <?= kirbytag([
             'email' => $site->page('about')->email(),
@@ -70,7 +70,7 @@
         </div>
 
         <div class="flex flex-col lg:text-lg text-md pt-6 lg:pt-10">
-          <h3 class="font-serif text-sm all-small-caps">Social Media</h3>
+          <h3 class="font-serif text-sm all-small-caps">social media</h3>
           <a href="<?= $site->page('about')->instagramLink()->toUrl() ?>" <?php e($site->page('about')->target()->toBool(), 'target="_blank"') ?>>
             <?= $site->page('about')->instagramLinkText() ?> </a>
         </div>
@@ -96,7 +96,7 @@
 
         <?php if ($hasVisiblePresskits): ?>
           <div class="presskits">
-            <h3 class="all-small-caps text-sm">Presskits</h3>
+            <h3 class="all-small-caps text-sm">presskits</h3>
             <div class="flex flex-col text-base">
               <?php foreach ($visiblePresskits as $linkObject): ?>
                 <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
@@ -124,7 +124,7 @@
 
         <?php if ($hasVisiblePressItems): ?>
           <div class="selectedPress">
-            <h3 class="all-small-caps text-sm">Selected Press</h3>
+            <h3 class="all-small-caps text-sm">selected press</h3>
             <?php foreach ($visiblePressItems as $linkObject): ?>
               <div class="flex gap-x-3 text-base">
                 <div class="">
@@ -155,7 +155,7 @@
 
         <?php if ($hasVisibleExhibitions): ?>
           <div class="exhibition">
-            <h3 class="all-small-caps text-sm">Past Exhibitions + Film Festivals</h3>
+            <h3 class="all-small-caps text-sm">past exhibitions + film festivals</h3>
             <?php foreach ($visibleExhibitions as $linkObject): ?>
               <div class="flex gap-x-3 text-base">
                 <div class="">
@@ -187,7 +187,7 @@
 
         <?php if ($hasVisibleUpcoming): ?>
           <div class="flex flex-col upcoming">
-            <h3 class="all-small-caps text-sm">Upcoming</h3>
+            <h3 class="all-small-caps text-sm">upcoming</h3>
             <?php foreach ($visibleUpcoming as $linkObject): ?>
               <div class="flex gap-x-3 text-base">
                 <div class="block">
@@ -217,7 +217,7 @@
 
         <?php if ($hasVisibleAwards): ?>
           <div class="grants">
-            <h3 class="all-small-caps text-sm">Grants, Residencies and Awards</h3>
+            <h3 class="all-small-caps text-sm">grants, residencies and awards</h3>
             <?php foreach ($visibleAwards as $item): ?>
               <div class="flex gap-x-3 text-base">
                 <div class="">
@@ -230,7 +230,7 @@
         <?php endif; ?>
 
         <div class="website">
-          <h3 class="all-small-caps text-sm">Website</h3>
+          <h3 class="all-small-caps text-sm">website</h3>
           <div class="flex flex-col text-base">
             <?php if ($p = page('datasecurity')): ?>
               <a href="<?= $p->url() ?>" target="_blank"> <?= $p->title() ?> </a>
@@ -242,11 +242,11 @@
 
       <div class="flex flex-col gap-y-6 pb-6">
         <div class="flex flex-col text-base">
-          <h3 class="all-small-caps text-sm">Selected Clients</h3>
+          <h3 class="all-small-caps text-sm">selected clients</h3>
           <?= $site->page('about')->clients() ?>
         </div>
         <div class="flex flex-col text-base">
-          <h3 class="all-small-caps text-sm">Talented friends and collaborators</h3>
+          <h3 class="all-small-caps text-sm">talented friends and collaborators</h3>
           <?= $site->page('about')->friends() ?>
         </div>
 

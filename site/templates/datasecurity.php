@@ -24,7 +24,7 @@
                 bg-white/25 lg:bg-transparent
                 px-2 lg:p-0
                 py-0.5
-                backdrop-blur-sm lg:backdrop-blur-0
+                backdrop-blur-xs lg:backdrop-blur-0
                 z-30">
              <a href="<?= site()->url() ?>">Back</a>
         </div>
