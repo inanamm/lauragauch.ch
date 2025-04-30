@@ -19,7 +19,7 @@
 
   <div
     x-ref="projectOverlay"
-    class="relative w-full h-full overflow-y-scroll rounded-t-2xl drop-shadow-sm no-scrollbar row-span-4 lg:row-span-2 backdrop-blur-md"
+    class="relative w-full h-full overflow-y-scroll rounded-t-2xl drop-shadow-xs no-scrollbar row-span-4 lg:row-span-2 backdrop-blur-md"
   >
     <button
       @click="$store.projectDrawer.closeDrawer()"
@@ -33,7 +33,7 @@
       bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent
       px-2 lg:p-0
       py-0.5
-      backdrop-blur-sm lg:backdrop-filter-none"
+      backdrop-blur-xs lg:backdrop-filter-none"
       :aria-expanded="$store.projectDrawer.open"
       aria-controls="projectDetails"
       aria-label="Project Details"

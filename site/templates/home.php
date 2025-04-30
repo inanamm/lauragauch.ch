@@ -54,7 +54,7 @@
         @click="$store.projectDrawer.openDrawer(); $nextTick(() => { htmx.ajax('GET', `/htmx/${$store.activeProject.activeProjectId}`, '#content'); })"
         :aria-expanded="$store.projectDrawer.open" aria-controls="navigation" class="hover:underline underline-offset-2 all-small-caps text-sm font-serif lg:hover:underline lg:underline-offset-2 rounded-lg lg:rounded-none
             bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent px-2 lg:p-0 py-0.5
-            backdrop-blur-sm lg:backdrop-filter-none
+            backdrop-blur-xs lg:backdrop-filter-none
             z-40 dark:text-white cursor-crosshair" aria-label="Navigation Menu">
         More Info
       </button>
