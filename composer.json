@@ -23,10 +23,10 @@
   },
   "require": {
     "php": ">=8.0.0 <=8.3.3",
-    "getkirby/cms": "^4.1",
+    "getkirby/cms": "4.8",
     "arnoson/kirby-vite": "^5.3.0",
     "tobimori/kirby-seo": "1.1.2",
-    "getkirby/cli": "^1.4"
+    "getkirby/cli": "1.8"
   },
   "config": {
     "allow-plugins": {
