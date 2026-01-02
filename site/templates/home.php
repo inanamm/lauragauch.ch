@@ -46,7 +46,7 @@
     </ul>
 
     <button x-data @click="$store.darkMode.toggle()"
-      class="fixed w-4 h-4 bottom-3 z-30 left-3 bg-neutral-900 rounded-full dark:bg-white cursor-crosshair">
+      class="hidden lg:fixed w-4 h-4 bottom-3 z-30 left-3 bg-neutral-900 rounded-full dark:bg-white cursor-crosshair">
     </button>
 
     <div

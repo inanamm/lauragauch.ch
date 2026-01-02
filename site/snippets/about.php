@@ -13,8 +13,8 @@
   <button
     @click="menuOpen = !menuOpen; $nextTick(() => { setTimeout(() => $refs.projectIndexOverlay.scrollTop = 0, 200); $refs.projectIndexOverlay.style.backgroundColor = 'bg-white/50' })"
     class="fixed
-    bottom-10 lg:top-2 lg:bottom-auto
-    lg:right-auto right-3 
+    bottom-2.5 lg:top-2 lg:bottom-auto
+    lg:right-auto left-3 lg:left-auto
     font-serif all-small-caps text-sm
     lg:hover:underline lg:underline-offset-2
     rounded-lg lg:rounded-none
