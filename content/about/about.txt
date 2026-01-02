@@ -6,88 +6,6 @@ Biography: <p>Laura Gauch is a visual artist focusing on photography and film. H
 
 ----
 
-Presskits:
-
-- 
-  toggle: 'true'
-  title: Hi
-  target: 'true'
-  link: ""
-- 
-  toggle: 'true'
-  title: Hi 2
-  target: 'true'
-  link: https://martinaholenstein.ch
-
-----
-
-Press:
-
-- 
-  title: >
-    Selected Press 1 blablabla s fhdskl
-    jkfdls jfkdls afjkdls fjkdls fjkdls
-    fjkdsl fdkjsla fdsl fjdksl fjdksl jfkdsl
-    jfkdsl jfkdsl fklsd
-  link: ""
-  target: 'true'
-  date: 2024-04-11
-  toggle: 'true'
-- 
-  title: Selected Press 2
-  link: https://www.google.com/
-  target: 'true'
-  date: 2024-04-11
-  toggle: 'false'
-- 
-  title: Selected Press 3
-  link: https://www.google.com/
-  target: 'true'
-  date: 2024-04-11
-  toggle: 'false'
-- 
-  title: Selected Press 4
-  link: https://www.google.com/
-  target: 'true'
-  date: 2024-04-11
-  toggle: 'true'
-- 
-  title: Selected Press 5
-  link: https://www.google.com/
-  target: 'true'
-  date: 2024-04-11
-  toggle: 'true'
-- 
-  title: Selected Press 6
-  link: https://www.google.com/
-  target: 'true'
-  date: 2024-04-11
-  toggle: 'true'
-- 
-  title: Selected Press 7
-  link: https://www.google.com/
-  target: 'true'
-  date: 2024-04-11
-  toggle: 'false'
-- 
-  title: Selected Press 8
-  link: https://www.google.com
-  target: 'true'
-  date: 2024-04-11
-  toggle: 'true'
-- 
-  title: Selected Press 9
-  link: https://www.google.com
-  target: 'false'
-  date: 2024-04-11
-  toggle: 'true'
-
-----
-
-Clients: <ul><li><a href="https://oysurf.com/" target="_blank">Oy Surf</a></li><li><a href="https://martinaholenstein.ch/" target="_blank">fdsdsafdsa</a></li><li>fdsfdsaf</li><li>fdafds</li><li>dfsafdsa</li><li>fdsa jfkdls fjklds fjdkls fkdsl fjkdsl fkjdsl fkdsl fdkjslf skl fs (:s fds fdsfdsfjhdsfjkdslfjkdsl jfkdlsfjksld</li></ul>
-
-----
-
 Upcoming:
 
 - 
@@ -181,6 +99,88 @@ Awards:
   target: 'false'
   year: 2024-04-03
   toggle: 'true'
+
+----
+
+Press:
+
+- 
+  title: >
+    Selected Press 1 blablabla s fhdskl
+    jkfdls jfkdls afjkdls fjkdls fjkdls
+    fjkdsl fdkjsla fdsl fjdksl fjdksl jfkdsl
+    jfkdsl jfkdsl fklsd
+  link: ""
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 2
+  link: https://www.google.com/
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'false'
+- 
+  title: Selected Press 3
+  link: https://www.google.com/
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'false'
+- 
+  title: Selected Press 4
+  link: https://www.google.com/
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 5
+  link: https://www.google.com/
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 6
+  link: https://www.google.com/
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 7
+  link: https://www.google.com/
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'false'
+- 
+  title: Selected Press 8
+  link: https://www.google.com
+  target: 'true'
+  date: 2024-04-11
+  toggle: 'true'
+- 
+  title: Selected Press 9
+  link: https://www.google.com
+  target: 'false'
+  date: 2024-04-11
+  toggle: 'true'
+
+----
+
+Presskits:
+
+- 
+  toggle: 'true'
+  title: Hi
+  target: 'true'
+  link: ""
+- 
+  toggle: 'true'
+  title: Hi 2
+  target: 'true'
+  link: https://martinaholenstein.ch
+
+----
+
+Clients: <ul><li><a href="https://oysurf.com/" target="_blank">Oy Surf</a></li><li><a href="https://martinaholenstein.ch/" target="_blank">fdsdsafdsa</a></li><li>fdsfdsaf</li><li>fdafds</li><li>dfsafdsa</li><li>fdsa jfkdls fjklds fjdkls fkdsl fjkdsl fkjdsl fkdsl fdkjslf skl fs (:s fds fdsfdsfjhdsfjkdslfjkdsl jfkdlsfjksld</li></ul>
 
 ----
 

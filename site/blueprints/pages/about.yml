@@ -20,7 +20,7 @@ columns:
             type: line
 
           headline:
-            label: Links
+            label: Exhibition and information
             type: headline
             numbered: false 
 
@@ -28,118 +28,7 @@ columns:
       links:
         type: fields
         fields:
-  
-      # PRESSKITS
-          presskits:
-            type: structure
-            label: Presskits
-            columns:
-              title:
-                width: 2/6
-              link:
-                width: 3/6
-              toggle:
-                width: 1/6
-            fields:
-              toggle:
-                label: Visible
-                type: toggle
-                width: 1/4
-                text: 
-                  - "No"
-                  - "Yes"
-                default: true                
-              title:
-                label: Name
-                type: text
-                width: 3/4
 
-              lineA2:
-                type: line
-
-              target:
-                label: Open in new window?
-                type: toggle
-                text: 
-                  - "No"
-                  - "Yes"
-                width: 1/4
-                default: true
-              link:
-                label: link
-                type: link
-                options: 
-                  - url
-                  - file
-                  - page
-                  - email
-                width: 3/4
-      # PRESS
-          press:
-            type: structure
-            label: Selected Press
-            columns:
-              title:
-                width: 2/6
-              link:
-                width: 2/6
-              date:
-                width: 1/6
-              toggle:
-                width: 1/6
-            fields:
-              title:
-                label: Name
-                type: text
-
-              lineA8:
-                type: line
-
-              link:
-                label: link
-                type: url
-                width: 3/4
-              target:
-                label: Open in new window?
-                type: toggle
-                text: 
-                  - "No"
-                  - "Yes"
-                width: 1/4
-
-              lineA9:
-                type: line
-
-              date:
-                label: Year
-                type: date
-                width: 1/2
-                display: YYYY
-              toggle:
-                label: Visible
-                type: toggle
-                width: 1/2
-                text: 
-                  - "No"
-                  - "Yes"
-                default: true
-
-      # SELECTED CLIENTS
-          clients:
-            type: list
-            label: Selected Clients
-            marks:
-              - link
-            nodes:
-              - bulletList
-
-          lineA4:
-            type: line
-    
-          headlineB:
-            label: Exhibition and information
-            type: headline
-            numbered: false 
 
       # UPCOMING
           upcoming:
@@ -303,9 +192,124 @@ columns:
             type: line
 
           headlineC:
+            label: Press and Links
+            type: headline
+            numbered: false 
+
+      # PRESS
+          press:
+            type: structure
+            label: Selected Press
+            columns:
+              title:
+                width: 2/6
+              link:
+                width: 2/6
+              date:
+                width: 1/6
+              toggle:
+                width: 1/6
+            fields:
+              title:
+                label: Name
+                type: text
+
+              lineA8:
+                type: line
+
+              link:
+                label: link
+                type: url
+                width: 3/4
+              target:
+                label: Open in new window?
+                type: toggle
+                text: 
+                  - "No"
+                  - "Yes"
+                width: 1/4
+
+              lineA9:
+                type: line
+
+              date:
+                label: Year
+                type: date
+                width: 1/2
+                display: YYYY
+              toggle:
+                label: Visible
+                type: toggle
+                width: 1/2
+                text: 
+                  - "No"
+                  - "Yes"
+                default: true
+
+      # PRESSKITS
+          presskits:
+            type: structure
+            label: Presskits
+            columns:
+              title:
+                width: 2/6
+              link:
+                width: 3/6
+              toggle:
+                width: 1/6
+            fields:
+              toggle:
+                label: Visible
+                type: toggle
+                width: 1/4
+                text: 
+                  - "No"
+                  - "Yes"
+                default: true                
+              title:
+                label: Name
+                type: text
+                width: 3/4
+
+              lineA2:
+                type: line
+
+              target:
+                label: Open in new window?
+                type: toggle
+                text: 
+                  - "No"
+                  - "Yes"
+                width: 1/4
+                default: true
+              link:
+                label: link
+                type: link
+                options: 
+                  - url
+                  - file
+                  - page
+                  - email
+                width: 3/4
+
+          lineA4:
+            type: line
+
+    
+          headlineB:
             label: Additional
             type: headline
             numbered: false 
+
+      # SELECTED CLIENTS
+          clients:
+            type: list
+            label: Selected Clients
+            marks:
+              - link
+            nodes:
+              - bulletList
+
 
       # SELECTED FRIENDS
           friends:
