@@ -169,7 +169,7 @@ endforeach;
       <div class="flex flex-wrap gap-1 w-full last:pb-0">
         <!-- VIDEO -->
         <?php if ($page->vimeo()->isNotEmpty()): ?>
-          <div class="overflow-hidden relative h-52 w-auto lg:h-96 aspect-video">
+          <div class="overflow-hidden relative w-auto h-52 lg:h-96 aspect-video">
             <iframe
               id="vimeo-iframe"
               class="absolute inset-0 w-full h-full"
@@ -187,9 +187,9 @@ endforeach;
         <?php foreach ($page->gallery()->toFiles() as $image): ?>
           <figure class="h-52 lg:h-96 lg:w-auto [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
             <?= $image->thumb([
-          'quality' => 90,
-          'format' => 'webp',
-      ])->html() ?>
+                'quality' => 90,
+                'format' => 'webp',
+            ])->html() ?>
           </figure>
         <?php endforeach ?>
       </div>
