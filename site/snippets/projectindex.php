@@ -44,59 +44,69 @@
 
 
     <article class="top px-3 font-serif pt-32 pb-20">
-      <div class="gallery flex flex-wrap w-full gap-x-5 gap-y-4">
+      <div
+        class="gallery flex flex-wrap w-full gap-x-5 gap-y-4 [&:has(.group:hover)_.group>*]:opacity-20 [&:has(.group:hover)_.group>*]:blur-xs">
         <?php
         $projects = $site->page('projects')->children()->published();
         foreach ($projects as $project):
           $isFirstItem = true;
-
-          // Video
-          if ($project->vimeo()->isNotEmpty()):
-            ?>
-            <div class="relative w-fit mt-[calc(0.95rem+0.25rem)]">
-              <h2 class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap">
-                <?= $project->title()->or($project->link()) ?>, <?= $project->year()->escape() ?>
-              </h2>
-              <figure class="relative h-32 aspect-video">
-                <iframe id="vimeo-iframe" class="absolute inset-0 w-full h-full"
-                        src="https://player.vimeo.com/video/<?= $project->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
-                        frameborder="0"
-                        webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-              </figure>
-            </div>
+          ?>
+          <div class="contents group">
             <?php
-            $isFirstItem = false;
-          endif;
-
-          // Images
-          foreach ($project->gallery()->toFiles() as $image):
-            if ($isFirstItem):
+            // Video
+            if ($project->vimeo()->isNotEmpty()):
               ?>
-              <div class="relative w-fit mt-[calc(0.95rem+0.25rem)]">
-                <h2 class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap">
+              <div
+                class="relative w-fit mt-[calc(0.95rem+0.25rem)] group-hover:!opacity-100 group-hover:!blur-none transition-opacity duration-300">
+                <h2
+                  class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                   <?= $project->title()->or($project->link()) ?>, <?= $project->year()->escape() ?>
                 </h2>
-                <figure class="h-32 w-fit [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
+                <figure class="relative h-32 aspect-video">
+                  <iframe id="vimeo-iframe" class="absolute inset-0 w-full h-full"
+                          src="https://player.vimeo.com/video/<?= $project->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
+                          frameborder="0"
+                          webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </figure>
+              </div>
+              <?php
+              $isFirstItem = false;
+            endif;
+
+            // Images
+            foreach ($project->gallery()->toFiles() as $image):
+              if ($isFirstItem):
+                ?>
+                <div
+                  class="relative w-fit mt-[calc(0.95rem+0.25rem)] group-hover:!opacity-100 group-hover:!blur-none transition-opacity duration-300">
+                  <h2
+                    class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    <?= $project->title()->or($project->link()) ?>, <?= $project->year()->escape() ?>
+                  </h2>
+                  <figure class="h-32 w-fit [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
+                    <?= $image->thumb([
+                      'quality' => 90,
+                      'format' => 'webp',
+                    ])->html(); ?>
+                  </figure>
+                </div>
+                <?php
+                $isFirstItem = false;
+              else:
+                ?>
+                <figure
+                  class="h-32 w-fit mt-[calc(0.95rem+0.25rem)] group-hover:!opacity-100 group-hover:!blur-none transition-opacity duration-300 [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
                   <?= $image->thumb([
                     'quality' => 90,
                     'format' => 'webp',
                   ])->html(); ?>
                 </figure>
-              </div>
               <?php
-              $isFirstItem = false;
-            else:
-              ?>
-              <figure
-                class="h-32 w-fit mt-[calc(0.95rem+0.25rem)] [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
-                <?= $image->thumb([
-                  'quality' => 90,
-                  'format' => 'webp',
-                ])->html(); ?>
-              </figure>
-            <?php
-            endif;
-          endforeach;
+              endif;
+            endforeach;
+            ?>
+          </div>
+        <?php
         endforeach;
         ?>
       </div>
