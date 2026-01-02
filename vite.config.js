@@ -10,7 +10,7 @@ export default ({ mode }) => ({
     outDir: "../public_html/dist",
     emptyOutDir: true,
     rollupOptions: {
-      input: globSync("src/{templates/*}.{js,css}"),
+      input: globSync("src/{index.css,templates/*}.{js,css}"),
     },
   },
 
