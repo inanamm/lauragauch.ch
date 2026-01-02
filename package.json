@@ -8,11 +8,12 @@
     "server": "php -S localhost:8888 -t public_html server.php",
     "build": "vite build",
     "preview": "npm run build && npm run server",
-    "format": "npm run format:js && npm run format:css && npm run format:php",
+    "format": "npm run format:js && npm run format:tailwind && npm run format:css && npm run format:php",
     "format:js": "prettier --write \"**/*.{js,html,md}\"",
+    "format:tailwind": "rustywind --write site/**/*.php",
     "format:css": "stylelint \"**/*.css\" --fix && prettier --write \"**/*.css\"",
     "format:php": "vendor/bin/ecs --fix",
-    "format:check": "prettier --check \"**/*.{js,html,md}\" && stylelint \"**/*.css\" && vendor/bin/ecs check"
+    "format:check": "prettier --check \"**/*.{js,html,md}\" && rustywind --check-formatted site/**/*.php && stylelint \"**/*.css\" && vendor/bin/ecs check"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
@@ -20,12 +21,12 @@
     "htmx.org": "^2.0.8"
   },
   "devDependencies": {
-    "@prettier/plugin-php": "^0.24.0",
     "concurrently": "^9.2.1",
     "glob": "^13.0.0",
     "postcss": "^8.5.6",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "rustywind": "^0.24.3",
     "stylelint": "^16.26.1",
     "stylelint-config-standard": "^39.0.1",
     "tailwindcss": "^4.1.18",

@@ -2,7 +2,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
-    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no" />
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no"/>
 
   <link rel="apple-touch-icon" sizes="180x180" href="/public_html/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/public_html/favicon-32x32.png">
@@ -30,4 +30,6 @@
       try: true,
   ) ?>
   <?= vite()->css('templates/{{ page.template }}.css', try: true) ?>
+
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="e076f68a-485e-447c-8363-905493501904"></script>
 </head>
