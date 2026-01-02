@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Only intercept if scrolling vertically
       if (event.deltaY !== 0) {
         event.preventDefault();
-        // Convert vertical scroll to horizontal with 2.5x speed multiplier
+        // Convert vertical scroll to horizontal with 5x speed multiplier
         homeGallery.scrollLeft += event.deltaY * 5;
       }
     }, {passive: false});
