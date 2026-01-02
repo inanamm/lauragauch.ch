@@ -19,10 +19,7 @@ return function ($site) {
                 'title' => $project->title()->value(),
                 'url' => $project->url(),
                 'description' => $project->description()->value(),
-                'backgroundColor' => slothieHelpers()->HSLtoHSLA(
-                    $project->backgroundColor()->value(),
-                    0.8,
-                ),
+                'backgroundColor' => slothieHelpers()->HSLtoHSLA($project->backgroundColor()->value(), 0.8),
             ];
             $formattedProjects[] = $projectInfo;
         }
@@ -35,10 +32,7 @@ return function ($site) {
                 'title' => $project->title()->value(),
                 'url' => $project->url(),
                 'description' => $project->description()->value(),
-                'backgroundColor' => slothieHelpers()->HSLtoHSLA(
-                    $project->backgroundColor()->value(),
-                    0.8,
-                ),
+                'backgroundColor' => slothieHelpers()->HSLtoHSLA($project->backgroundColor()->value(), 0.8),
             ];
 
             $formattedProjects[] = $projectInfo;

@@ -1,6 +1,6 @@
 <button
   x-ref="copyToClipboardRef"
-  class="font-serif text-sm all-small-caps lg:text-center text-left hover:underline lg:hover:underline cursor-crosshair lg:underline-offset-2"
+  class="font-serif text-sm text-left lg:text-center hover:underline all-small-caps cursor-crosshair lg:hover:underline lg:underline-offset-2"
   x-data="copyToClipboard('<?= $copyText ?>')"
   @click="copyToClipboard"
 >

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="h-screen dark dark:bg-black transition-colors duration-700 no-scrollbar">
+<html lang="en" class="h-screen transition-colors duration-700 dark:bg-black no-scrollbar dark">
 
 <?php snippet('head'); ?>
 
-<body class="h-full w-full grid grid-rows-12 bg:white no-scrollbar lg:overflow-x-scroll">
+<body class="grid w-full h-full lg:overflow-x-scroll grid-rows-12 bg:white no-scrollbar">
 <header class="flex row-span-3">
   <nav class="flex gap-16 font-serif">
     <h2 class="ml-3"><?php snippet('projectindex'); ?></h2>
@@ -11,9 +11,9 @@
   </nav>
 </header>
 
-<main class="scrollContainer lg:row-span-6 no-scrollbar lg:overflow-x-scroll">
+<main class="lg:overflow-x-scroll lg:row-span-6 scrollContainer no-scrollbar">
   <ul
-    class="homeGallery flex flex-col lg:flex-row lg:overflow-x-scroll overflow-x-hidden gap-1 lg:gap-10 w-full max-w-full items-center lg:px-0 lg:h-full no-scrollbar scroll-smooth pb-24 lg:pb-0 snap-x">
+    class="flex overflow-x-hidden flex-col gap-1 items-center pb-24 w-full max-w-full lg:overflow-x-scroll lg:flex-row lg:gap-10 lg:px-0 lg:pb-0 lg:h-full homeGallery no-scrollbar scroll-smooth snap-x">
     <?php foreach ($projects as $project) { ?>
       <?php if ($project->type === 'image') { ?>
         <figure
@@ -26,15 +26,17 @@
           x-data
           @click="$store.projectDrawer.openDrawer();"
         >
-          <?= $project->image->thumb([
-            'quality' => 90,
-              'format' => 'webp',
-        ])->html() ?>
+          <?= $project->image
+              ->thumb([
+                'quality' => 90,
+                  'format' => 'webp',
+            ])
+              ->html() ?>
         </figure>
       <?php } ?>
 
       <?php if ($project->type === 'video') { ?>
-        <div class="flex max-h-max opacity-90 hover:opacity-100 cursor-crosshair">
+        <div class="flex opacity-90 hover:opacity-100 max-h-max cursor-crosshair">
           <figure
             @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
             hx-get="/htmx/<?= $project->id ?>"
@@ -63,14 +65,14 @@
   <button
     x-data
     @click="$store.darkMode.toggle()"
-    class="hidden lg:fixed w-4 h-4 bottom-3 z-30 left-3 bg-neutral-900 rounded-full dark:bg-white cursor-crosshair"
+    class="hidden bottom-3 left-3 z-30 w-4 h-4 rounded-full lg:fixed dark:bg-white bg-neutral-900 cursor-crosshair"
   >
   </button>
 
   <div
-    class="flex dark:text-white fixed flex-col items-center bottom-2.5 lg:bottom-1 inset-x-20 font-serif text-base leading-tight">
+    class="flex fixed bottom-2.5 inset-x-20 flex-col items-center font-serif text-base leading-tight lg:bottom-1 dark:text-white">
     <p
-      class="text-center hidden lg:flex"
+      class="hidden text-center lg:flex"
       x-data
       x-text="$store.activeProject.activeProjectName"
     ></p>
@@ -79,7 +81,7 @@
       @click="$store.projectDrawer.openDrawer(); $nextTick(() => { htmx.ajax('GET', `/htmx/${$store.activeProject.activeProjectId}`, '#content'); })"
       :aria-expanded="$store.projectDrawer.open"
       aria-controls="navigation"
-      class="hover:underline underline-offset-2 all-small-caps text-sm font-serif lg:hover:underline lg:underline-offset-2 rounded-lg lg:rounded-none bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent px-2 lg:p-0 py-0.5 backdrop-blur-xs lg:backdrop-filter-none z-40 dark:text-white cursor-crosshair"
+      class="z-40 py-0.5 px-2 font-serif text-sm rounded-lg lg:p-0 lg:bg-transparent lg:rounded-none dark:text-white hover:underline underline-offset-2 all-small-caps bg-white/65 backdrop-blur-xs cursor-crosshair lg:hover:underline lg:underline-offset-2 lg:backdrop-filter-none dark:bg-white/25 dark:lg:bg-transparent"
       aria-label="Navigation Menu"
     >
       More Info

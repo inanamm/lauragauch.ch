@@ -1,4 +1,4 @@
-<div class="dark:text-white relative h-full z-30 lg:z-50" x-data="{ menuOpen: false }"
+<div class="relative z-30 h-full lg:z-50 dark:text-white" x-data="{ menuOpen: false }"
   x-init="() => $watch('menuOpen', (value) => document.body.style.overflow = value ? 'hidden' : 'auto')"
   @keyup.escape.window="menuOpen = false;">
 
@@ -12,46 +12,26 @@
 
   <button
     @click="menuOpen = !menuOpen; $nextTick(() => { setTimeout(() => $refs.projectIndexOverlay.scrollTop = 0, 200); $refs.projectIndexOverlay.style.backgroundColor = 'bg-white/50' })"
-    class="fixed
-    bottom-2.5 lg:top-2 lg:bottom-auto
-    lg:right-auto left-3 lg:left-auto
-    font-serif all-small-caps text-sm
-    lg:hover:underline lg:underline-offset-2
-    rounded-lg lg:rounded-none
-    bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent
-    px-2 lg:p-0
-    py-0.5
-    z-0
-    backdrop-blur-xs lg:backdrop-blur-0 cursor-crosshair" :aria-expanded="menuOpen" aria-controls="navigation"
+    class="fixed bottom-2.5 left-3 z-0 py-0.5 px-2 font-serif text-sm rounded-lg lg:top-2 lg:right-auto lg:bottom-auto lg:left-auto lg:p-0 lg:bg-transparent lg:rounded-none all-small-caps bg-white/65 backdrop-blur-xs cursor-crosshair lg:hover:underline lg:underline-offset-2 lg:backdrop-blur-0 dark:bg-white/25 dark:lg:bg-transparent" :aria-expanded="menuOpen" aria-controls="navigation"
     aria-label="About">
     about
   </button>
 
-  <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.800ms class="fixed
-        bottom-2.5 lg:top-2 lg:bottom-auto
-        right-3 lg:left-3 lg:right-auto
-        font-serif all-small-caps text-sm 
-        lg:hover:underline lg:underline-offset-2 
-        rounded-lg lg:rounded-none 
-        bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent
-        px-2 lg:p-0
-        py-0.5 
-        z-50
-        backdrop-blur-xs lg:backdrop-blur-0 cursor-crosshair" :aria-expanded="menuOpen.toString()"
+  <button @click="menuOpen = !menuOpen" x-show="menuOpen" x-transition:enter.delay.800ms class="fixed bottom-2.5 right-3 z-50 py-0.5 px-2 font-serif text-sm rounded-lg lg:top-2 lg:left-3 lg:right-auto lg:bottom-auto lg:p-0 lg:bg-transparent lg:rounded-none all-small-caps bg-white/65 backdrop-blur-xs cursor-crosshair lg:hover:underline lg:underline-offset-2 lg:backdrop-blur-0 dark:bg-white/25 dark:lg:bg-transparent" :aria-expanded="menuOpen.toString()"
     aria-controls="about" aria-label="About">
     close
   </button>
 
 
   <div id="about" x-show="menuOpen" x-ref="overlay"
-    class="h-full w-full flex flex-col fixed bottom-0 left-0 backdrop-blur-md bg-white/50 dark:bg-black/50 overflow-y-scroll pb-6"
+    class="flex overflow-y-scroll fixed bottom-0 left-0 flex-col pb-6 w-full h-full backdrop-blur-md bg-white/50 dark:bg-black/50"
     x-transition:enter="transition lg:duration-1000 duration-700 ease-in-out"
     x-transition:enter-start="translate-y-full" x-transition:enter-end="translate-y-0"
     x-transition:leave="transition ease-in-out lg:duration-1000 duration-700" x-transition:leave-start="translate-y-0"
     x-transition:leave-end="translate-y-full">
 
 
-    <article class="top grid lg:grid-cols-3 grid-row px-3 font-sans text-2xl pt-32 pb-20 gap-6">
+    <article class="grid gap-6 px-3 pt-32 pb-20 font-sans text-2xl lg:grid-cols-3 top grid-row">
       <div class="col-span-2">
         <h3 class="font-serif text-sm all-small-caps">biography</h3>
         <div class="lg:text-lg text-md">
@@ -68,27 +48,24 @@
         ]) ?>
         </div>
 
-        <div class="flex flex-col lg:text-lg text-md pt-6 lg:pt-10">
+        <div class="flex flex-col pt-6 lg:pt-10 lg:text-lg text-md">
           <h3 class="font-serif text-sm all-small-caps">social media</h3>
-          <a href="<?= $site
-              ->page('about')
-              ->instagramLink()
-              ->toUrl() ?>" <?php e(
-                  $site->page('about')->target()->toBool(),
-                  'target="_blank"',
-              ); ?>>
+          <a href="<?= $site->page('about')->instagramLink()->toUrl() ?>" <?php e(
+              $site->page('about')->target()->toBool(),
+              'target="_blank"',
+          ); ?>>
             <?= $site->page('about')->instagramLinkText() ?> </a>
         </div>
       </div>
     </article>
 
-    <div class="bottom grid lg:grid-cols-3 grid-row font-serif px-3 gap-6 lg:flex-row pb-3">
+    <div class="grid gap-6 px-3 pb-3 font-serif lg:flex-row lg:grid-cols-3 bottom grid-row">
       <div class="flex flex-col gap-y-6 pb-6 column-1">
 
         <!-- UPCOMING -->
         <div class="flex flex-col gap-y-6 pb-6">
           <?php
-                        $upcoming = $site->page('about')->upcoming()->toStructure();
+                    $upcoming = $site->page('about')->upcoming()->toStructure();
           $hasVisibleUpcoming = false;
           $visibleUpcoming = [];
 
@@ -102,22 +79,16 @@
 
           <?php if ($hasVisibleUpcoming) { ?>
             <div class="flex flex-col upcoming">
-              <h3 class="all-small-caps text-sm">upcoming</h3>
+              <h3 class="text-sm all-small-caps">upcoming</h3>
               <?php foreach ($visibleUpcoming as $linkObject) { ?>
                 <div class="flex gap-x-3 text-base">
                   <div class="block">
-                    <?= str_replace(
-                        ' ',
-                        '&nbsp;',
-                        $linkObject->date()->toDate('%B, %d %G'),
-                    ) ?>
+                    <?= str_replace(' ', '&nbsp;', $linkObject->date()->toDate('%B, %d %G')) ?>
                   </div>
                   <?php if ($linkObject->link()->toUrl()) { ?>
                     <a class="flex flex-wrap" href="<?= $linkObject
                       ->link()
-                      ->toUrl() ?>" <?= $linkObject->target()->toBool()
-  ? 'target="_blank"'
-  : '' ?>>
+                      ->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
                       <?= $linkObject->title()->or($linkObject->link()) ?>
                     </a>
                   <?php } else { ?>
@@ -145,7 +116,7 @@
 
           <?php if ($hasVisibleExhibitions) { ?>
             <div class="exhibition">
-              <h3 class="all-small-caps text-sm">past exhibitions + film festivals</h3>
+              <h3 class="text-sm all-small-caps">past exhibitions + film festivals</h3>
               <?php foreach ($visibleExhibitions as $linkObject) { ?>
                 <div class="flex gap-x-3 text-base">
                   <div class="">
@@ -154,9 +125,7 @@
                   <?php if ($linkObject->link()->toUrl()) { ?>
                     <a class="flex flex-wrap" href="<?= $linkObject
                       ->link()
-                      ->toUrl() ?>" <?= $linkObject->target()->toBool()
-  ? 'target="_blank"'
-  : '' ?>>
+                      ->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
                       <?= $linkObject->title()->or($linkObject->link()) ?>
                     </a>
                   <?php } else { ?>
@@ -183,7 +152,7 @@
 
           <?php if ($hasVisibleAwards) { ?>
             <div class="grants">
-              <h3 class="all-small-caps text-sm">grants, residencies and awards</h3>
+              <h3 class="text-sm all-small-caps">grants, residencies and awards</h3>
 
               <?php foreach ($visibleAwards as $linkObject) { ?>
                 <div class="flex gap-x-3 text-base">
@@ -193,9 +162,7 @@
                   <?php if ($linkObject->link()->toUrl()) { ?>
                     <a class="flex flex-wrap" href="<?= $linkObject
                       ->link()
-                      ->toUrl() ?>" <?= $linkObject->target()->toBool()
-  ? 'target="_blank"'
-  : '' ?>>
+                      ->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
                       <?= $linkObject->title()->or($linkObject->link()) ?>
                     </a>
                   <?php } else { ?>
@@ -227,7 +194,7 @@
 
           <?php if ($hasVisiblePressItems) { ?>
             <div class="selectedPress">
-              <h3 class="all-small-caps text-sm">selected press</h3>
+              <h3 class="text-sm all-small-caps">selected press</h3>
               <?php foreach ($visiblePressItems as $linkObject) { ?>
                 <div class="flex gap-x-3 text-base">
                   <div class="">
@@ -236,9 +203,7 @@
                   <?php if ($linkObject->link()->toUrl()) { ?>
                     <a class="flex flex-wrap" href="<?= $linkObject
                       ->link()
-                      ->toUrl() ?>" <?= $linkObject->target()->toBool()
-  ? 'target="_blank"'
-  : '' ?>>
+                      ->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
                       <?= $linkObject->title()->or($linkObject->link()) ?>
                     </a>
                   <?php } else { ?>
@@ -265,15 +230,13 @@
 
           <?php if ($hasVisiblePresskits) { ?>
             <div class="presskits">
-              <h3 class="all-small-caps text-sm">presskits</h3>
+              <h3 class="text-sm all-small-caps">presskits</h3>
               <div class="flex flex-col text-base">
                 <?php foreach ($visiblePresskits as $linkObject) { ?>
                   <?php if ($linkObject->link()->toUrl()) { ?>
                     <a class="flex flex-wrap" href="<?= $linkObject
                     ->link()
-                    ->toUrl() ?>" <?= $linkObject->target()->toBool()
-  ? 'target="_blank"'
-  : '' ?>>
+                    ->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
                       <?= $linkObject->title()->or($linkObject->link()) ?>
                     </a>
                   <?php } else { ?>
@@ -287,16 +250,16 @@
 
         <div class="flex flex-col gap-y-6 pb-6 column-3">
           <div class="flex flex-col text-base">
-            <h3 class="all-small-caps text-sm">selected clients</h3>
+            <h3 class="text-sm all-small-caps">selected clients</h3>
             <?= $site->page('about')->clients() ?>
           </div>
           <div class="flex flex-col text-base">
-            <h3 class="all-small-caps text-sm">talented friends and collaborators</h3>
+            <h3 class="text-sm all-small-caps">talented friends and collaborators</h3>
             <?= $site->page('about')->friends() ?>
           </div>
 
           <div class="website">
-            <h3 class="all-small-caps text-sm">website</h3>
+            <h3 class="text-sm all-small-caps">website</h3>
             <div class="flex flex-col text-base">
               <?php if ($p = page('datasecurity')) { ?>
                 <a href="<?= $p->url() ?>" target="_blank"> <?= $p->title() ?> </a>
