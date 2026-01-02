@@ -15,14 +15,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+      - name: Install composer dependencies
+        uses: php-actions/composer@v6
         with:
-          php-version: "8.3"
-          extensions: gd, ctype, curl, mbstring, zip
-
-      - name: Install Composer dependencies
-        run: composer install --no-interaction --prefer-dist
+          php_version: "8.3"
+          php_extensions: gd ctype curl mbstring zip
+          version: 2.x
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
