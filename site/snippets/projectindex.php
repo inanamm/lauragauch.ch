@@ -60,19 +60,22 @@
   >
 
     <article class="top px-3 font-serif pt-32 pb-20">
-      <div class="gallery flex flex-wrap w-full gap-x-3 lg:gap-x-5 gap-y-3 lg:gap-y-4 lg:[&:has(.group:hover)_.group>*]:opacity-20 lg:[&:has(.group:hover)_.group>*]:blur-xs">
+      <div
+        class="gallery flex flex-wrap w-full gap-x-1 lg:gap-x-5 gap-y-1 lg:gap-y-4 lg:[&:has(.group:hover)_.group>*]:opacity-20 lg:[&:has(.group:hover)_.group>*]:blur-xs">
         <?php
         $projects = $site->page('projects')->children()->published();
-        foreach ($projects as $project) {
+        foreach ($projects as $project):
             $isFirstItem = true;
             ?>
-          <div class="contents group">
+          <div class="flex flex-wrap w-full gap-x-1 gap-y-1 mb-12 lg:mb-0 lg:contents group">
             <?php
-                // Video
-                if ($project->vimeo()->isNotEmpty()) {
-                    ?>
-              <div class="relative w-fit mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300">
-                <h2 class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700">
+              // Video
+              if ($project->vimeo()->isNotEmpty()):
+                  ?>
+              <div
+                class="relative w-fit mt-0 lg:mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300">
+                <h2
+                  class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700">
                   <?= $project->title()->or($project->link()) ?>, <?= $project->year()->escape() ?>
                 </h2>
                 <figure class="relative h-24 lg:h-32 aspect-video">
@@ -88,15 +91,17 @@
                 </figure>
               </div>
               <?php
-                      $isFirstItem = false;
-                }
+                  $isFirstItem = false;
+              endif;
 
             // Images
-            foreach ($project->gallery()->toFiles() as $image) {
-                if ($isFirstItem) {
+            foreach ($project->gallery()->toFiles() as $image):
+                if ($isFirstItem):
                     ?>
-                <div class="relative w-fit mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300">
-                  <h2 class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700">
+                <div
+                  class="relative w-fit mt-0 lg:mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300">
+                  <h2
+                    class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700">
                     <?= $project->title()->or($project->link()) ?>, <?= $project->year()->escape() ?>
                   </h2>
                   <figure class="h-24 lg:h-32 w-fit [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
@@ -107,22 +112,23 @@
                   </figure>
                 </div>
                 <?php
-                      $isFirstItem = false;
-                } else {
+                    $isFirstItem = false;
+                else:
                     ?>
-                <figure class="h-24 lg:h-32 w-fit mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300 [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
+                <figure
+                  class="h-24 lg:h-32 w-fit mt-0 lg:mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300 [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
                   <?= $image->thumb([
                     'quality' => 90,
                       'format' => 'webp',
                 ])->html(); ?>
                 </figure>
               <?php
-                }
-            }
+                endif;
+            endforeach;
             ?>
           </div>
         <?php
-        }
+        endforeach;
         ?>
       </div>
     </article>
