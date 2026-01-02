@@ -32,7 +32,7 @@
             <figure @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
               hx-get="/htmx/<?= $project->id ?>" hx-trigger="click" hx-target="#content"
               data-project='<?= json_encode($project->title) ?>' x-data @click="$store.projectDrawer.openDrawer();"
-              class="videohome relative w-full overflow-hidden">
+              class="videohome video-container relative w-full overflow-hidden">
               <iframe id="vimeo-iframe" class="w-full h-full"
                 src="https://player.vimeo.com/video/<?= $project->videoCode ?>?title=0&byline=0&portrait=0&autopause=0"
                 frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

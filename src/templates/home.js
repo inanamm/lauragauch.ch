@@ -28,13 +28,26 @@ document.addEventListener('DOMContentLoaded', function () {
   // Enable horizontal scrolling with mouse wheel
   const homeGallery = document.querySelector('.homeGallery');
   if (homeGallery) {
-    homeGallery.addEventListener('wheel', function (event) {
-      // Only intercept if scrolling vertically
-      if (event.deltaY !== 0) {
+    const handleWheelScroll = function (event) {
+      // Only convert vertical to horizontal if:
+      // 1. There's vertical scroll (deltaY) but no horizontal (deltaX)
+      // 2. The gallery has horizontal scrollable content
+      const hasHorizontalScroll = homeGallery.scrollWidth > homeGallery.clientWidth;
+
+      if (event.deltaY !== 0 && event.deltaX === 0 && hasHorizontalScroll) {
         event.preventDefault();
         // Convert vertical scroll to horizontal with 5x speed multiplier
         homeGallery.scrollLeft += event.deltaY * 5;
       }
-    }, {passive: false});
+    };
+
+    // Add listener to the gallery
+    homeGallery.addEventListener('wheel', handleWheelScroll, {passive: false});
+
+    // Add wheel listeners to video containers for scrolling over iframes
+    const videoContainers = homeGallery.querySelectorAll('.video-container');
+    videoContainers.forEach(function (container) {
+      container.addEventListener('wheel', handleWheelScroll, {passive: false});
+    });
   }
 });
