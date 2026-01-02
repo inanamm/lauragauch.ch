@@ -44,39 +44,72 @@
 
 
     <article class="top px-3 font-serif pt-32 pb-20">
-      <ul class="flex flex-col">
+      <div
+        class="gallery flex flex-wrap w-full gap-x-3 lg:gap-x-5 gap-y-3 lg:gap-y-4 [&:has(.group:hover)_.group>*]:opacity-20 [&:has(.group:hover)_.group>*]:blur-xs">
         <?php
         $projects = $site->page('projects')->children()->published();
-        foreach ($projects as $project): ?>
-          <li class="all-small-caps text-sm">
-            <?= $project->title()->or($project->link()) ?>, <?= $project->year()->escape() ?>
-
-          </li>
-          <div class="gallery flex flex-wrap pb-12 last:pb-0 w-full gap-1">
+        foreach ($projects as $project):
+          $isFirstItem = true;
+          ?>
+          <div class="contents group">
             <?php
-            // gallery images
-            if ($project->vimeo()->isNotEmpty()) { ?>
-              <figure
-                class="relative w-full max-w-[calc(8rem*16/9)] lg:max-w-[calc(15rem*16/9)] aspect-video overflow-hidden">
-                <iframe id="vimeo-iframe" class="absolute inset-0 w-full h-full"
-                        src="https://player.vimeo.com/video/<?= $project->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
-                        frameborder="0"
-                        webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-              </figure>
-            <?php } ?>
+            // Video
+            if ($project->vimeo()->isNotEmpty()):
+              ?>
+              <div
+                class="relative w-fit mt-[calc(0.95rem+0.25rem)] group-hover:!opacity-100 group-hover:!blur-none transition-opacity duration-300">
+                <h2
+                  class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700">
+                  <?= $project->title()->or($project->link()) ?>, <?= $project->year()->escape() ?>
+                </h2>
+                <figure class="relative h-24 lg:h-32 aspect-video">
+                  <iframe id="vimeo-iframe" class="absolute inset-0 w-full h-full"
+                          src="https://player.vimeo.com/video/<?= $project->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
+                          frameborder="0"
+                          webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </figure>
+              </div>
+              <?php
+              $isFirstItem = false;
+            endif;
 
-            <?php
-            foreach ($project->gallery()->toFiles() as $image): ?>
-              <figure class="h-32 lg:h-60 [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
-                <?= $image->thumb([
-                  'quality' => 90,
-                  'format' => 'webp',
-                ])->html(); ?>
-              </figure>
-            <?php endforeach; ?>
+            // Images
+            foreach ($project->gallery()->toFiles() as $image):
+              if ($isFirstItem):
+                ?>
+                <div
+                  class="relative w-fit mt-[calc(0.95rem+0.25rem)] group-hover:!opacity-100 group-hover:!blur-none transition-opacity duration-300">
+                  <h2
+                    class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700">
+                    <?= $project->title()->or($project->link()) ?>, <?= $project->year()->escape() ?>
+                  </h2>
+                  <figure class="h-24 lg:h-32 w-fit [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
+                    <?= $image->thumb([
+                      'quality' => 90,
+                      'format' => 'webp',
+                    ])->html(); ?>
+                  </figure>
+                </div>
+                <?php
+                $isFirstItem = false;
+              else:
+                ?>
+                <figure
+                  class="h-24 lg:h-32 w-fit mt-[calc(0.95rem+0.25rem)] group-hover:!opacity-100 group-hover:!blur-none transition-opacity duration-300 [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
+                  <?= $image->thumb([
+                    'quality' => 90,
+                    'format' => 'webp',
+                  ])->html(); ?>
+                </figure>
+              <?php
+              endif;
+            endforeach;
+            ?>
           </div>
-        <?php endforeach; ?>
-      </ul>
+        <?php
+        endforeach;
+        ?>
+      </div>
     </article>
   </div>
 </div>
