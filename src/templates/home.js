@@ -18,10 +18,23 @@ Alpine.data("copyToClipboard", copyToClipboard);
 Alpine.start();
 console.log('initialized Alpine');
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('img').forEach(function(img) {
-    img.addEventListener('contextmenu', function(event) {
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('img').forEach(function (img) {
+    img.addEventListener('contextmenu', function (event) {
       event.preventDefault();
     });
   });
+
+  // Enable horizontal scrolling with mouse wheel
+  const homeGallery = document.querySelector('.homeGallery');
+  if (homeGallery) {
+    homeGallery.addEventListener('wheel', function (event) {
+      // Only intercept if scrolling vertically
+      if (event.deltaY !== 0) {
+        event.preventDefault();
+        // Convert vertical scroll to horizontal with 5x speed multiplier
+        homeGallery.scrollLeft += event.deltaY * 5;
+      }
+    }, {passive: false});
+  }
 });
