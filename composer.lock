@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9adbaee9ddf7b1de24568fabd192c1a6",
+    "content-hash": "835592b15beb81e5842996ed6fca0c1f",
     "packages": [
         {
             "name": "arnoson/kirby-vite",
@@ -2088,12 +2088,12 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.0.0 <=8.3.3"
+        "php": ">=8.2.0 <8.4.0"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }
