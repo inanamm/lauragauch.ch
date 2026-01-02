@@ -1,6 +1,35 @@
 @import 'tailwindcss';
 
-@config '../tailwind.config.js';
+@source "../site/templates/**/*.php";
+@source "../site/snippets/**/*.php";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Font Families */
+  --font-sans: "GeigyLLRegular", sans-serif;
+  --font-serif: "TimesTen", serif;
+
+  /* Font Sizes with line-height and letter-spacing */
+  --text-sm: 0.95rem;
+  --text-sm--line-height: 1.35rem;
+  --text-sm--letter-spacing: 0.1rem;
+
+  --text-base: 1rem;
+  --text-base--line-height: 1.35rem;
+  --text-base--letter-spacing: 0.085rem;
+
+  --text-md: 1.45rem;
+  --text-md--line-height: 1.65rem;
+  --text-md--letter-spacing: 0.03rem;
+
+  --text-lg: 1.65rem;
+  --text-lg--line-height: 1.9rem;
+  --text-lg--letter-spacing: 0.03rem;
+
+  /* Line Heights */
+  --leading-extra: 0.75;
+}
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
@@ -23,6 +52,29 @@
 @layer utilities {
   .all-small-caps {
     font-variant: all-small-caps;
+  }
+
+  /* No scrollbar utilities */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Dark mode letter-spacing adjustments */
+  .dark .text-sm {
+    letter-spacing: 0.105rem;
+  }
+  .dark .text-base {
+    letter-spacing: 0.095rem;
+  }
+  .dark .text-md {
+    letter-spacing: 0.035rem;
+  }
+  .dark .text-lg {
+    letter-spacing: 0.035rem;
   }
 }
 
