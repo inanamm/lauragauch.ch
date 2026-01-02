@@ -1,29 +1,29 @@
 on:
   push:
-    branches: live
+    branches: [ "live" ]
 
 name: LIVE Deploy website on push
 
 jobs:
   web-deploy:
     name: Deploy
-    runs-on: [ubuntu-latest]
+    runs-on: [ ubuntu-latest ]
 
     steps:
       - name: Get latest code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install composer dependencies
         uses: php-actions/composer@v6
         with:
-          php_version: "8.2"
+          php_version: "8.3"
           php_extensions: gd ctype curl mbstring zip
           version: 2.x
 
       - name: Install npm dependencies
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: "20"
+          node-version: "24"
       - run: |
           npm ci
           npm run build
