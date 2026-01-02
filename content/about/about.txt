@@ -2,22 +2,103 @@ Title: About
 
 ----
 
-Biography: <p>Laura Gauch is a visual artist focusing on photography and film. Her passion for capturing the world sprung during her teenage years and was carried to the present through the exploration of her Chilean heritage and familial background. Putting a personal and intimate perspective in each and every project she commits to, Laura strives to create a composition relatable to the viewing audience in order to connect the image to people and their reality. </p>
+Biography: <p>Laura Gauch is a visual artist focusing on photography and film. Her passion for capturing the world sprung during her teenage years and was carried to the present through the exploration of her Chilean heritage and familial background. Putting a personal and intimate perspective in each and every project she commits to, Laura strives to create a composition relatable to the viewing audience in order to connect the image to people and their reality.&nbsp;</p>
 
 ----
 
-Presskits:
+Upcoming:
 
 - 
-  toggle: 'true'
-  title: Hi
+  title: >
+    MoMa fjdkls jfkdls jfkdsl fjkdsl fjkdsl
+    fdkjsla
+  link: https://www.google.com/
   target: 'true'
-  link: ""
+  date: 2025-04-20
+  toggle: 'true'
+  year: ""
 - 
-  toggle: 'true'
-  title: Hi 2
-  target: 'true'
+  title: test
   link: ""
+  target: 'false'
+  date: 2026-01-16
+  toggle: 'true'
+
+----
+
+Exhibitions:
+
+- 
+  title: 'Museum für Gestaltung  fjkdls fjdkls fjkdsl fjkdsl fkdl fdskla fjdkls fjkdls fkjdsl fjkdls fjdksl öfs'
+  link: ""
+  target: 'false'
+  year: 2022-10-04
+  toggle: 'true'
+- 
+  title: Kunsthaus Zürich
+  link: https://www.google.com/
+  target: 'true'
+  year: 2023-01-01
+  toggle: 'true'
+  date: ""
+- 
+  title: Musée Visionaire
+  link: https://www.google.com/
+  target: 'true'
+  year: 2023-01-01
+  toggle: 'true'
+  date: ""
+- 
+  title: Kunst Basel
+  link: https://www.google.com/
+  target: 'true'
+  year: 2023-01-01
+  toggle: 'true'
+  date: ""
+- 
+  title: Louvre Paris
+  link: https://www.google.com/
+  target: 'true'
+  year: 2023-01-01
+  toggle: 'true'
+  date: ""
+- 
+  title: Fondation Prada
+  link: https://www.google.com/
+  target: 'true'
+  year: 2023-01-01
+  toggle: 'true'
+  date: ""
+- 
+  title: Kunstmuseum Chur
+  link: https://www.google.com/
+  target: 'false'
+  year: 2023-01-01
+  toggle: 'true'
+  date: ""
+- 
+  title: test
+  link: ""
+  target: 'true'
+  year: ""
+  toggle: 'true'
+
+----
+
+Awards:
+
+- 
+  title: 'Winner Prix Photoforum, Biel/Bienne '
+  link: https://martinaholenstein.ch
+  target: 'true'
+  year: 2024-01-01
+  toggle: 'true'
+- 
+  title: Another Grant
+  link: ""
+  target: 'false'
+  year: 2024-04-03
+  toggle: 'true'
 
 ----
 
@@ -29,7 +110,7 @@ Press:
     jkfdls jfkdls afjkdls fjkdls fjkdls
     fjkdsl fdkjsla fdsl fjdksl fjdksl jfkdsl
     jfkdsl jfkdsl fklsd
-  link: https://www.google.com/
+  link: ""
   target: 'true'
   date: 2024-04-11
   toggle: 'true'
@@ -84,91 +165,22 @@ Press:
 
 ----
 
+Presskits:
+
+- 
+  toggle: 'true'
+  title: Hi
+  target: 'true'
+  link: ""
+- 
+  toggle: 'true'
+  title: Hi 2
+  target: 'true'
+  link: https://martinaholenstein.ch
+
+----
+
 Clients: <ul><li><a href="https://oysurf.com/" target="_blank">Oy Surf</a></li><li><a href="https://martinaholenstein.ch/" target="_blank">fdsdsafdsa</a></li><li>fdsfdsaf</li><li>fdafds</li><li>dfsafdsa</li><li>fdsa jfkdls fjklds fjdkls fkdsl fjkdsl fkjdsl fkdsl fdkjslf skl fs (:s fds fdsfdsfjhdsfjkdslfjkdsl jfkdlsfjksld</li></ul>
-
-----
-
-Upcoming:
-
-- 
-  title: >
-    MoMa fjdkls jfkdls jfkdsl fjkdsl fjkdsl
-    fdkjsla
-  link: https://www.google.com/
-  target: 'true'
-  date: 2025-04-20
-  toggle: 'true'
-  year: ""
-
-----
-
-Exhibitions:
-
-- 
-  title: 'Museum für Gestaltung  fjkdls fjdkls fjkdsl fjkdsl fkdl fdskla fjdkls fjkdls fkjdsl fjkdls fjdksl öfs'
-  link: ""
-  target: 'false'
-  year: 2022-10-04
-  toggle: 'true'
-- 
-  title: Kunsthaus Zürich
-  link: https://www.google.com/
-  target: 'true'
-  year: 2023-01-01
-  toggle: 'true'
-  date: ""
-- 
-  title: Musée Visionaire
-  link: https://www.google.com/
-  target: 'true'
-  year: 2023-01-01
-  toggle: 'true'
-  date: ""
-- 
-  title: Kunst Basel
-  link: https://www.google.com/
-  target: 'true'
-  year: 2023-01-01
-  toggle: 'true'
-  date: ""
-- 
-  title: Louvre Paris
-  link: https://www.google.com/
-  target: 'true'
-  year: 2023-01-01
-  toggle: 'true'
-  date: ""
-- 
-  title: Fondation Prada
-  link: https://www.google.com/
-  target: 'true'
-  year: 2023-01-01
-  toggle: 'true'
-  date: ""
-- 
-  title: Kunstmuseum Chur
-  link: https://www.google.com/
-  target: 'false'
-  year: 2023-01-01
-  toggle: 'true'
-  date: ""
-
-----
-
-Awards:
-
-- 
-  title: 'Winner Prix Photoforum, Biel/Bienne '
-  year: 2024-01-01
-  toggle: 'true'
-  link: ""
-  target: 'false'
-- 
-  title: Another Grant
-  year: 2024-04-03
-  toggle: 'true'
-  link: ""
-  target: 'false'
 
 ----
 
