@@ -169,7 +169,7 @@ endforeach;
       <div class="flex flex-wrap gap-1 w-full last:pb-0">
         <!-- VIDEO -->
         <?php if ($page->vimeo()->isNotEmpty()): ?>
-          <div class="overflow-hidden relative w-full max-h-96 aspect-video">
+          <div class="overflow-hidden relative h-52 w-auto lg:h-96 aspect-video">
             <iframe
               id="vimeo-iframe"
               class="absolute inset-0 w-full h-full"
