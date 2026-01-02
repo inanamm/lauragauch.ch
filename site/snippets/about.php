@@ -218,14 +218,23 @@
         <?php if ($hasVisibleAwards): ?>
           <div class="grants">
             <h3 class="all-small-caps text-sm">grants, residencies and awards</h3>
-            <?php foreach ($visibleAwards as $item): ?>
+
+            <?php foreach ($visibleAwards as $linkObject): ?>
               <div class="flex gap-x-3 text-base">
-                <div class="">
-                  <?= $item->year()->toDate('%G') ?>
+                <div class="block">
+                  <?= $linkObject->year()->toDate('%G') ?>
                 </div>
-                <div class="flex flex-wrap"><?= $item->title()->kt() ?></div>
+                <?php if ($linkObject->link()->toUrl()): ?>
+                  <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                    <?= $linkObject->title()->or($linkObject->link()) ?>
+                  </a>
+                <?php else: ?>
+                  <?= $linkObject->title() ?>
+                <?php endif ?>
+
               </div>
             <?php endforeach; ?>
+
           </div>
         <?php endif; ?>
 

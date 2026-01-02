@@ -254,7 +254,9 @@ columns:
             label: Grants, Residencies and Awards
             columns:
               title:
-                width: 4/6
+                width: 2/6
+              link:
+                width: 2/6
               year:
                 width: 1/6
               toggle:
@@ -266,6 +268,19 @@ columns:
 
               lineA6:
                 type: line
+                
+              link:
+                label: link
+                type: url
+                width: 3/4
+              target:
+                label: Open in new window?
+                type: toggle
+                text: 
+                  - "No"
+                  - "Yes"
+                default: true
+                width: 1/4
 
               year:
                 label: Year

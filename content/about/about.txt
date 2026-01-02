@@ -2,7 +2,7 @@ Title: About
 
 ----
 
-Biography: <p>Laura Gauch is a visual artist focusing on photography and film. Her passion for capturing the world sprung during her teenage years and was carried to the present through the exploration of her Chilean heritage and familial background. Putting a personal and intimate perspective in each and every project she commits to, Laura strives to create a composition relatable to the viewing audience in order to connect the image to people and their reality. </p>
+Biography: <p>Laura Gauch is a visual artist focusing on photography and film. Her passion for capturing the world sprung during her teenage years and was carried to the present through the exploration of her Chilean heritage and familial background. Putting a personal and intimate perspective in each and every project she commits to, Laura strives to create a composition relatable to the viewing audience in order to connect the image to people and their reality.&nbsp;</p>
 
 ----
 
@@ -159,16 +159,16 @@ Awards:
 
 - 
   title: 'Winner Prix Photoforum, Biel/Bienne '
+  link: https://martinaholenstein.ch
+  target: 'true'
   year: 2024-01-01
   toggle: 'true'
-  link: ""
-  target: 'false'
 - 
   title: Another Grant
-  year: 2024-04-03
-  toggle: 'true'
   link: ""
   target: 'false'
+  year: 2024-04-03
+  toggle: 'true'
 
 ----
 
