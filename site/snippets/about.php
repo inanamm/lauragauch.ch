@@ -91,7 +91,7 @@
         <!-- UPCOMING -->
         <div class="flex flex-col gap-y-6 pb-6">
           <?php
-            $upcoming = $site->page('about')->upcoming()->toStructure();
+          $upcoming = $site->page('about')->upcoming()->toStructure();
           $hasVisibleUpcoming = false;
           $visibleUpcoming = [];
 
@@ -301,7 +301,9 @@
               <a
                 href="<?= $p->url() ?>"
                 target="_blank"
-              > <?= $p->title() ?> </a>
+              >
+                <?= $p->title() ?>
+              </a>
             <?php endif ?>
             <?= $site->page('home')->imprint() ?>
           </div>

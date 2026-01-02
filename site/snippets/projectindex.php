@@ -77,30 +77,27 @@
                 <div
                   class="relative w-fit mt-0 lg:mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300">
                   <h2
-                    class="absolute left-0 bottom-full mb-1 text-sm whitespace-nowrap opacity-100 transition-opacity duration-700 lg:opacity-0 all-small-caps lg:group-hover:opacity-100">
-                    <?= $project->title()->or($project->link()) ?>, <?= $project
-                          ->year()
-                          ->escape() ?>
+                    class="absolute left-0 bottom-full mb-1 text-sm whitespace-nowrap opacity-100 transition-opacity duration-700 lg:opacity-0 all-small-caps lg:group-hover:opacity-100"
+                  >
+                    <?= $project->title()->or($project->link()) ?>,<?= $project->year()->escape() ?>
                   </h2>
                   <figure class="h-24 lg:h-32 w-fit [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
                     <?= $image
-                          ->thumb([
+                        ->thumb([
                             'quality' => 90,
-                              'format' => 'webp',
-                      ])
-                          ->html() ?>
+                            'format' => 'webp',
+                        ])
+                        ->html() ?>
                   </figure>
                 </div>
                 <?php $isFirstItem = false;
                 else: ?>
                 <figure
                   class="h-24 lg:h-32 w-fit mt-0 lg:mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300 [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
-                  <?= $image
-                        ->thumb([
-                            'quality' => 90,
-                            'format' => 'webp',
-                        ])
-                        ->html() ?>
+                  <?= $image->thumb([
+                    'quality' => 90,
+                      'format' => 'webp',
+                ])->html() ?>
                 </figure>
               <?php endif;
             endforeach ?>

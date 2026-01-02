@@ -15,12 +15,15 @@ $style = "background-color: {$hslaColor}";
 <main class="overflow-scroll h-full bg-white/10 no-scrollbar">
   <div class="px-3 pt-1 lg:grid lg:grid-cols-6">
 
-    <a href="<?= site()->url() ?>"
-       class="fixed top-1 right-3 z-30 font-sans lg:text-lg hover:no-underline text-md">
+    <a
+      href="<?= site()->url() ?>"
+      class="fixed top-1 right-3 z-30 font-sans lg:text-lg hover:no-underline text-md"
+    >
       Laura Gauch
     </a>
 
-    <div class="fixed bottom-2.5 right-3 z-30 py-0.5 px-2 font-serif text-sm rounded-lg lg:top-2 lg:left-3 lg:right-auto lg:bottom-auto lg:p-0 lg:bg-transparent lg:rounded-none all-small-caps bg-white/45 backdrop-blur-xs lg:hover:underline lg:underline-offset-2 lg:backdrop-blur-0">
+    <div
+      class="fixed bottom-2.5 right-3 z-30 py-0.5 px-2 font-serif text-sm rounded-lg lg:top-2 lg:left-3 lg:right-auto lg:bottom-auto lg:p-0 lg:bg-transparent lg:rounded-none all-small-caps bg-white/45 backdrop-blur-xs lg:hover:underline lg:underline-offset-2 lg:backdrop-blur-0">
       <a href="<?= site()->url() ?>">Back</a>
     </div>
 
@@ -142,9 +145,7 @@ endforeach;
             <div class="flex flex-wrap gap-x-5 text-base">
               <?php if ($item->dateUntil()->isNotEmpty()): ?>
                 <div class="flex flex-row gap-0.5">
-                  <?= $item->date()->toDate('%B, %d') ?>–<?= $item
-                      ->dateUntil()
-                      ->toDate('%B, %d %G') ?>
+                  <?= $item->date()->toDate('%B, %d') ?>–<?= $item->dateUntil()->toDate('%B, %d %G') ?>
                 </div>
               <?php else: ?>
                 <div class="flex flex-row gap-0.5">
@@ -169,49 +170,32 @@ endforeach;
         <!-- VIDEO -->
         <?php if ($page->vimeo()->isNotEmpty()): ?>
           <div class="overflow-hidden relative w-full max-h-96 aspect-video">
-            <iframe id="vimeo-iframe" class="absolute inset-0 w-full h-full"
-                    src="https://player.vimeo.com/video/<?= $page
-            ->vimeo()
-            ->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
-                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe
+              id="vimeo-iframe"
+              class="absolute inset-0 w-full h-full"
+              src="https://player.vimeo.com/video/<?= $page->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            >
+            </iframe>
           </div>
         <?php endif ?>
 
         <!-- BILDER -->
         <?php foreach ($page->gallery()->toFiles() as $image): ?>
           <figure class="h-52 lg:h-96 lg:w-auto [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
-            <?= $image
-                ->thumb([
-                    'quality' => 90,
-                    'format' => 'webp',
-                ])
-                ->html() ?>
+            <?= $image->thumb([
+          'quality' => 90,
+          'format' => 'webp',
+      ])->html() ?>
           </figure>
         <?php endforeach ?>
       </div>
     </section>
   </div>
 
-
 </main>
-
-<?= vite()->js('index.js') ?>
 </body>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Get the Vimeo URL from the PHP variable and log it to the console
-    console.log('Vimeo URL:', '<?= $page->vimeo()->escape() ?>');
-  });
-</script>
-<script>
-  function correctFigureSize(figureElement) {
-    figureElement.onload = function () {
-      const aspectRatio = figureElement.naturalWidth / figureElement.naturalHeight;
-      const containerHeight = figureElement.closest('figure').clientHeight;
-      figureElement.closest('figure').style.width = `${containerHeight * aspectRatio}px`;
-    };
-  }
-</script>
-
 </html>

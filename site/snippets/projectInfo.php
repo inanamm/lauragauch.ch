@@ -153,9 +153,7 @@ endforeach;
           <div class="flex flex-wrap gap-x-5 text-base">
             <?php if ($item->dateUntil()->isNotEmpty()): ?>
               <div class="flex flex-row gap-0.5">
-                <?= $item->date()->toDate('%B, %d') ?>–<?= $item
-                ->dateUntil()
-                ->toDate('%B, %d %G') ?>
+                <?= $item->date()->toDate('%B, %d') ?>–<?= $item->dateUntil()->toDate('%B, %d %G') ?>
               </div>
             <?php else: ?>
               <div class="flex flex-row gap-0.5">
