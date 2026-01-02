@@ -1,9 +1,11 @@
 <?php
 
-Kirby::plugin('SlothieStudio/slothie-helpers', []);
+Kirby::plugin("SlothieStudio/slothie-helpers", []);
 
-class SlothieHelpers {
-    public function HSLtoHSLA(string $hslColor, float $alpha = 1): string {
+class SlothieHelpers
+{
+    public function HSLtoHSLA(string $hslColor, float $alpha = 1): string
+    {
         // Trim the input color string
         $hslColor = trim($hslColor);
 
@@ -12,21 +14,21 @@ class SlothieHelpers {
 
         // Validate and extract components
         if (!preg_match($regex, $hslColor, $matches)) {
-            throw new InvalidArgumentException('Invalid HSL color format.');
+            throw new InvalidArgumentException("Invalid HSL color format.");
         }
 
         // Extract hue, saturation, and lightness from matches
-        $hue = (int)$matches[1];
-        $saturation = (int)$matches[2] . '%';
-        $lightness = (int)$matches[3] . '%';
+        $hue = (int) $matches[1];
+        $saturation = (int) $matches[2] . "%";
+        $lightness = (int) $matches[3] . "%";
 
         // Validate ranges
         if ($hue < 0 || $hue > 360) {
-            throw new InvalidArgumentException('Hue must be between 0 and 360.');
+            throw new InvalidArgumentException("Hue must be between 0 and 360.");
         }
 
         if ($alpha < 0 || $alpha > 1) {
-            throw new InvalidArgumentException('Alpha must be between 0 and 1.');
+            throw new InvalidArgumentException("Alpha must be between 0 and 1.");
         }
 
         // Return the formatted HSLA color string
@@ -34,6 +36,7 @@ class SlothieHelpers {
     }
 }
 
-function slothieHelpers(): SlothieHelpers {
+function slothieHelpers(): SlothieHelpers
+{
     return new SlothieHelpers();
 }

@@ -1,8 +1,8 @@
-import {globSync} from "glob";
+import { globSync } from "glob";
 import kirby from "vite-plugin-kirby";
 import tailwindcss from "@tailwindcss/vite";
 
-export default ({mode}) => ({
+export default ({ mode }) => ({
   root: "src",
   base: mode === "development" ? "/" : "/dist/",
 

@@ -1,70 +1,94 @@
 <!DOCTYPE html>
 <html lang="en" class="h-screen dark dark:bg-black transition-colors duration-700 no-scrollbar">
 
-<?php snippet('head') ?>
+<?php snippet('head'); ?>
 
 <body class="h-full w-full grid grid-rows-12 bg:white no-scrollbar lg:overflow-x-scroll">
-  <header class="flex row-span-3">
-    <nav class="flex gap-16 font-serif">
-      <h2 class="ml-3"><?php snippet('projectindex') ?></h2>
-      <?php snippet('about') ?>
-    </nav>
-  </header>
+<header class="flex row-span-3">
+  <nav class="flex gap-16 font-serif">
+    <h2 class="ml-3"><?php snippet('projectindex'); ?></h2>
+    <?php snippet('about'); ?>
+  </nav>
+</header>
 
-  <main class="scrollContainer lg:row-span-6 no-scrollbar lg:overflow-x-scroll">
-    <ul
-      class="homeGallery flex flex-col lg:flex-row lg:overflow-x-scroll overflow-x-hidden gap-1 lg:gap-10 w-full max-w-full items-center lg:px-0 lg:h-full no-scrollbar scroll-smooth pb-24 lg:pb-0 snap-x">
-      <?php foreach ($projects as $project): ?>
-        <?php if ($project->type === "image"): ?>
-          <figure @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
-            hx-get="/htmx/<?= $project->id ?>" hx-trigger="click" hx-target="#content"
-            class="h-full flex-none opacity-90 hover:opacity-100 cursor-crosshair px-12 lg:px-0 [&_img]:h-auto lg:[&_img]:h-full [&_img]:w-auto [&_img]:object-contain"
-            data-project='<?= json_encode($project->title) ?>' x-data @click="$store.projectDrawer.openDrawer();">
-            <?= $project->image->thumb([
-              'quality' => 90,
+<main class="scrollContainer lg:row-span-6 no-scrollbar lg:overflow-x-scroll">
+  <ul
+    class="homeGallery flex flex-col lg:flex-row lg:overflow-x-scroll overflow-x-hidden gap-1 lg:gap-10 w-full max-w-full items-center lg:px-0 lg:h-full no-scrollbar scroll-smooth pb-24 lg:pb-0 snap-x">
+    <?php foreach ($projects as $project) { ?>
+      <?php if ($project->type === 'image') { ?>
+        <figure
+          @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
+          hx-get="/htmx/<?= $project->id ?>"
+          hx-trigger="click"
+          hx-target="#content"
+          class="h-full flex-none opacity-90 hover:opacity-100 cursor-crosshair px-12 lg:px-0 [&_img]:h-auto lg:[&_img]:h-full [&_img]:w-auto [&_img]:object-contain"
+          data-project='<?= json_encode($project->title) ?>'
+          x-data
+          @click="$store.projectDrawer.openDrawer();"
+        >
+          <?= $project->image->thumb([
+            'quality' => 90,
               'format' => 'webp',
-            ])->html(); ?>
+        ])->html() ?>
+        </figure>
+      <?php } ?>
+
+      <?php if ($project->type === 'video') { ?>
+        <div class="flex max-h-max opacity-90 hover:opacity-100 cursor-crosshair">
+          <figure
+            @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
+            hx-get="/htmx/<?= $project->id ?>"
+            hx-trigger="click"
+            hx-target="#content"
+            data-project='<?= json_encode($project->title) ?>'
+            x-data
+            @click="$store.projectDrawer.openDrawer();"
+            class="video-container relative overflow-hidden w-screen h-[calc((100svw-6rem)*9/16)] px-12 lg:w-[calc(50svh*16/9)] lg:h-[50svh] lg:px-0"
+          >
+            <iframe
+              id="vimeo-iframe"
+              class="w-full h-full"
+              src="https://player.vimeo.com/video/<?= $project->videoCode ?>?title=0&byline=0&portrait=0&autopause=0"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            ></iframe>
           </figure>
-        <?php endif; ?>
+        </div>
+      <?php } ?>
+    <?php } ?>
+  </ul>
 
-        <?php if ($project->type === "video"): ?>
-          <div class="flex max-h-max opacity-90 hover:opacity-100 cursor-crosshair">
-            <figure @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
-              hx-get="/htmx/<?= $project->id ?>" hx-trigger="click" hx-target="#content"
-              data-project='<?= json_encode($project->title) ?>' x-data @click="$store.projectDrawer.openDrawer();"
-              class="video-container relative overflow-hidden
-                     w-screen h-[calc((100svw-6rem)*9/16)] px-12
-                     lg:w-[calc(50svh*16/9)] lg:h-[50svh] lg:px-0">
-              <iframe id="vimeo-iframe" class="w-full h-full"
-                src="https://player.vimeo.com/video/<?= $project->videoCode ?>?title=0&byline=0&portrait=0&autopause=0"
-                frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </figure>
-          </div>
-        <?php endif; ?>
-      <?php endforeach;
-      ?>
-    </ul>
+  <button
+    x-data
+    @click="$store.darkMode.toggle()"
+    class="hidden lg:fixed w-4 h-4 bottom-3 z-30 left-3 bg-neutral-900 rounded-full dark:bg-white cursor-crosshair"
+  >
+  </button>
 
-    <button x-data @click="$store.darkMode.toggle()"
-      class="hidden lg:fixed w-4 h-4 bottom-3 z-30 left-3 bg-neutral-900 rounded-full dark:bg-white cursor-crosshair">
+  <div
+    class="flex dark:text-white fixed flex-col items-center bottom-2.5 lg:bottom-1 inset-x-20 font-serif text-base leading-tight">
+    <p
+      class="text-center hidden lg:flex"
+      x-data
+      x-text="$store.activeProject.activeProjectName"
+    ></p>
+    <button
+      x-data
+      @click="$store.projectDrawer.openDrawer(); $nextTick(() => { htmx.ajax('GET', `/htmx/${$store.activeProject.activeProjectId}`, '#content'); })"
+      :aria-expanded="$store.projectDrawer.open"
+      aria-controls="navigation"
+      class="hover:underline underline-offset-2 all-small-caps text-sm font-serif lg:hover:underline lg:underline-offset-2 rounded-lg lg:rounded-none bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent px-2 lg:p-0 py-0.5 backdrop-blur-xs lg:backdrop-filter-none z-40 dark:text-white cursor-crosshair"
+      aria-label="Navigation Menu"
+    >
+      More Info
     </button>
+  </div>
 
-    <div
-      class="flex dark:text-white fixed flex-col items-center bottom-2.5 lg:bottom-1 inset-x-20 font-serif text-base leading-tight">
-      <p class="text-center hidden lg:flex" x-data x-text="$store.activeProject.activeProjectName"></p>
-      <button x-data
-        @click="$store.projectDrawer.openDrawer(); $nextTick(() => { htmx.ajax('GET', `/htmx/${$store.activeProject.activeProjectId}`, '#content'); })"
-        :aria-expanded="$store.projectDrawer.open" aria-controls="navigation" class="hover:underline underline-offset-2 all-small-caps text-sm font-serif lg:hover:underline lg:underline-offset-2 rounded-lg lg:rounded-none
-            bg-white/65 lg:bg-transparent dark:bg-white/25 dark:lg:bg-transparent px-2 lg:p-0 py-0.5
-            backdrop-blur-xs lg:backdrop-filter-none
-            z-40 dark:text-white cursor-crosshair" aria-label="Navigation Menu">
-        More Info
-      </button>
-    </div>
+  <?php snippet('projectDrawer'); ?>
 
-    <?php snippet('projectDrawer') ?>
-
-  </main>
+</main>
 </body>
 
 </html>

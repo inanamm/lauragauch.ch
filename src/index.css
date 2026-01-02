@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source "../site/templates/**/*.php";
 @source "../site/snippets/**/*.php";
@@ -14,15 +14,12 @@
   --text-sm: 0.95rem;
   --text-sm--line-height: 1.35rem;
   --text-sm--letter-spacing: 0.1rem;
-
   --text-base: 1rem;
   --text-base--line-height: 1.35rem;
   --text-base--letter-spacing: 0.085rem;
-
   --text-md: 1.45rem;
   --text-md--line-height: 1.65rem;
   --text-md--letter-spacing: 0.03rem;
-
   --text-lg: 1.65rem;
   --text-lg--line-height: 1.9rem;
   --text-lg--letter-spacing: 0.03rem;
@@ -40,6 +37,7 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -49,12 +47,15 @@
   .dark .text-sm {
     letter-spacing: 0.105rem;
   }
+
   .dark .text-base {
     letter-spacing: 0.095rem;
   }
+
   .dark .text-md {
     letter-spacing: 0.035rem;
   }
+
   .dark .text-lg {
     letter-spacing: 0.035rem;
   }
@@ -71,22 +72,23 @@
 
 /* complete */
 @font-face {
-  font-family: "GeigyLLRegular";
+  font-family: GeigyLLRegular;
   src: url("assets/GeigyLLWeb-Regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: "GeigyLLRegular";
+  font-family: GeigyLLRegular;
   src: url("assets/GeigyLLWeb-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "TimesTen";
+  font-family: TimesTen;
   src: url("assets/TimesTenLTStd-Roman.otf") format("opentype");
 }
 
 a {
-  @apply hover:underline underline-offset-2;
+  @apply underline-offset-2 hover:underline;
+
   cursor: crosshair;
 }
 

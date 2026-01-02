@@ -1,32 +1,32 @@
 import Alpine from "alpinejs";
-import Htmx from 'htmx.org';
+import Htmx from "htmx.org";
 
-import projectDrawer from '../alpine/projectDrawer.js'
-import darkMode from '../alpine/darkMode.js'
+import projectDrawer from "../alpine/projectDrawer.js";
+import darkMode from "../alpine/darkMode.js";
 import copyToClipboard from "../alpine/copyToClipboard.js";
 import activeProject from "../alpine/activeProject.js";
 
 window.htmx = Htmx;
-console.log('initialized htmx');
+console.log("initialized htmx");
 
 window.Alpine = Alpine;
-Alpine.store('darkMode', darkMode);
-Alpine.store('projectDrawer', projectDrawer);
-Alpine.store('activeProject', activeProject);
+Alpine.store("darkMode", darkMode);
+Alpine.store("projectDrawer", projectDrawer);
+Alpine.store("activeProject", activeProject);
 Alpine.data("copyToClipboard", copyToClipboard);
 
 Alpine.start();
-console.log('initialized Alpine');
+console.log("initialized Alpine");
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('img').forEach(function (img) {
-    img.addEventListener('contextmenu', function (event) {
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("img").forEach(function (img) {
+    img.addEventListener("contextmenu", function (event) {
       event.preventDefault();
     });
   });
 
   // Enable horizontal scrolling with mouse wheel
-  const homeGallery = document.querySelector('.homeGallery');
+  const homeGallery = document.querySelector(".homeGallery");
   if (homeGallery) {
     const handleWheelScroll = function (event) {
       // Only convert vertical to horizontal if:
@@ -42,12 +42,12 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Add listener to the gallery
-    homeGallery.addEventListener('wheel', handleWheelScroll, {passive: false});
+    homeGallery.addEventListener("wheel", handleWheelScroll, { passive: false });
 
     // Add wheel listeners to video containers for scrolling over iframes
-    const videoContainers = homeGallery.querySelectorAll('.video-container');
+    const videoContainers = homeGallery.querySelectorAll(".video-container");
     videoContainers.forEach(function (container) {
-      container.addEventListener('wheel', handleWheelScroll, {passive: false});
+      container.addEventListener("wheel", handleWheelScroll, { passive: false });
     });
   }
 });

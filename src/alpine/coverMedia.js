@@ -1,13 +1,11 @@
 export default () => ({
-
   init() {
-    console.log("here!!!!!")
+    console.log("here!!!!!");
   },
 
   trigger: {
-    ['@mouseover']() {
-     console.log("hello")
+    ["@mouseover"]() {
+      console.log("hello");
     },
   },
-
-})
+});
