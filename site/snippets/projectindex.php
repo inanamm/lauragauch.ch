@@ -65,13 +65,13 @@
         <?php
         $projects = $site->page('projects')->children()->published();
         foreach ($projects as $project):
-          $isFirstItem = true;
-          ?>
+            $isFirstItem = true;
+            ?>
           <div class="flex flex-wrap w-full gap-x-1 gap-y-1 mb-12 lg:mb-0 lg:contents group">
             <?php
-            // Video
-            if ($project->vimeo()->isNotEmpty()):
-              ?>
+              // Video
+              if ($project->vimeo()->isNotEmpty()):
+                  ?>
               <div
                 class="relative w-fit mt-0 lg:mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300">
                 <h2
@@ -91,13 +91,13 @@
                 </figure>
               </div>
               <?php
-              $isFirstItem = false;
-            endif;
+                  $isFirstItem = false;
+              endif;
 
             // Images
             foreach ($project->gallery()->toFiles() as $image):
-              if ($isFirstItem):
-                ?>
+                if ($isFirstItem):
+                    ?>
                 <div
                   class="relative w-fit mt-0 lg:mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300">
                   <h2
@@ -106,24 +106,24 @@
                   </h2>
                   <figure class="h-24 lg:h-32 w-fit [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
                     <?= $image->thumb([
-                      'quality' => 90,
-                      'format' => 'webp',
+                        'quality' => 90,
+                        'format' => 'webp',
                     ])->html(); ?>
                   </figure>
                 </div>
                 <?php
-                $isFirstItem = false;
-              else:
-                ?>
+                    $isFirstItem = false;
+                else:
+                    ?>
                 <figure
                   class="h-24 lg:h-32 w-fit mt-0 lg:mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300 [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
                   <?= $image->thumb([
                     'quality' => 90,
-                    'format' => 'webp',
-                  ])->html(); ?>
+                      'format' => 'webp',
+                ])->html(); ?>
                 </figure>
               <?php
-              endif;
+                endif;
             endforeach;
             ?>
           </div>

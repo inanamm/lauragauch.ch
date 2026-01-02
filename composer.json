@@ -22,7 +22,7 @@
     "source": "https://github.com/getkirby/starterkit"
   },
   "require": {
-    "php": ">=8.2.0 <8.4.0",
+    "php": ">=8.3.0 <8.4.0",
     "getkirby/cms": "^5.2",
     "arnoson/kirby-vite": "^5.6",
     "tobimori/kirby-seo": "^2.0.0-alpha.8",
@@ -39,5 +39,8 @@
       "Composer\\Config::disableProcessTimeout",
       "@php -S localhost:8000 kirby/router.php"
     ]
+  },
+  "require-dev": {
+    "symplify/easy-coding-standard": "^13.0"
   }
 }

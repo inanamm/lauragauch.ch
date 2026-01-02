@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="h-screen bg-black">
 
-<?php snippet('head') ?>
+<?php snippet('head'); ?>
 
 <body class="h-full no-scrollbar text-white">
-    <?php snippet('header') ?>
+    <?php snippet('header'); ?>
 
     <main class="bg-black h-full overflow-scroll no-scrollbar">
         <div class="px-3 pt-1 lg:grid lg:grid-cols-6">

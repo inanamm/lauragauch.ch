@@ -10,16 +10,24 @@
   <link rel="manifest" href="/public_html/site.webmanifest">
 
   <?php snippet('seo/head'); ?>
-  <?php header("Cache-Control: max-age=3600"); ?>
+  <?php header('Cache-Control: max-age=3600'); ?>
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="language" content="English">
 
-  <?= vite()->js('index.js', ['defer' => true]) ?>
+  <?= vite()->js('index.js', [
+      'defer' => true,
+  ]) ?>
   <?= vite()->css('index.css') ?>
 
-  <?= vite()->js("templates/{{ page.template }}.js", ['defer' => true], try: true) ?>
-  <?= vite()->css("templates/{{ page.template }}.css", try: true) ?>
+  <?= vite()->js(
+      'templates/{{ page.template }}.js',
+      [
+          'defer' => true,
+      ],
+      try: true,
+  ) ?>
+  <?= vite()->css('templates/{{ page.template }}.css', try: true) ?>
 </head>

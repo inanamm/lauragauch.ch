@@ -64,14 +64,19 @@
 
           <?= kirbytag([
             'email' => $site->page('about')->email(),
-            'text' => $site->page('about')->email(),
-          ]);
-          ?>
+              'text' => $site->page('about')->email(),
+        ]) ?>
         </div>
 
         <div class="flex flex-col lg:text-lg text-md pt-6 lg:pt-10">
           <h3 class="font-serif text-sm all-small-caps">social media</h3>
-          <a href="<?= $site->page('about')->instagramLink()->toUrl() ?>" <?php e($site->page('about')->target()->toBool(), 'target="_blank"') ?>>
+          <a href="<?= $site
+              ->page('about')
+              ->instagramLink()
+              ->toUrl() ?>" <?php e(
+                  $site->page('about')->target()->toBool(),
+                  'target="_blank"',
+              ); ?>>
             <?= $site->page('about')->instagramLinkText() ?> </a>
         </div>
       </div>
@@ -83,37 +88,45 @@
         <!-- UPCOMING -->
         <div class="flex flex-col gap-y-6 pb-6">
           <?php
-          $upcoming = $site->page('about')->upcoming()->toStructure();
+                        $upcoming = $site->page('about')->upcoming()->toStructure();
           $hasVisibleUpcoming = false;
           $visibleUpcoming = [];
 
           foreach ($upcoming as $linkObject) {
-            if ($linkObject->toggle()->toBool() === true) {
-              $visibleUpcoming[] = $linkObject;
-              $hasVisibleUpcoming = true;
-            }
+              if ($linkObject->toggle()->toBool() === true) {
+                  $visibleUpcoming[] = $linkObject;
+                  $hasVisibleUpcoming = true;
+              }
           }
           ?>
 
-          <?php if ($hasVisibleUpcoming): ?>
+          <?php if ($hasVisibleUpcoming) { ?>
             <div class="flex flex-col upcoming">
               <h3 class="all-small-caps text-sm">upcoming</h3>
-              <?php foreach ($visibleUpcoming as $linkObject): ?>
+              <?php foreach ($visibleUpcoming as $linkObject) { ?>
                 <div class="flex gap-x-3 text-base">
                   <div class="block">
-                    <?= str_replace(' ', '&nbsp;', $linkObject->date()->toDate('%B, %d %G')) ?>
+                    <?= str_replace(
+                        ' ',
+                        '&nbsp;',
+                        $linkObject->date()->toDate('%B, %d %G'),
+                    ) ?>
                   </div>
-                  <?php if ($linkObject->link()->toUrl()): ?>
-                    <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                  <?php if ($linkObject->link()->toUrl()) { ?>
+                    <a class="flex flex-wrap" href="<?= $linkObject
+                      ->link()
+                      ->toUrl() ?>" <?= $linkObject->target()->toBool()
+  ? 'target="_blank"'
+  : '' ?>>
                       <?= $linkObject->title()->or($linkObject->link()) ?>
                     </a>
-                  <?php else: ?>
+                  <?php } else { ?>
                     <?= $linkObject->title() ?>
-                  <?php endif ?>
+                  <?php } ?>
                 </div>
-              <?php endforeach; ?>
+              <?php } ?>
             </div>
-          <?php endif; ?>
+          <?php } ?>
 
 
           <!-- EXHIBITIONS -->
@@ -123,32 +136,36 @@
           $visibleExhibitions = [];
 
           foreach ($exhibitions as $linkObject) {
-            if ($linkObject->toggle()->toBool() === true) {
-              $visibleExhibitions[] = $linkObject;
-              $hasVisibleExhibitions = true;
-            }
+              if ($linkObject->toggle()->toBool() === true) {
+                  $visibleExhibitions[] = $linkObject;
+                  $hasVisibleExhibitions = true;
+              }
           }
           ?>
 
-          <?php if ($hasVisibleExhibitions): ?>
+          <?php if ($hasVisibleExhibitions) { ?>
             <div class="exhibition">
               <h3 class="all-small-caps text-sm">past exhibitions + film festivals</h3>
-              <?php foreach ($visibleExhibitions as $linkObject): ?>
+              <?php foreach ($visibleExhibitions as $linkObject) { ?>
                 <div class="flex gap-x-3 text-base">
                   <div class="">
                     <?= $linkObject->year()->toDate('%G') ?>
                   </div>
-                  <?php if ($linkObject->link()->toUrl()): ?>
-                    <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                  <?php if ($linkObject->link()->toUrl()) { ?>
+                    <a class="flex flex-wrap" href="<?= $linkObject
+                      ->link()
+                      ->toUrl() ?>" <?= $linkObject->target()->toBool()
+  ? 'target="_blank"'
+  : '' ?>>
                       <?= $linkObject->title()->or($linkObject->link()) ?>
                     </a>
-                  <?php else: ?>
+                  <?php } else { ?>
                     <?= $linkObject->title() ?>
-                  <?php endif ?>
+                  <?php } ?>
                 </div>
-              <?php endforeach; ?>
+              <?php } ?>
             </div>
-          <?php endif; ?>
+          <?php } ?>
 
           <!-- AWARDS -->
           <?php
@@ -157,35 +174,39 @@
           $visibleAwards = [];
 
           foreach ($items as $item) {
-            if ($item->toggle()->toBool() === true) {
-              $visibleAwards[] = $item;
-              $hasVisibleAwards = true;
-            }
+              if ($item->toggle()->toBool() === true) {
+                  $visibleAwards[] = $item;
+                  $hasVisibleAwards = true;
+              }
           }
           ?>
 
-          <?php if ($hasVisibleAwards): ?>
+          <?php if ($hasVisibleAwards) { ?>
             <div class="grants">
               <h3 class="all-small-caps text-sm">grants, residencies and awards</h3>
 
-              <?php foreach ($visibleAwards as $linkObject): ?>
+              <?php foreach ($visibleAwards as $linkObject) { ?>
                 <div class="flex gap-x-3 text-base">
                   <div class="block">
                     <?= $linkObject->year()->toDate('%G') ?>
                   </div>
-                  <?php if ($linkObject->link()->toUrl()): ?>
-                    <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                  <?php if ($linkObject->link()->toUrl()) { ?>
+                    <a class="flex flex-wrap" href="<?= $linkObject
+                      ->link()
+                      ->toUrl() ?>" <?= $linkObject->target()->toBool()
+  ? 'target="_blank"'
+  : '' ?>>
                       <?= $linkObject->title()->or($linkObject->link()) ?>
                     </a>
-                  <?php else: ?>
+                  <?php } else { ?>
                     <?= $linkObject->title() ?>
-                  <?php endif ?>
+                  <?php } ?>
 
                 </div>
-              <?php endforeach; ?>
+              <?php } ?>
 
             </div>
-          <?php endif; ?>
+          <?php } ?>
         </div>
       </div>
 
@@ -197,32 +218,36 @@
           $visiblePressItems = [];
 
           foreach ($pressItems as $linkObject) {
-            if ($linkObject->toggle()->toBool() === true) {
-              $visiblePressItems[] = $linkObject;
-              $hasVisiblePressItems = true;
-            }
+              if ($linkObject->toggle()->toBool() === true) {
+                  $visiblePressItems[] = $linkObject;
+                  $hasVisiblePressItems = true;
+              }
           }
           ?>
 
-          <?php if ($hasVisiblePressItems): ?>
+          <?php if ($hasVisiblePressItems) { ?>
             <div class="selectedPress">
               <h3 class="all-small-caps text-sm">selected press</h3>
-              <?php foreach ($visiblePressItems as $linkObject): ?>
+              <?php foreach ($visiblePressItems as $linkObject) { ?>
                 <div class="flex gap-x-3 text-base">
                   <div class="">
                     <?= $linkObject->date()->toDate('%G') ?>
                   </div>
-                  <?php if ($linkObject->link()->toUrl()): ?>
-                    <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                  <?php if ($linkObject->link()->toUrl()) { ?>
+                    <a class="flex flex-wrap" href="<?= $linkObject
+                      ->link()
+                      ->toUrl() ?>" <?= $linkObject->target()->toBool()
+  ? 'target="_blank"'
+  : '' ?>>
                       <?= $linkObject->title()->or($linkObject->link()) ?>
                     </a>
-                  <?php else: ?>
+                  <?php } else { ?>
                     <?= $linkObject->title() ?>
-                  <?php endif ?>
+                  <?php } ?>
                 </div>
-              <?php endforeach; ?>
+              <?php } ?>
             </div>
-          <?php endif; ?>
+          <?php } ?>
 
           <!-- PRESSKITS -->
           <?php
@@ -231,29 +256,33 @@
           $visiblePresskits = [];
 
           foreach ($presskits as $linkObject) {
-            if ($linkObject->toggle()->toBool() === true) {
-              $visiblePresskits[] = $linkObject;
-              $hasVisiblePresskits = true;
-            }
+              if ($linkObject->toggle()->toBool() === true) {
+                  $visiblePresskits[] = $linkObject;
+                  $hasVisiblePresskits = true;
+              }
           }
           ?>
 
-          <?php if ($hasVisiblePresskits): ?>
+          <?php if ($hasVisiblePresskits) { ?>
             <div class="presskits">
               <h3 class="all-small-caps text-sm">presskits</h3>
               <div class="flex flex-col text-base">
-                <?php foreach ($visiblePresskits as $linkObject): ?>
-                  <?php if ($linkObject->link()->toUrl()): ?>
-                    <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                <?php foreach ($visiblePresskits as $linkObject) { ?>
+                  <?php if ($linkObject->link()->toUrl()) { ?>
+                    <a class="flex flex-wrap" href="<?= $linkObject
+                    ->link()
+                    ->toUrl() ?>" <?= $linkObject->target()->toBool()
+  ? 'target="_blank"'
+  : '' ?>>
                       <?= $linkObject->title()->or($linkObject->link()) ?>
                     </a>
-                  <?php else: ?>
+                  <?php } else { ?>
                     <?= $linkObject->title() ?>
-                  <?php endif ?>
-                <?php endforeach; ?>
+                  <?php } ?>
+                <?php } ?>
               </div>
             </div>
-          <?php endif; ?>
+          <?php } ?>
         </div>
 
         <div class="flex flex-col gap-y-6 pb-6 column-3">
@@ -269,9 +298,9 @@
           <div class="website">
             <h3 class="all-small-caps text-sm">website</h3>
             <div class="flex flex-col text-base">
-              <?php if ($p = page('datasecurity')): ?>
+              <?php if ($p = page('datasecurity')) { ?>
                 <a href="<?= $p->url() ?>" target="_blank"> <?= $p->title() ?> </a>
-              <?php endif ?>
+              <?php } ?>
               <?= $site->page('home')->imprint() ?>
             </div>
           </div>

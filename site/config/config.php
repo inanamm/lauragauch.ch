@@ -1,9 +1,7 @@
 <?php
 
 return [
-    'locale' => [
-        'en_CH.utf-8'
-    ],
+    'locale' => ['en_CH.utf-8'],
 
     'smartypants' => [
         'attr' => 1,
@@ -18,22 +16,30 @@ return [
         'apostrophe' => '&rsquo;', // or 'apostrophe' => '&#8217;'
     ],
     'panel' => [
-        'install' => true
+        'install' => true,
     ],
     'date' => [
-        'handler' => 'strftime'
+        'handler' => 'strftime',
     ],
 
     'routes' => [
         [
             'pattern' => 'htmx/projects/(:any)',
-            'action' => function ($pageId,) {
+            'action' => function ($pageId) {
                 $projectPage = page('projects')->find($pageId);
-                return snippet('projectInfo', [
-                    'page' => $projectPage,
-                    "backgroundColor" => slothieHelpers()->HSLtoHSLA($projectPage->backgroundColor()->value(), 0.8),
-                ], true);
-            }
+
+                return snippet(
+                    'projectInfo',
+                    [
+                        'page' => $projectPage,
+                        'backgroundColor' => slothieHelpers()->HSLtoHSLA(
+                            $projectPage->backgroundColor()->value(),
+                            0.8,
+                        ),
+                    ],
+                    true,
+                );
+            },
         ],
-    ]
+    ],
 ];

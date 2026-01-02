@@ -4,6 +4,6 @@ export default {
 
   setActiveProject(id, name) {
     this.activeProjectId = id;
-    this.activeProjectName = name
-  }
-}
+    this.activeProjectName = name;
+  },
+};
