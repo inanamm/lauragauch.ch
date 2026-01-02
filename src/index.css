@@ -1,28 +1,62 @@
 @import 'tailwindcss';
 
-@config '../tailwind.config.js';
+@source "../site/templates/**/*.php";
+@source "../site/snippets/**/*.php";
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+@variant dark (&:where(.dark, .dark *));
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+@theme {
+  /* Font Families */
+  --font-sans: "GeigyLLRegular", sans-serif;
+  --font-serif: "TimesTen", serif;
+
+  /* Font Sizes with line-height and letter-spacing */
+  --text-sm: 0.95rem;
+  --text-sm--line-height: 1.35rem;
+  --text-sm--letter-spacing: 0.1rem;
+
+  --text-base: 1rem;
+  --text-base--line-height: 1.35rem;
+  --text-base--letter-spacing: 0.085rem;
+
+  --text-md: 1.45rem;
+  --text-md--line-height: 1.65rem;
+  --text-md--letter-spacing: 0.03rem;
+
+  --text-lg: 1.65rem;
+  --text-lg--line-height: 1.9rem;
+  --text-lg--letter-spacing: 0.03rem;
+
+  /* Line Heights */
+  --leading-extra: 0.75;
 }
 
 @layer utilities {
   .all-small-caps {
     font-variant: all-small-caps;
+  }
+
+  /* No scrollbar utilities */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Dark mode letter-spacing adjustments */
+  .dark .text-sm {
+    letter-spacing: 0.105rem;
+  }
+  .dark .text-base {
+    letter-spacing: 0.095rem;
+  }
+  .dark .text-md {
+    letter-spacing: 0.035rem;
+  }
+  .dark .text-lg {
+    letter-spacing: 0.035rem;
   }
 }
 
@@ -52,70 +86,11 @@
 }
 
 a {
-  @apply hover:underline underline-offset-2
-}
-
-figure img {
-  @apply h-full w-auto object-contain;
-}
-
-.video-responsive {
-  position: relative;
-  height: 24rem;
-  width: calc(24rem * 16 / 9);
-}
-
-.videoindex {
-  position: relative;
-  height: 15rem;
-  width: calc(15rem * 16 / 9);
-}
-
-.videohome {
-  position: relative;
-  height: 50svh;
-  width: calc(50svh * 16 / 9);
-}
-
-@media (max-width: 1023px) {
-  .homeGallery figure img {
-    height: auto;
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  .galleryImages {
-    height: full;
-  }
-
-  .video-responsive {
-    position: relative;
-    height: 13rem;
-    width: calc(13rem * 16 / 9);
-  }
-
-  .videoindex {
-    position: relative;
-    height: 8rem;
-    width: calc(8rem * 16 / 9);
-  }
-
-  .videohome {
-    position: relative;
-    height: calc((100svw - 6rem) * 9 / 16);
-    width: 100svw;
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-
-a {
+  @apply hover:underline underline-offset-2;
   cursor: crosshair;
 }
 
 img {
   -webkit-user-drag: none;
   -moz-user-drag: none;
-  -o-user-drag: none;
-  user-drag: none;
 }
