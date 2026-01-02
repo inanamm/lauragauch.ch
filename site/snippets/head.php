@@ -31,5 +31,7 @@
   ) ?>
   <?= vite()->css('templates/{{ page.template }}.css', try: true) ?>
 
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="e076f68a-485e-447c-8363-905493501904"></script>
+  <?php if (option('analytics')): ?>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="e076f68a-485e-447c-8363-905493501904"></script>
+  <?php endif ?>
 </head>

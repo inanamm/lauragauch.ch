@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'analytics' => false,
     'debug' => true,
     'cache' => [
         'pages' => [
