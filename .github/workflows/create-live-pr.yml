@@ -1,0 +1,34 @@
+on:
+  workflow_run:
+    workflows: ["PREVIEW Deploy website on push"]
+    types:
+      - completed
+    branches:
+      - main
+
+name: Create PR to Live
+
+jobs:
+  create-pr:
+    name: Create Pull Request
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Create Pull Request
+        run: |
+          gh pr create \
+            --base live \
+            --head main \
+            --title "Deploy main to live" \
+            --body "Automated PR created after successful preview deployment.
+
+          This PR merges the latest changes from \`main\` to \`live\` for production deployment." \
+            || echo "PR already exists or cannot be created"
+        env:
+          GH_TOKEN: ${{ github.token }}
