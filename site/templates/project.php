@@ -180,18 +180,16 @@ $style = "background-color: $hslaColor";
                 <div class="flex flex-wrap last:pb-0 w-full gap-1">
                     <!-- VIDEO -->
                     <?php if ($page->vimeo()->isNotEmpty()): ?>
-                        <div class="video-responsive">
-                            <div class="relative w-full h-52 lg:h-96 max-h-96 overflow-hidden">
-                                <iframe id="vimeo-iframe" class="w-full h-full"
-                                    src="https://player.vimeo.com/video/<?= $page->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
-                                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                            </div>
+                        <div class="relative w-full aspect-video max-h-96 overflow-hidden">
+                            <iframe id="vimeo-iframe" class="absolute inset-0 w-full h-full"
+                                src="https://player.vimeo.com/video/<?= $page->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
+                                frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                     <?php endif; ?>
 
                     <!-- BILDER -->
                     <?php foreach ($page->gallery()->toFiles() as $image): ?>
-                        <figure class="galleryImages h-52 lg:h-96 lg:w-auto">
+                        <figure class="h-52 lg:h-96 lg:w-auto [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
                             <?php echo $image->thumb([
                                 'quality' => 90,
                                 'format' => 'webp',

@@ -37,7 +37,8 @@
 
   <div id="index" x-show="menuOpen" x-ref="projectIndexOverlay"
        class="h-full w-full flex flex-col fixed bottom-0 left-0 backdrop-blur-md bg-white/50 dark:bg-black/50 overflow-y-scroll no-scrollbar"
-       x-transition:enter="transition lg:duration-1000 duration-700 ease-in-out" x-transition:enter-start="translate-y-full"
+       x-transition:enter="transition lg:duration-1000 duration-700 ease-in-out"
+       x-transition:enter-start="translate-y-full"
        x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in-out lg:duration-1000 duration-700 "
        x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full">
 
@@ -55,8 +56,9 @@
             <?php
             // gallery images
             if ($project->vimeo()->isNotEmpty()) { ?>
-              <figure class="videoindex relative w-full h-32 lg:h-60 max-h-96 overflow-hidden">
-                <iframe id="vimeo-iframe" class="w-full h-full"
+              <figure
+                class="relative w-full max-w-[calc(8rem*16/9)] lg:max-w-[calc(15rem*16/9)] aspect-video overflow-hidden">
+                <iframe id="vimeo-iframe" class="absolute inset-0 w-full h-full"
                         src="https://player.vimeo.com/video/<?= $project->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
                         frameborder="0"
                         webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -65,7 +67,7 @@
 
             <?php
             foreach ($project->gallery()->toFiles() as $image): ?>
-              <figure class="h-32 lg:h-60">
+              <figure class="h-32 lg:h-60 [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
                 <?= $image->thumb([
                   'quality' => 90,
                   'format' => 'webp',

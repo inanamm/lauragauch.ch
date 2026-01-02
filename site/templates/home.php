@@ -18,7 +18,7 @@
         <?php if ($project->type === "image"): ?>
           <figure @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
             hx-get="/htmx/<?= $project->id ?>" hx-trigger="click" hx-target="#content"
-            class="h-full flex-none opacity-90 hover:opacity-100 cursor-crosshair"
+            class="h-full flex-none opacity-90 hover:opacity-100 cursor-crosshair px-12 lg:px-0 [&_img]:h-auto lg:[&_img]:h-full [&_img]:w-auto [&_img]:object-contain"
             data-project='<?= json_encode($project->title) ?>' x-data @click="$store.projectDrawer.openDrawer();">
             <?= $project->image->thumb([
               'quality' => 90,
@@ -32,7 +32,9 @@
             <figure @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
               hx-get="/htmx/<?= $project->id ?>" hx-trigger="click" hx-target="#content"
               data-project='<?= json_encode($project->title) ?>' x-data @click="$store.projectDrawer.openDrawer();"
-              class="videohome video-container relative w-full overflow-hidden">
+              class="video-container relative overflow-hidden
+                     w-screen h-[calc((100svw-6rem)*9/16)] px-12
+                     lg:w-[calc(50svh*16/9)] lg:h-[50svh] lg:px-0">
               <iframe id="vimeo-iframe" class="w-full h-full"
                 src="https://player.vimeo.com/video/<?= $project->videoCode ?>?title=0&byline=0&portrait=0&autopause=0"
                 frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
