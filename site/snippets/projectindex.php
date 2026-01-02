@@ -45,7 +45,7 @@
 
     <article class="top px-3 font-serif pt-32 pb-20">
       <div
-        class="gallery flex flex-wrap w-full gap-x-5 gap-y-4 [&:has(.group:hover)_.group>*]:opacity-20 [&:has(.group:hover)_.group>*]:blur-xs">
+        class="gallery flex flex-wrap w-full gap-x-3 lg:gap-x-5 gap-y-3 lg:gap-y-4 [&:has(.group:hover)_.group>*]:opacity-20 [&:has(.group:hover)_.group>*]:blur-xs">
         <?php
         $projects = $site->page('projects')->children()->published();
         foreach ($projects as $project):
@@ -59,10 +59,10 @@
               <div
                 class="relative w-fit mt-[calc(0.95rem+0.25rem)] group-hover:!opacity-100 group-hover:!blur-none transition-opacity duration-300">
                 <h2
-                  class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700">
                   <?= $project->title()->or($project->link()) ?>, <?= $project->year()->escape() ?>
                 </h2>
-                <figure class="relative h-32 aspect-video">
+                <figure class="relative h-24 lg:h-32 aspect-video">
                   <iframe id="vimeo-iframe" class="absolute inset-0 w-full h-full"
                           src="https://player.vimeo.com/video/<?= $project->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
                           frameborder="0"
@@ -80,10 +80,10 @@
                 <div
                   class="relative w-fit mt-[calc(0.95rem+0.25rem)] group-hover:!opacity-100 group-hover:!blur-none transition-opacity duration-300">
                   <h2
-                    class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    class="absolute all-small-caps text-sm mb-1 bottom-full left-0 whitespace-nowrap opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-700">
                     <?= $project->title()->or($project->link()) ?>, <?= $project->year()->escape() ?>
                   </h2>
-                  <figure class="h-32 w-fit [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
+                  <figure class="h-24 lg:h-32 w-fit [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
                     <?= $image->thumb([
                       'quality' => 90,
                       'format' => 'webp',
@@ -95,7 +95,7 @@
               else:
                 ?>
                 <figure
-                  class="h-32 w-fit mt-[calc(0.95rem+0.25rem)] group-hover:!opacity-100 group-hover:!blur-none transition-opacity duration-300 [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
+                  class="h-24 lg:h-32 w-fit mt-[calc(0.95rem+0.25rem)] group-hover:!opacity-100 group-hover:!blur-none transition-opacity duration-300 [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
                   <?= $image->thumb([
                     'quality' => 90,
                     'format' => 'webp',
