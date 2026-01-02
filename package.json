@@ -11,7 +11,7 @@
     "format": "npm run format:js && npm run format:css && npm run format:php",
     "format:js": "prettier --write \"**/*.{js,html,md}\"",
     "format:css": "stylelint \"**/*.css\" --fix && prettier --write \"**/*.css\"",
-    "format:php": "vendor/bin/ecs",
+    "format:php": "vendor/bin/ecs --fix",
     "format:check": "prettier --check \"**/*.{js,html,md}\" && stylelint \"**/*.css\" && vendor/bin/ecs check"
   },
   "dependencies": {
