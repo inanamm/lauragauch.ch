@@ -99,9 +99,13 @@
             <h3 class="all-small-caps text-sm">presskits</h3>
             <div class="flex flex-col text-base">
               <?php foreach ($visiblePresskits as $linkObject): ?>
-                <a href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
-                  <?= $linkObject->title()->or($linkObject->link()) ?>
-                </a>
+                <?php if ($linkObject->link()->toUrl()): ?>
+                  <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                    <?= $linkObject->title()->or($linkObject->link()) ?>
+                  </a>
+                <?php else: ?>
+                  <?= $linkObject->title() ?>
+                <?php endif ?>
               <?php endforeach; ?>
             </div>
           </div>
@@ -130,9 +134,13 @@
                 <div class="">
                   <?= $linkObject->date()->toDate('%G') ?>
                 </div>
-                <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
-                  <?= $linkObject->title()->or($linkObject->link()) ?>
-                </a>
+                <?php if ($linkObject->link()->toUrl()): ?>
+                  <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                    <?= $linkObject->title()->or($linkObject->link()) ?>
+                  </a>
+                <?php else: ?>
+                  <?= $linkObject->title() ?>
+                <?php endif ?>
               </div>
             <?php endforeach; ?>
           </div>
@@ -161,9 +169,13 @@
                 <div class="">
                   <?= $linkObject->year()->toDate('%G') ?>
                 </div>
-                <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
-                  <?= $linkObject->title()->or($linkObject->link()) ?>
-                </a>
+                <?php if ($linkObject->link()->toUrl()): ?>
+                  <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                    <?= $linkObject->title()->or($linkObject->link()) ?>
+                  </a>
+                <?php else: ?>
+                  <?= $linkObject->title() ?>
+                <?php endif ?>
               </div>
             <?php endforeach; ?>
           </div>
@@ -193,9 +205,13 @@
                 <div class="block">
                   <?= str_replace(' ', '&nbsp;', $linkObject->date()->toDate('%B, %d %G')) ?>
                 </div>
-                <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
-                  <?= $linkObject->title()->or($linkObject->link()) ?>
-                </a>
+                <?php if ($linkObject->link()->toUrl()): ?>
+                  <a class="flex flex-wrap" href="<?= $linkObject->link()->toUrl() ?>" <?= $linkObject->target()->toBool() ? 'target="_blank"' : '' ?>>
+                    <?= $linkObject->title()->or($linkObject->link()) ?>
+                  </a>
+                <?php else: ?>
+                  <?= $linkObject->title() ?>
+                <?php endif ?>
               </div>
             <?php endforeach; ?>
           </div>
