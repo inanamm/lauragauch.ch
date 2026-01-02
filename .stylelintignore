@@ -1,0 +1,8 @@
+node_modules
+public_html
+vendor
+kirby
+site/plugins
+*.min.css
+package-lock.json
+composer.lock

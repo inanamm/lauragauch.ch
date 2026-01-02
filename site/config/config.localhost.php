@@ -1,11 +1,12 @@
 <?php
 
 return [
-  'debug' => true,
-  'cache' => [
-    'pages' => [
-      'type' => 'php',
-      'active' => false
-    ]
-  ],
+    'analytics' => false,
+    'debug' => true,
+    'cache' => [
+        'pages' => [
+            'type' => 'php',
+            'active' => false,
+        ],
+    ],
 ];
