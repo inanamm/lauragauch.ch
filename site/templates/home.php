@@ -14,8 +14,8 @@
 <main class="lg:overflow-x-scroll lg:row-span-6 scrollContainer no-scrollbar">
   <ul
     class="flex overflow-x-hidden flex-col gap-1 items-center pb-24 w-full max-w-full lg:overflow-x-scroll lg:flex-row lg:gap-10 lg:px-0 lg:pb-0 lg:h-full homeGallery no-scrollbar scroll-smooth snap-x">
-    <?php foreach ($projects as $project) { ?>
-      <?php if ($project->type === 'image') { ?>
+    <?php foreach ($projects as $project): ?>
+      <?php if ($project->type === 'image'): ?>
         <figure
           @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
           hx-get="/htmx/<?= $project->id ?>"
@@ -33,9 +33,9 @@
             ])
               ->html() ?>
         </figure>
-      <?php } ?>
+      <?php endif ?>
 
-      <?php if ($project->type === 'video') { ?>
+      <?php if ($project->type === 'video'): ?>
         <div class="flex opacity-90 hover:opacity-100 max-h-max cursor-crosshair">
           <figure
             @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
@@ -58,8 +58,8 @@
             ></iframe>
           </figure>
         </div>
-      <?php } ?>
-    <?php } ?>
+      <?php endif ?>
+    <?php endforeach ?>
   </ul>
 
   <button

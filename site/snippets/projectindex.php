@@ -61,9 +61,7 @@
                   <iframe
                     id="vimeo-iframe"
                     class="absolute inset-0 w-full h-full"
-                    src="https://player.vimeo.com/video/<?= $project
-                      ->vimeo()
-                      ->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
+                    src="https://player.vimeo.com/video/<?= $project->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
                     frameborder="0"
                     webkitallowfullscreen
                     mozallowfullscreen
@@ -81,16 +79,16 @@
                   <h2
                     class="absolute left-0 bottom-full mb-1 text-sm whitespace-nowrap opacity-100 transition-opacity duration-700 lg:opacity-0 all-small-caps lg:group-hover:opacity-100">
                     <?= $project->title()->or($project->link()) ?>, <?= $project
-                        ->year()
-                        ->escape() ?>
+                          ->year()
+                          ->escape() ?>
                   </h2>
                   <figure class="h-24 lg:h-32 w-fit [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
                     <?= $image
-                        ->thumb([
+                          ->thumb([
                             'quality' => 90,
-                            'format' => 'webp',
-                        ])
-                        ->html() ?>
+                              'format' => 'webp',
+                      ])
+                          ->html() ?>
                   </figure>
                 </div>
                 <?php $isFirstItem = false;
@@ -98,19 +96,16 @@
                 <figure
                   class="h-24 lg:h-32 w-fit mt-0 lg:mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300 [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
                   <?= $image
-                      ->thumb([
-                        'quality' => 90,
-                          'format' => 'webp',
-                    ])
-                      ->html() ?>
+                        ->thumb([
+                            'quality' => 90,
+                            'format' => 'webp',
+                        ])
+                        ->html() ?>
                 </figure>
               <?php endif;
-            endforeach;
-            ?>
+            endforeach ?>
           </div>
-        <?php
-        endforeach;
-        ?>
+        <?php endforeach ?>
       </div>
     </article>
 

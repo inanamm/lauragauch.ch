@@ -28,52 +28,52 @@ $style = "background-color: {$hslaColor}";
       <?= $page->title()->kt() ?>
     </div>
 
-    <?php if ($page->description()->isNotEmpty()) { ?>
+    <?php if ($page->description()->isNotEmpty()): ?>
       <article
         class="flex flex-col gap-3 pt-24 pb-16 lg:col-start-2 lg:col-end-6 lg:row-start-2 lg:text-lg text-md">
         <?= $page->description()->kt() ?>
       </article>
-    <?php } ?>
+    <?php endif ?>
 
     <!-- ADDITIONAL INFO -->
     <div class="font-serif lg:col-span-4 lg:col-start-2">
 
       <!-- REQUEST FULL MOVIE -->
-      <?php if ($page->requestToggle()->toBool() === true) { ?>
+      <?php if ($page->requestToggle()->toBool() === true): ?>
         <a
           href="mailto:?subject=Request access to full film by Laura Gauch&body=Hi! I saw the trailer to <?= $page->title() ?> on your website. Is it possible to get access to the full film? Thank you!"
           class="pt-6 text-sm all-small-caps">Full Film on Request</a>
-      <?php } ?>
+      <?php endif ?>
 
       <!-- YEAR LOCATION -->
-      <?php if ($page->year()->isNotEmpty()) { ?>
+      <?php if ($page->year()->isNotEmpty()): ?>
         <h3 class="pt-6 text-sm all-small-caps">Year</h3>
         <div class="flex flex-row gap-3 text-base">
           <?= $page->year()->escape() ?>
         </div>
-      <?php } ?>
+      <?php endif ?>
 
       <!-- PRESSKITS -->
       <?php
       $presskits = $page->presskits()->toStructure();
 $hasVisiblePresskits = false;
 $visiblePresskits = [];
-foreach ($presskits as $presskit) {
-    if ($presskit->toggle()->toBool() === true) {
+foreach ($presskits as $presskit):
+    if ($presskit->toggle()->toBool() === true):
         $visiblePresskits[] = $presskit;
         $hasVisiblePresskits = true;
-    }
-}
+    endif;
+endforeach;
 ?>
 
-      <?php if ($hasVisiblePresskits) { ?>
+      <?php if ($hasVisiblePresskits): ?>
         <h3 class="pt-6 text-sm all-small-caps">presskits</h3>
-        <?php foreach ($visiblePresskits as $presskit) { ?>
+        <?php foreach ($visiblePresskits as $presskit): ?>
           <div class="flex flex-row gap-3 text-base">
             <?= $presskit->title() ?>
           </div>
-        <?php } ?>
-      <?php } ?>
+        <?php endforeach ?>
+      <?php endif ?>
 
 
       <!-- COLLABORATION -->
@@ -81,22 +81,22 @@ foreach ($presskits as $presskit) {
 $collaborations = $page->collaboration()->toStructure();
 $hasVisibleCollaborations = false;
 $visibleCollaborations = [];
-foreach ($collaborations as $collab) {
-    if ($collab->toggle()->toBool() === true) {
+foreach ($collaborations as $collab):
+    if ($collab->toggle()->toBool() === true):
         $visibleCollaborations[] = $collab;
         $hasVisibleCollaborations = true;
-    }
-}
+    endif;
+endforeach;
 ?>
 
-      <?php if ($hasVisibleCollaborations) { ?>
+      <?php if ($hasVisibleCollaborations): ?>
         <h3 class="pt-6 text-sm all-small-caps">in collaboration with</h3>
-        <?php foreach ($visibleCollaborations as $collab) { ?>
+        <?php foreach ($visibleCollaborations as $collab): ?>
           <div class="flex flex-row gap-3 text-base">
             <?= $collab->name() ?>
           </div>
-        <?php } ?>
-      <?php } ?>
+        <?php endforeach ?>
+      <?php endif ?>
 
 
       <!-- SUPPORT OF -->
@@ -104,22 +104,22 @@ foreach ($collaborations as $collab) {
 $supports = $page->supportOf()->toStructure();
 $hasVisibleSupports = false;
 $visibleSupports = [];
-foreach ($supports as $support) {
-    if ($support->toggle()->toBool() === true) {
+foreach ($supports as $support):
+    if ($support->toggle()->toBool() === true):
         $visibleSupports[] = $support;
         $hasVisibleSupports = true;
-    }
-}
+    endif;
+endforeach;
 ?>
 
-      <?php if ($hasVisibleSupports) { ?>
+      <?php if ($hasVisibleSupports): ?>
         <h3 class="pt-6 text-sm all-small-caps">With the Support of</h3>
-        <?php foreach ($visibleSupports as $support) { ?>
+        <?php foreach ($visibleSupports as $support): ?>
           <div class="flex flex-row gap-3 text-base">
             <?= $support->name() ?>
           </div>
-        <?php } ?>
-      <?php } ?>
+        <?php endforeach ?>
+      <?php endif ?>
 
 
       <!-- NEXT VIEWINGS -->
@@ -127,37 +127,37 @@ foreach ($supports as $support) {
 $viewings = $page->nextViewings()->toStructure();
 $hasVisibleViewings = false;
 $visibleViewings = [];
-foreach ($viewings as $item) {
-    if ($item->toggle()->toBool() === true) {
+foreach ($viewings as $item):
+    if ($item->toggle()->toBool() === true):
         $visibleViewings[] = $item;
         $hasVisibleViewings = true;
-    }
-}
+    endif;
+endforeach;
 ?>
 
-      <?php if ($hasVisibleViewings) { ?>
+      <?php if ($hasVisibleViewings): ?>
         <h3 class="pt-6 text-sm all-small-caps">Next Viewings</h3>
-        <?php foreach ($visibleViewings as $item) { ?>
+        <?php foreach ($visibleViewings as $item): ?>
           <div class="flex flex-col">
             <div class="flex flex-wrap gap-x-5 text-base">
-              <?php if ($item->dateUntil()->isNotEmpty()) { ?>
+              <?php if ($item->dateUntil()->isNotEmpty()): ?>
                 <div class="flex flex-row gap-0.5">
                   <?= $item->date()->toDate('%B, %d') ?>–<?= $item
                       ->dateUntil()
                       ->toDate('%B, %d %G') ?>
                 </div>
-              <?php } else { ?>
+              <?php else: ?>
                 <div class="flex flex-row gap-0.5">
                   <?= $item->date()->toDate('%B, %d %G') ?>
                 </div>
-              <?php } ?>
+              <?php endif ?>
               <div>
                 <?= $item->name()->kt() ?>
               </div>
             </div>
           </div>
-        <?php } ?>
-      <?php } ?>
+        <?php endforeach ?>
+      <?php endif ?>
 
 
     </div>
@@ -167,7 +167,7 @@ foreach ($viewings as $item) {
     <section class="py-24 lg:col-span-6 lg:col-start-1">
       <div class="flex flex-wrap gap-1 w-full last:pb-0">
         <!-- VIDEO -->
-        <?php if ($page->vimeo()->isNotEmpty()) { ?>
+        <?php if ($page->vimeo()->isNotEmpty()): ?>
           <div class="overflow-hidden relative w-full max-h-96 aspect-video">
             <iframe id="vimeo-iframe" class="absolute inset-0 w-full h-full"
                     src="https://player.vimeo.com/video/<?= $page
@@ -175,19 +175,19 @@ foreach ($viewings as $item) {
             ->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
                     frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </div>
-        <?php } ?>
+        <?php endif ?>
 
         <!-- BILDER -->
-        <?php foreach ($page->gallery()->toFiles() as $image) { ?>
+        <?php foreach ($page->gallery()->toFiles() as $image): ?>
           <figure class="h-52 lg:h-96 lg:w-auto [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
-            <?php echo $image
+            <?= $image
                 ->thumb([
                     'quality' => 90,
                     'format' => 'webp',
                 ])
-                ->html(); ?>
+                ->html() ?>
           </figure>
-        <?php } ?>
+        <?php endforeach ?>
       </div>
     </section>
   </div>
