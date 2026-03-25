@@ -63,7 +63,6 @@
                     class="absolute inset-0 w-full h-full"
                     src="https://player.vimeo.com/video/<?= $project->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
                     frameborder="0"
-                    loading="lazy"
                     webkitallowfullscreen
                     mozallowfullscreen
                     allowfullscreen
@@ -83,70 +82,22 @@
                     <?= $project->title()->or($project->link()) ?>,<?= $project->year()->escape() ?>
                   </h2>
                   <figure class="h-24 lg:h-32 w-fit [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
-                    <?php
-                    $srcsetWidths = [240, 480, 720, 960];
-                    $webpSrcset = implode(', ', array_map(fn ($width) => $image->thumb([
-                        'width' => $width,
-                        'quality' => 90,
-                        'format' => 'webp',
-                    ])->url() . ' ' . $width . 'w', $srcsetWidths));
-                    $avifSrcset = implode(', ', array_map(fn ($width) => $image->thumb([
-                        'width' => $width,
-                        'quality' => 90,
-                        'format' => 'avif',
-                    ])->url() . ' ' . $width . 'w', $srcsetWidths));
-                    $fallback = $image->thumb([
-                        'width' => 720,
-                        'quality' => 90,
-                        'format' => 'jpg',
-                    ]);
-                    ?>
-                    <picture>
-                      <source srcset="<?= $avifSrcset ?>" type="image/avif">
-                      <source srcset="<?= $webpSrcset ?>" type="image/webp">
-                      <img
-                        src="<?= $fallback->url() ?>"
-                        alt="<?= $image->alt()->or($project->title())->escape() ?>"
-                        sizes="(min-width: 1024px) 12rem, 6rem"
-                        loading="lazy"
-                        decoding="async"
-                      >
-                    </picture>
+                    <?= $image
+                        ->thumb([
+                            'quality' => 90,
+                            'format' => 'webp',
+                        ])
+                        ->html() ?>
                   </figure>
                 </div>
                 <?php $isFirstItem = false;
                 else: ?>
                 <figure
                   class="h-24 lg:h-32 w-fit mt-0 lg:mt-[calc(0.95rem+0.25rem)] lg:group-hover:!opacity-100 lg:group-hover:!blur-none transition-opacity duration-300 [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
-                  <?php
-                  $srcsetWidths = [240, 480, 720, 960];
-                  $webpSrcset = implode(', ', array_map(fn ($width) => $image->thumb([
-                      'width' => $width,
-                      'quality' => 90,
+                  <?= $image->thumb([
+                    'quality' => 90,
                       'format' => 'webp',
-                  ])->url() . ' ' . $width . 'w', $srcsetWidths));
-                  $avifSrcset = implode(', ', array_map(fn ($width) => $image->thumb([
-                      'width' => $width,
-                      'quality' => 90,
-                      'format' => 'avif',
-                  ])->url() . ' ' . $width . 'w', $srcsetWidths));
-                  $fallback = $image->thumb([
-                      'width' => 720,
-                      'quality' => 90,
-                      'format' => 'jpg',
-                  ]);
-                  ?>
-                  <picture>
-                    <source srcset="<?= $avifSrcset ?>" type="image/avif">
-                    <source srcset="<?= $webpSrcset ?>" type="image/webp">
-                    <img
-                      src="<?= $fallback->url() ?>"
-                      alt="<?= $image->alt()->or($project->title())->escape() ?>"
-                      sizes="(min-width: 1024px) 12rem, 6rem"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                  </picture>
+                ])->html() ?>
                 </figure>
               <?php endif;
             endforeach ?>

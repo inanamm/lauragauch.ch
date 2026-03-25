@@ -14,7 +14,7 @@
 <main class="lg:overflow-x-scroll lg:row-span-6 scrollContainer no-scrollbar">
   <ul
     class="flex overflow-x-hidden flex-col gap-1 items-center pb-24 w-full max-w-full lg:overflow-x-scroll lg:flex-row lg:gap-10 lg:px-0 lg:pb-0 lg:h-full homeGallery no-scrollbar scroll-smooth snap-x">
-    <?php foreach ($projects as $index => $project): ?>
+    <?php foreach ($projects as $project): ?>
       <?php if ($project->type === 'image'): ?>
         <figure
           @mouseover="$store.activeProject.setActiveProject('<?= $project->id ?>', '<?= $project->title ?>')"
@@ -26,35 +26,12 @@
           x-data
           @click="$store.projectDrawer.openDrawer();"
         >
-          <?php
-          $srcsetWidths = [320, 640, 960, 1280, 1600, 1920];
-          $webpSrcset = implode(', ', array_map(fn ($width) => $project->image->thumb([
-              'width' => $width,
-              'quality' => 90,
-              'format' => 'webp',
-          ])->url() . ' ' . $width . 'w', $srcsetWidths));
-          $avifSrcset = implode(', ', array_map(fn ($width) => $project->image->thumb([
-              'width' => $width,
-              'quality' => 90,
-              'format' => 'avif',
-          ])->url() . ' ' . $width . 'w', $srcsetWidths));
-          $fallback = $project->image->thumb([
-              'width' => 1280,
-              'quality' => 80,
-              'format' => 'jpg',
-          ]);
-          ?>
-          <picture>
-            <source srcset="<?= $avifSrcset ?>" type="image/avif">
-            <source srcset="<?= $webpSrcset ?>" type="image/webp">
-            <img
-              src="<?= $fallback->url() ?>"
-              alt="<?= $project->title()->escape() ?>"
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              <?= $index === 0 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"' ?>
-              decoding="async"
-            >
-          </picture>
+          <?= $project->image
+              ->thumb([
+                'quality' => 90,
+                  'format' => 'webp',
+            ])
+              ->html() ?>
         </figure>
       <?php endif ?>
 
@@ -75,7 +52,6 @@
               class="w-full h-full"
               src="https://player.vimeo.com/video/<?= $project->videoCode ?>?title=0&byline=0&portrait=0&autopause=0"
               frameborder="0"
-              loading="lazy"
               webkitallowfullscreen
               mozallowfullscreen
               allowfullscreen
