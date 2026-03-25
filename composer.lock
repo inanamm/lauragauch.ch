@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "83f76936e5bcc3f793b2c3eec991d116",
+    "content-hash": "a96602dff27f0f197b2e5b481ed2dd67",
     "packages": [
         {
             "name": "arnoson/kirby-vite",
@@ -518,6 +518,59 @@
                 }
             ],
             "time": "2020-12-28T12:54:39+00:00"
+        },
+        {
+            "name": "getkirby/staticache",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/getkirby/staticache.git",
+                "reference": "3931e2a256b169d0341b96e913d531334dc3ecc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/getkirby/staticache/zipball/3931e2a256b169d0341b96e913d531334dc3ecc2",
+                "reference": "3931e2a256b169d0341b96e913d531334dc3ecc2",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/cms": "^3.8 || ^4.0 || ^5.0",
+                "getkirby/composer-installer": "^1.2"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "installer-name": "staticache",
+                "kirby-cms-path": false
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bastian Allgeier",
+                    "email": "bastian@getkirby.com",
+                    "homepage": "https://getkirby.com/plugins/getkirby"
+                },
+                {
+                    "name": "Lukas Bestle",
+                    "email": "lukas@getkirby.com",
+                    "homepage": "https://getkirby.com/plugins/getkirby"
+                }
+            ],
+            "description": "Static site performance on demand",
+            "homepage": "https://getkirby.com/plugins/getkirby/staticache",
+            "support": {
+                "issues": "https://github.com/getkirby/staticache/issues",
+                "source": "https://github.com/getkirby/staticache/tree/2.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://getkirby.com/buy",
+                    "type": "custom"
+                }
+            ],
+            "time": "2026-03-03T08:45:59+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
