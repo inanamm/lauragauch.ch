@@ -175,6 +175,7 @@ endforeach;
               class="absolute inset-0 w-full h-full"
               src="https://player.vimeo.com/video/<?= $page->vimeo()->escape() ?>?title=0&byline=0&portrait=0&autopause=0"
               frameborder="0"
+              loading="lazy"
               webkitallowfullscreen
               mozallowfullscreen
               allowfullscreen
@@ -186,10 +187,35 @@ endforeach;
         <!-- BILDER -->
         <?php foreach ($page->gallery()->toFiles() as $image): ?>
           <figure class="h-52 lg:h-96 lg:w-auto [&_img]:h-full [&_img]:w-auto [&_img]:object-contain">
-            <?= $image->thumb([
+            <?php
+            $srcsetWidths = [480, 960, 1440, 1920];
+            $webpSrcset = implode(', ', array_map(fn ($width) => $image->thumb([
+                'width' => $width,
                 'quality' => 90,
                 'format' => 'webp',
-            ])->html() ?>
+            ])->url() . ' ' . $width . 'w', $srcsetWidths));
+            $avifSrcset = implode(', ', array_map(fn ($width) => $image->thumb([
+                'width' => $width,
+                'quality' => 90,
+                'format' => 'avif',
+            ])->url() . ' ' . $width . 'w', $srcsetWidths));
+            $fallback = $image->thumb([
+                'width' => 1440,
+                'quality' => 90,
+                'format' => 'jpg',
+            ]);
+            ?>
+            <picture>
+              <source srcset="<?= $avifSrcset ?>" type="image/avif">
+              <source srcset="<?= $webpSrcset ?>" type="image/webp">
+              <img
+                src="<?= $fallback->url() ?>"
+                alt="<?= $image->alt()->or($page->title())->escape() ?>"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
           </figure>
         <?php endforeach ?>
       </div>
