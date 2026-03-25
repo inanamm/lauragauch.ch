@@ -26,8 +26,7 @@
     "getkirby/cms": "^5.2",
     "arnoson/kirby-vite": "^5.6",
     "tobimori/kirby-seo": "^2.0.0-alpha.8",
-    "getkirby/cli": "^1.9",
-    "getkirby/staticache": "^2.1"
+    "getkirby/cli": "^1.9"
   },
   "config": {
     "allow-plugins": {

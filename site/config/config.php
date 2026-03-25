@@ -22,13 +22,6 @@ return [
         'handler' => 'strftime',
     ],
 
-    'cache' => [
-        'pages' => [
-            'active' => true,
-            'type' => 'static',
-        ],
-    ],
-
     'routes' => [
         [
             'pattern' => 'htmx/projects/(:any)',
