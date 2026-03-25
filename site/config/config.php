@@ -26,6 +26,7 @@ return [
         'pages' => [
             'active' => true,
             'type' => 'static',
+            'headers' => true,
         ],
     ],
 
